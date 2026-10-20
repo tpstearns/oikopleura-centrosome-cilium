@@ -1,0 +1,47 @@
+# Plan of work
+
+**Project description (TS, 2026-10-20).** An unusual feature of *Oikopleura* is that the genome is extremely reduced compared to other chordates. Our task is to do an in-depth analysis of the genes associated with proteins of the centrosome and cilium and determine what has been lost and what has been retained in Od and related species. This is of interest because the centrosome and particularly the cilium are subject to rapid evolutionary change in many groups, including complete loss in several branches of the eukaryotic tree. Goal: publish a paper. Strictly computational; outputs are a paper and resources.
+
+## Objective
+Determine which centrosome, centriole, and cilium genes *O. dioica* and related tunicates have lost and retained relative to other chordates, place those losses against the recurrent patterns of centriole/cilium reduction and loss across eukaryotes, and publish the analysis with its resource. The distinctive position: *Oikopleura* is not a cilia-loss lineage. It keeps sperm flagella, motile ciliated epithelia (gill ring, ciliated funnel, gut), and monociliated sensory cells (Nishida et al. 2021), so it tests reduction without loss: what a chordate must keep to build centrioles and cilia when gene loss is cheap.
+
+## Species panel
+- Core: *O. dioica* cryptic lineages (Okinawa OKI2018_I69 and the 2025 haplotype-resolved assembly; Osaka; Bergen; Barcelona) plus the legacy OdB3 annotation. Differences among them are loss in progress without morphological change.
+- Related larvaceans: whichever of the Naville et al. 2019 genomes are public (to verify).
+- Ascidians and thaliaceans via ANISEED/NCBI.
+- Reference backbone: human, mouse, zebrafish, *Xenopus*, amphioxus; *Chlamydomonas*, *Tetrahymena* (complete toolkit); *Drosophila*, *C. elegans* (reduced/divergent); *Arabidopsis*, yeast (centriole-free).
+- Eukaryote-wide backdrop imported from Hodges 2010, Carvalho-Santos 2010, Nevers 2017, Dobbelaere 2023 rather than recomputed.
+
+## Gene set
+~200 human-anchored genes by module (config/gene_modules.tsv): tubulins incl. ZED; duplication/cartwheel; distal end; PCM/γ-TuRC; appendages/basal foot; transition zone; IFT/BBSome/motors; motile axoneme and assembly factors; multiciliogenesis; ciliary signaling; linkers/satellites/IDPs; tubulin PTM enzymes; controls. Non-human anchors where human lacks the gene. TS curates.
+
+## Pipeline (designed around false absences)
+1. Orthogroups across the panel (OrthoFinder) for paralog structure.
+2. Per-gene HMMs from vertebrate and invertebrate seeds (pyhmmer) against proteomes; miniprot against genomes for unannotated genes; transcripts where available.
+3. RBH (MMseqs2) and Pfam architecture to confirm identity.
+4. Structure-aware pass: Foldseek against AlphaFold models where they exist; ProstT5 3Di prediction for new assemblies.
+5. Evidence tiers E1–E4 per cell (docs/evidence_tiers.md); sensitivity controls per species.
+6. Loss timing by parsimony on the chordate/tunicate tree.
+
+## Depth beyond presence/absence
+- Retained core: conservation of known assembly interfaces (SAS-6 head/coiled-coil, STIL–PLK4, CEP135–SAS-6, CPAP–tubulin), domain truncations, paralog collapse; branch-length ratios of retained centriole genes versus the genome-wide distribution.
+- Module-level coelimination: are losses clustered by module, and do they match the modules that go first elsewhere in eukaryotes (BBSome, ZED, PCM-specific proteins), or does compaction cut into the conserved core?
+- Cilium types against modules: ZED and basal-foot status vs. predicted centriole architecture; multiciliogenesis genes vs. whether gill-ring, funnel, and gut cells are multiciliated (ultrastructure literature); sensory-cilium modules vs. monociliated sensory cells.
+- Expression support from OikoBase developmental transcriptomes.
+
+## Outputs
+Manuscript (GBE / MBE / Current Biology depending on the biology); evidence-tiered matrix with per-gene evidence; curated module HMMs; pipeline (this repo); Zenodo deposit; browsable matrix page.
+
+## Phases
+1. Landscape and data inventory (in progress; novelty check clean so far).
+2. Pipeline and matrix (bulk of the work; Claude Code on TS's MacBook).
+3. Depth analyses and figures.
+4. Drafting in TS's voice with verified references.
+
+Division of labor: TS curates the gene list, adjudicates ambiguous calls, owns interpretation; Claude runs the pipeline, analyses, and drafts.
+
+## Status (2026-10-20)
+- Repo scaffold written: config, scripts for stages 1–8, Snakefile, docs.
+- Data inventory: OKI2018_I69 verified (Zenodo 4023776, ENA PRJEB40135); PRJEB91365 seen (2025 haplotype-resolved, publication unknown); Osaka/Bergen/Barcelona accessions to pull from Plessy 2024 Suppl. Table 1; OdB3 and OikoBase locations to resolve; larvacean set from Naville 2019 to list; ascidian proteomes via ANISEED/NCBI to resolve.
+- Novelty: Hodges 2010 (45 genomes) does not include *Oikopleura*; Dobbelaere 2023 (147 genomes) tunicate inclusion to check (Dataset EV1A); no *Oikopleura*-focused survey found.
+- Open for TS: panel breadth; gene list curation.

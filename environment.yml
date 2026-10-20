@@ -1,0 +1,26 @@
+name: oiko-cc
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - snakemake-minimal>=8
+  - pandas
+  - pyyaml
+  - requests
+  - biopython
+  - pyhmmer
+  - hmmer>=3.4
+  - mmseqs2
+  - diamond
+  - orthofinder
+  - mafft
+  - iqtree
+  - fasttree
+  - miniprot
+  - foldseek
+  - seqkit
+  - ncbi-datasets-cli
+  - ete3
+  - matplotlib
+  - jupyterlab

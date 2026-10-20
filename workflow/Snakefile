@@ -1,0 +1,223 @@
+"""Centrosome/cilium gene repertoire pipeline. Run from the repository root:
+
+    snakemake --cores 12 panel_manifest        # validate species, resolve proteomes
+    snakemake --cores 12 fetch_all             # download proteomes/genomes listed as fetchable in the panel
+    snakemake --cores 12 anchors               # resolve gene symbols to anchor sequences
+    snakemake --cores 12 profiles              # seeds + per-gene HMMs
+    snakemake --cores 12                       # everything through results/matrix.tsv
+
+Thresholds: config/params.yaml. Species: config/species_panel.yaml. Genes: config/gene_modules.tsv.
+"""
+import csv
+from pathlib import Path
+
+import yaml
+
+configfile: "config/params.yaml"
+
+PANEL = "config/species_panel.yaml"
+GENES_TSV = "config/gene_modules.tsv"
+PARAMS = "config/params.yaml"
+THREADS = int(config.get("threads", 8))
+FETCHABLE = {"uniprot_reference", "zenodo", "ncbi_datasets", "url"}
+
+panel = yaml.safe_load(open(PANEL))
+SPECIES = [s for s in panel["species"] if s["name"] != "TO-RESOLVE"]
+
+
+def source_of(sp, kind):
+    return ((sp.get(kind) or {}).get("source"))
+
+
+PROT_SPECIES = [s["key"] for s in SPECIES if source_of(s, "proteome") in FETCHABLE]
+GENOME_SPECIES = [s["key"] for s in SPECIES
+                  if source_of(s, "genome") in FETCHABLE and s["key"] in panel.get("genome_search_species", [])]
+SEED_SPECIES = [k for k in panel.get("seed_species", []) if k in PROT_SPECIES]
+GENES = [r["gene"] for r in csv.DictReader(open(GENES_TSV), delimiter="\t")]
+USE_PFAM = bool(config.get("pfam", {}).get("enabled", False))
+
+wildcard_constraints:
+    key="[A-Za-z0-9_]+",
+    gene="[A-Za-z0-9_.-]+",
+
+
+rule all:
+    input:
+        "results/matrix.tsv",
+        "results/module_summary.tsv",
+        "results/matrix_summary.md",
+
+
+rule panel_manifest:
+    input:
+        PANEL,
+    output:
+        "data/manifest/species.tsv",
+    shell:
+        "python scripts/panel_resolve.py {input} {output}"
+
+
+rule fetch_proteome:
+    input:
+        species="data/manifest/species.tsv",
+    output:
+        "data/proteomes/{key}.faa",
+    shell:
+        "python scripts/fetch_data.py proteome --panel {PANEL} --species-tsv {input.species} "
+        "--key {wildcards.key} --out {output} --manifest data/manifest/files.tsv"
+
+
+rule fetch_genome:
+    input:
+        species="data/manifest/species.tsv",
+    output:
+        "data/genomes/{key}.fna",
+    shell:
+        "python scripts/fetch_data.py genome --panel {PANEL} --species-tsv {input.species} "
+        "--key {wildcards.key} --out {output} --manifest data/manifest/files.tsv"
+
+
+rule fetch_pfam:
+    output:
+        "data/pfam/Pfam-A.hmm",
+    shell:
+        "python scripts/fetch_data.py pfam --out {output} --manifest data/manifest/files.tsv"
+
+
+rule fetch_all:
+    input:
+        expand("data/proteomes/{key}.faa", key=PROT_SPECIES),
+        expand("data/genomes/{key}.fna", key=GENOME_SPECIES),
+
+
+rule anchors:
+    input:
+        genes=GENES_TSV,
+        species="data/manifest/species.tsv",
+    output:
+        tsv="data/genes/anchors.tsv",
+        faa="data/genes/anchors.faa",
+    shell:
+        "python scripts/genes_resolve.py {input.genes} {input.species} {output.tsv} {output.faa}"
+
+
+rule seeds:
+    input:
+        anchors="data/genes/anchors.faa",
+        proteomes=expand("data/proteomes/{key}.faa", key=SEED_SPECIES),
+    output:
+        expand("data/seeds/{gene}.faa", gene=GENES),
+    params:
+        prots=lambda wc, input: " ".join(f"{k}={p}" for k, p in zip(SEED_SPECIES, input.proteomes)),
+    threads: THREADS
+    shell:
+        "python scripts/seeds_collect.py --anchors {input.anchors} --params {PARAMS} --outdir data/seeds "
+        "--threads {threads} --proteomes {params.prots}"
+
+
+rule profile:
+    input:
+        "data/seeds/{gene}.faa",
+    output:
+        "data/profiles/{gene}.hmm",
+    threads: 2
+    shell:
+        "python scripts/profiles_build.py {input} {output} --threads {threads}"
+
+
+rule profiles:
+    input:
+        expand("data/profiles/{gene}.hmm", gene=GENES),
+
+
+rule hmmsearch:
+    input:
+        profiles=expand("data/profiles/{gene}.hmm", gene=GENES),
+        proteome="data/proteomes/{key}.faa",
+    output:
+        "results/hmmsearch/{key}.tsv",
+    threads: THREADS
+    shell:
+        "python scripts/search_proteomes.py --profiles data/profiles --proteome {input.proteome} "
+        "--out {output} --params {PARAMS} --threads {threads}"
+
+
+rule rbh:
+    input:
+        anchors="data/genes/anchors.faa",
+        proteome="data/proteomes/{key}.faa",
+    output:
+        "results/rbh/{key}.tsv",
+    threads: THREADS
+    shell:
+        "python scripts/rbh.py --anchors {input.anchors} --proteome {input.proteome} --out {output} "
+        "--params {PARAMS} --threads {threads}"
+
+
+rule pfam:
+    input:
+        pfam="data/pfam/Pfam-A.hmm",
+        anchors="data/genes/anchors.faa",
+        proteome="data/proteomes/{key}.faa",
+        hmmsearch="results/hmmsearch/{key}.tsv",
+        rbh="results/rbh/{key}.tsv",
+    output:
+        "results/pfam/{key}.tsv",
+    threads: THREADS
+    shell:
+        "python scripts/pfam_scan.py --pfam {input.pfam} --anchors {input.anchors} --proteome {input.proteome} "
+        "--hmmsearch {input.hmmsearch} --rbh {input.rbh} --out {output} --params {PARAMS} --threads {threads}"
+
+
+rule miniprot:
+    input:
+        genome="data/genomes/{key}.fna",
+        seeds=expand("data/seeds/{gene}.faa", gene=GENES),
+    output:
+        "results/miniprot/{key}.tsv",
+    threads: THREADS
+    shell:
+        "python scripts/search_genomes.py --genome {input.genome} --seeds data/seeds --out {output} "
+        "--params {PARAMS} --threads {threads}"
+
+
+def tier_inputs(wc):
+    inputs = {"hmmsearch": f"results/hmmsearch/{wc.key}.tsv", "rbh": f"results/rbh/{wc.key}.tsv"}
+    if USE_PFAM:
+        inputs["pfam"] = f"results/pfam/{wc.key}.tsv"
+    if wc.key in GENOME_SPECIES:
+        inputs["miniprot"] = f"results/miniprot/{wc.key}.tsv"
+    return inputs
+
+
+def tier_opts(wc, input):
+    opts = []
+    if "pfam" in input.keys():
+        opts.append(f"--pfam {input.pfam}")
+    if "miniprot" in input.keys():
+        opts.append(f"--miniprot {input.miniprot}")
+    return " ".join(opts)
+
+
+rule tiers:
+    input:
+        unpack(tier_inputs),
+    output:
+        "results/tiers/{key}.tsv",
+    params:
+        opts=tier_opts,
+    shell:
+        "python scripts/tiers.py --species {wildcards.key} --genes {GENES_TSV} --params {PARAMS} "
+        "--hmmsearch {input.hmmsearch} --rbh {input.rbh} --out {output} {params.opts}"
+
+
+rule matrix:
+    input:
+        tiers=expand("results/tiers/{key}.tsv", key=PROT_SPECIES),
+    output:
+        matrix="results/matrix.tsv",
+        summary="results/module_summary.tsv",
+        md="results/matrix_summary.md",
+    shell:
+        "python scripts/matrix.py --genes {GENES_TSV} --tiers {input.tiers} --out {output.matrix} "
+        "--summary {output.summary} --md {output.md}"

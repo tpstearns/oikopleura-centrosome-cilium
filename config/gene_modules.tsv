@@ -1,0 +1,273 @@
+module	gene	aliases	anchor	anchor_accession	origin	notes
+A_tubulins	TUBA1A		Hsap			alpha-tubulin representative
+A_tubulins	TUBB		Hsap			beta-tubulin representative
+A_tubulins	TUBG1		Hsap			gamma-tubulin
+A_tubulins	TUBG2		Hsap			gamma-tubulin paralog
+A_tubulins	TUBD1		Hsap			delta-tubulin (ZED module)
+A_tubulins	TUBE1		Hsap			epsilon-tubulin (ZED module)
+A_tubulins	TUBZ1	tubz1|zeta-tubulin	Xtro			zeta-tubulin (ZED module); reported absent from placental mammals (Turk et al. 2015, verify); resolve anchor from Xenopus or zebrafish
+B_duplication_cartwheel	PLK4	SAK|STK18	Hsap			master duplication kinase
+B_duplication_cartwheel	STIL	SIL	Hsap
+B_duplication_cartwheel	SASS6	SAS6	Hsap			cartwheel hub
+B_duplication_cartwheel	CEP135	BLD10	Hsap
+B_duplication_cartwheel	CENPJ	CPAP|SAS4	Hsap
+B_duplication_cartwheel	CEP152	ASTERLESS	Hsap
+B_duplication_cartwheel	CEP192	SPD2	Hsap
+B_duplication_cartwheel	CEP63		Hsap			paralog of DEUP1
+B_duplication_cartwheel	CEP57		Hsap
+B_duplication_cartwheel	CEP57L1		Hsap
+B_duplication_cartwheel	CEP120		Hsap
+B_duplication_cartwheel	CEP295	ANA1|KIAA1731	Hsap			centriole-to-centrosome conversion
+B_duplication_cartwheel	CEP44		Hsap
+B_duplication_cartwheel	RTTN	ANA3	Hsap
+B_duplication_cartwheel	POC1A		Hsap
+B_duplication_cartwheel	POC1B		Hsap
+B_duplication_cartwheel	POC5		Hsap
+B_duplication_cartwheel	CNTROB	CENTROBIN	Hsap
+B_duplication_cartwheel	SPICE1		Hsap
+B_duplication_cartwheel	WDR62		Hsap
+B_duplication_cartwheel	CEP78		Hsap
+B_duplication_cartwheel	CCDC14		Hsap
+B_duplication_cartwheel	CEP85		Hsap
+B_duplication_cartwheel	CEP76		Hsap
+C_distal_end_length	CCP110	CP110	Hsap
+C_distal_end_length	CEP97		Hsap
+C_distal_end_length	CEP104		Hsap
+C_distal_end_length	KIF24		Hsap
+C_distal_end_length	TTBK2		Hsap
+C_distal_end_length	FAM161A		Hsap
+C_distal_end_length	WDR90	POC16	Hsap
+C_distal_end_length	HYLS1		Hsap
+C_distal_end_length	CCDC61	VFL3	Hsap
+C_distal_end_length	LRRC45		Hsap
+C_distal_end_length	KIAA0586	TALPID3	Hsap
+D_PCM_gTuRC	TUBGCP2	GCP2	Hsap
+D_PCM_gTuRC	TUBGCP3	GCP3	Hsap
+D_PCM_gTuRC	TUBGCP4	GCP4	Hsap
+D_PCM_gTuRC	TUBGCP5	GCP5	Hsap
+D_PCM_gTuRC	TUBGCP6	GCP6	Hsap
+D_PCM_gTuRC	MZT1	MOZART1	Hsap
+D_PCM_gTuRC	MZT2A	MOZART2A	Hsap
+D_PCM_gTuRC	MZT2B	MOZART2B	Hsap
+D_PCM_gTuRC	NEDD1	GCP-WD	Hsap
+D_PCM_gTuRC	PCNT	PERICENTRIN	Hsap
+D_PCM_gTuRC	CDK5RAP2	CEP215	Hsap
+D_PCM_gTuRC	AKAP9	CG-NAP	Hsap
+D_PCM_gTuRC	CEP170		Hsap
+D_PCM_gTuRC	CEP350		Hsap
+D_PCM_gTuRC	FGFR1OP	FOP|CEP43	Hsap
+D_PCM_gTuRC	CEP19		Hsap
+D_PCM_gTuRC	CEP72		Hsap
+D_PCM_gTuRC	CEP41		Hsap
+E_appendages_basal_foot	ODF2	CENEXIN	Hsap			subdistal appendage / basal foot
+E_appendages_basal_foot	NIN	NINEIN	Hsap
+E_appendages_basal_foot	NINL		Hsap
+E_appendages_basal_foot	CEP128		Hsap			basal foot
+E_appendages_basal_foot	CNTRL	CENTRIOLIN|CEP110	Hsap			basal foot
+E_appendages_basal_foot	CCDC120		Hsap
+E_appendages_basal_foot	CCDC68		Hsap
+E_appendages_basal_foot	CEP164		Hsap			distal appendage
+E_appendages_basal_foot	CEP83	CCDC41	Hsap			distal appendage
+E_appendages_basal_foot	CEP89	CEP123|CCDC123	Hsap			distal appendage
+E_appendages_basal_foot	SCLT1		Hsap			distal appendage
+E_appendages_basal_foot	FBF1		Hsap			distal appendage
+E_appendages_basal_foot	ANKRD26		Hsap			distal appendage
+E_appendages_basal_foot	C2CD3		Hsap
+E_appendages_basal_foot	OFD1		Hsap
+E_appendages_basal_foot	KIAA0753	MOONRAKER|MNR	Hsap
+E_appendages_basal_foot	PIBF1	CEP90	Hsap
+E_appendages_basal_foot	FOPNL	FOR20	Hsap
+E_appendages_basal_foot	TCHP	TROCHOPLEIN	Hsap
+F_transition_zone	CEP290		Hsap
+F_transition_zone	RPGRIP1L		Hsap
+F_transition_zone	RPGRIP1		Hsap
+F_transition_zone	NPHP1		Hsap
+F_transition_zone	NPHP4		Hsap
+F_transition_zone	MKS1		Hsap
+F_transition_zone	TMEM67	MKS3	Hsap
+F_transition_zone	TCTN1		Hsap
+F_transition_zone	TCTN2		Hsap
+F_transition_zone	TCTN3		Hsap
+F_transition_zone	B9D1		Hsap
+F_transition_zone	B9D2		Hsap
+F_transition_zone	AHI1		Hsap
+F_transition_zone	CC2D2A		Hsap
+F_transition_zone	TMEM216		Hsap
+F_transition_zone	TMEM231		Hsap
+F_transition_zone	TMEM237		Hsap
+F_transition_zone	TMEM17		Hsap
+F_transition_zone	TMEM107		Hsap
+F_transition_zone	CEP162		Hsap
+F_transition_zone	INVS	NPHP2	Hsap
+F_transition_zone	NEK8		Hsap
+F_transition_zone	ANKS6		Hsap
+F_transition_zone	NPHP3		Hsap
+G_IFT_BBSome_motors	IFT20		Hsap
+G_IFT_BBSome_motors	IFT22	RABL5	Hsap
+G_IFT_BBSome_motors	IFT25	HSPB11	Hsap
+G_IFT_BBSome_motors	IFT27	RABL4	Hsap
+G_IFT_BBSome_motors	IFT46		Hsap
+G_IFT_BBSome_motors	IFT52		Hsap
+G_IFT_BBSome_motors	IFT54	TRAF3IP1	Hsap
+G_IFT_BBSome_motors	IFT56	TTC26	Hsap
+G_IFT_BBSome_motors	IFT57		Hsap
+G_IFT_BBSome_motors	IFT70A	TTC30A	Hsap
+G_IFT_BBSome_motors	IFT74		Hsap
+G_IFT_BBSome_motors	IFT80		Hsap
+G_IFT_BBSome_motors	IFT81		Hsap
+G_IFT_BBSome_motors	IFT88		Hsap
+G_IFT_BBSome_motors	IFT172		Hsap
+G_IFT_BBSome_motors	CLUAP1	IFT38	Hsap
+G_IFT_BBSome_motors	IFT43		Hsap
+G_IFT_BBSome_motors	IFT121	WDR35	Hsap
+G_IFT_BBSome_motors	IFT122		Hsap
+G_IFT_BBSome_motors	IFT139	TTC21B	Hsap
+G_IFT_BBSome_motors	IFT140		Hsap
+G_IFT_BBSome_motors	IFT144	WDR19	Hsap
+G_IFT_BBSome_motors	BBS1		Hsap
+G_IFT_BBSome_motors	BBS2		Hsap
+G_IFT_BBSome_motors	BBS4		Hsap
+G_IFT_BBSome_motors	BBS5		Hsap
+G_IFT_BBSome_motors	BBS7		Hsap
+G_IFT_BBSome_motors	BBS8	TTC8	Hsap
+G_IFT_BBSome_motors	BBS9	PTHB1	Hsap
+G_IFT_BBSome_motors	BBIP1	BBS18	Hsap
+G_IFT_BBSome_motors	ARL6	BBS3	Hsap
+G_IFT_BBSome_motors	LZTFL1	BBS17	Hsap
+G_IFT_BBSome_motors	BBS10		Hsap
+G_IFT_BBSome_motors	BBS12		Hsap
+G_IFT_BBSome_motors	MKKS	BBS6	Hsap
+G_IFT_BBSome_motors	DYNC2H1		Hsap			dynein-2 heavy chain
+G_IFT_BBSome_motors	DYNC2I1	WDR60	Hsap
+G_IFT_BBSome_motors	DYNC2I2	WDR34	Hsap
+G_IFT_BBSome_motors	DYNC2LI1		Hsap
+G_IFT_BBSome_motors	DYNLT2B	TCTEX1D2	Hsap
+G_IFT_BBSome_motors	KIF3A		Hsap			kinesin-2
+G_IFT_BBSome_motors	KIF3B		Hsap
+G_IFT_BBSome_motors	KIF3C		Hsap
+G_IFT_BBSome_motors	KIFAP3	KAP3	Hsap
+G_IFT_BBSome_motors	KIF17		Hsap
+G_IFT_BBSome_motors	TULP3		Hsap
+G_IFT_BBSome_motors	ARL3		Hsap
+G_IFT_BBSome_motors	UNC119		Hsap
+H_motile_axoneme	DNAH5		Hsap			ODA heavy chain
+H_motile_axoneme	DNAH11		Hsap			ODA heavy chain
+H_motile_axoneme	DNAH9		Hsap			ODA heavy chain
+H_motile_axoneme	DNAI1		Hsap			ODA intermediate chain
+H_motile_axoneme	DNAI2		Hsap
+H_motile_axoneme	DNAL1		Hsap
+H_motile_axoneme	DNAL4		Hsap
+H_motile_axoneme	ODAD1	CCDC114	Hsap			ODA docking complex
+H_motile_axoneme	ODAD2	ARMC4	Hsap
+H_motile_axoneme	ODAD3	CCDC151	Hsap
+H_motile_axoneme	ODAD4	TTC25	Hsap
+H_motile_axoneme	DNAH1		Hsap			IDA heavy chain
+H_motile_axoneme	DNAH2		Hsap
+H_motile_axoneme	DNAH6		Hsap
+H_motile_axoneme	DNAH7		Hsap
+H_motile_axoneme	DNAH10		Hsap
+H_motile_axoneme	DNAH12		Hsap
+H_motile_axoneme	DNALI1		Hsap
+H_motile_axoneme	RSPH1		Hsap			radial spoke
+H_motile_axoneme	RSPH3		Hsap
+H_motile_axoneme	RSPH4A		Hsap
+H_motile_axoneme	RSPH9		Hsap
+H_motile_axoneme	CCDC39		Hsap			96-nm ruler
+H_motile_axoneme	CCDC40		Hsap			96-nm ruler
+H_motile_axoneme	CFAP43		Hsap
+H_motile_axoneme	CFAP44		Hsap
+H_motile_axoneme	HYDIN		Hsap			central apparatus
+H_motile_axoneme	SPAG6		Hsap			central apparatus
+H_motile_axoneme	SPAG16		Hsap
+H_motile_axoneme	CFAP221	PCDP1	Hsap
+H_motile_axoneme	CFAP54		Hsap
+H_motile_axoneme	DRC1	CCDC164	Hsap			N-DRC
+H_motile_axoneme	CCDC65	DRC2	Hsap			N-DRC
+H_motile_axoneme	GAS8	DRC4	Hsap			N-DRC
+H_motile_axoneme	TEKT1		Hsap
+H_motile_axoneme	TEKT2		Hsap
+H_motile_axoneme	MNS1		Hsap
+H_motile_axoneme	CFAP20		Hsap			inner junction
+H_motile_axoneme	CFAP53		Hsap
+H_motile_axoneme	ENKUR		Hsap
+H_motile_axoneme	DNAAF1	LRRC50	Hsap			dynein assembly factor
+H_motile_axoneme	DNAAF2	KTU	Hsap
+H_motile_axoneme	DNAAF3		Hsap
+H_motile_axoneme	DNAAF4	DYX1C1	Hsap
+H_motile_axoneme	DNAAF5	HEATR2	Hsap
+H_motile_axoneme	DNAAF6	PIH1D3	Hsap
+H_motile_axoneme	ZMYND10		Hsap
+H_motile_axoneme	LRRC6		Hsap
+H_motile_axoneme	SPAG1		Hsap
+H_motile_axoneme	CFAP298	C21orf59	Hsap
+H_motile_axoneme	CFAP300	C11orf70	Hsap
+I_multiciliogenesis	MCIDAS	MULTICILIN|IDAS	Hsap		verify origin
+I_multiciliogenesis	GMNC	GEMC1	Hsap		verify origin
+I_multiciliogenesis	GMNN	GEMININ	Hsap			paralog control for the geminin family
+I_multiciliogenesis	E2F4		Hsap
+I_multiciliogenesis	E2F5		Hsap
+I_multiciliogenesis	CCNO		Hsap
+I_multiciliogenesis	CDC20B		Hsap
+I_multiciliogenesis	DEUP1	CCDC67	Hsap		vertebrate-specific CEP63 paralog (verify)	deuterosome
+I_multiciliogenesis	CCDC78		Hsap			deuterosome
+I_multiciliogenesis	FOXJ1		Hsap
+I_multiciliogenesis	RFX2		Hsap
+I_multiciliogenesis	RFX3		Hsap
+I_multiciliogenesis	MYB		Hsap
+I_multiciliogenesis	TP73		Hsap
+J_ciliary_signaling	SHH		Hsap
+J_ciliary_signaling	IHH		Hsap
+J_ciliary_signaling	DHH		Hsap
+J_ciliary_signaling	PTCH1		Hsap
+J_ciliary_signaling	PTCH2		Hsap
+J_ciliary_signaling	SMO		Hsap
+J_ciliary_signaling	GLI1		Hsap
+J_ciliary_signaling	GLI2		Hsap
+J_ciliary_signaling	GLI3		Hsap
+J_ciliary_signaling	KIF7		Hsap
+J_ciliary_signaling	SUFU		Hsap
+J_ciliary_signaling	GPR161		Hsap
+J_ciliary_signaling	INPP5E		Hsap
+J_ciliary_signaling	ARL13B		Hsap
+J_ciliary_signaling	PKD1		Hsap
+J_ciliary_signaling	PKD2		Hsap
+J_ciliary_signaling	PKD1L1		Hsap
+J_ciliary_signaling	PKD2L1		Hsap
+J_ciliary_signaling	EVC		Hsap
+J_ciliary_signaling	EVC2		Hsap
+J_ciliary_signaling	ADCY3		Hsap
+K_linkers_satellites_IDPs	CEP250	C-NAP1	Hsap			centrosome linker
+K_linkers_satellites_IDPs	CROCC	ROOTLETIN	Hsap
+K_linkers_satellites_IDPs	CEP68		Hsap
+K_linkers_satellites_IDPs	PCM1		Hsap			satellites
+K_linkers_satellites_IDPs	CEP131	AZI1	Hsap			satellites
+K_linkers_satellites_IDPs	SSX2IP		Hsap
+K_linkers_satellites_IDPs	CSPP1		Hsap
+K_linkers_satellites_IDPs	ALMS1		Hsap			intrinsically disordered; TS lab interest
+L_tubulin_PTM	TTLL1		Hsap			polyglutamylase
+L_tubulin_PTM	TTLL3		Hsap			glycylase
+L_tubulin_PTM	TTLL4		Hsap
+L_tubulin_PTM	TTLL5		Hsap
+L_tubulin_PTM	TTLL6		Hsap
+L_tubulin_PTM	TTLL7		Hsap
+L_tubulin_PTM	TTLL8		Hsap			glycylase
+L_tubulin_PTM	TTLL9		Hsap
+L_tubulin_PTM	TTLL10		Hsap
+L_tubulin_PTM	TTLL11		Hsap
+L_tubulin_PTM	TTLL13		Hsap
+L_tubulin_PTM	AGTPBP1	CCP1|NNA1	Hsap			deglutamylase
+L_tubulin_PTM	AGBL2	CCP2	Hsap
+L_tubulin_PTM	AGBL3	CCP3	Hsap
+L_tubulin_PTM	AGBL1	CCP4	Hsap
+L_tubulin_PTM	AGBL5	CCP5	Hsap
+L_tubulin_PTM	AGBL4	CCP6	Hsap
+L_tubulin_PTM	VASH1		Hsap			detyrosinase
+L_tubulin_PTM	VASH2		Hsap
+L_tubulin_PTM	SVBP		Hsap
+L_tubulin_PTM	TTL		Hsap			tubulin tyrosine ligase
+L_tubulin_PTM	ATAT1	MEC17	Hsap			acetyltransferase
+L_tubulin_PTM	HDAC6		Hsap			deacetylase
+M_controls	ACTB		Hsap			positive control: ubiquitous
+M_controls	EEF1A1		Hsap			positive control: ubiquitous
+M_controls	RPL3		Hsap			positive control: ubiquitous
+M_controls	PSMA1		Hsap			positive control: ubiquitous

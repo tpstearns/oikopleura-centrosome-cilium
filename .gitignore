@@ -1,0 +1,23 @@
+# downloaded and derived data stay out of git; manifests are committed
+data/*
+!data/README.md
+!data/manifest/
+data/manifest/*
+!data/manifest/.gitkeep
+!data/manifest/*.tsv
+
+# large intermediate results
+results/hmmsearch/
+results/rbh/
+results/miniprot/
+results/foldseek/
+results/pfam/
+results/orthofinder/
+results/tmp/
+
+# environments and caches
+.snakemake/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store

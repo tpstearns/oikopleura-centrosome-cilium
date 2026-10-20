@@ -1,0 +1,248 @@
+# Species panel.
+# Every entry is validated by scripts/panel_resolve.py: the scientific name is resolved against NCBI Taxonomy,
+# and if `taxid` is given it must match, otherwise the run fails. Entries with status `to-verify` carry
+# source information that has NOT yet been checked against a live page in this project; verify (and record
+# the verification in docs/decisions.md) before using them.
+#
+# Fields
+#   key        short identifier used in file names (letters, digits, underscore)
+#   name       scientific name as in NCBI Taxonomy
+#   taxid      NCBI taxon ID (optional; validated when present)
+#   role       core | larvacean | ascidian | thaliacean | backbone | control
+#   proteome   where to get proteins: {source: uniprot_reference} resolves the reference proteome by taxid;
+#              {source: ncbi_datasets, accession: GCA_/GCF_} uses NCBI Datasets (genome+protein+gff3);
+#              {source: zenodo, record: N, files: [glob...]}; {source: url, url: ...}
+#   genome     assembly source, same forms as proteome
+#   transcripts optional transcript assembly source
+#   status     verified | to-verify
+#   refs       keys into docs/bibliography.md
+
+species:
+
+  # ---------------- Core: Oikopleura dioica cryptic lineages ----------------
+  - key: Odio_OKI
+    name: Oikopleura dioica
+    lineage: Okinawa, OKI2018_I69 (chromosome-scale, single male)
+    role: core
+    proteome: {source: zenodo, record: 4023776, files: ["*protein*", "*.faa*", "*pep*"]}
+    genome:   {source: zenodo, record: 4023776, files: ["*.fa*", "*.fna*"]}
+    annotation: {source: zenodo, record: 4023776, files: ["*.gff*", "*.gtf*"]}
+    ena_bioproject: PRJEB40135
+    status: verified   # Zenodo record and BMC Genomics paper checked 2026-10-20; file names inside the record still to be confirmed at fetch time
+    refs: [Bliznina2021]
+
+  - key: Odio_OKI_hap
+    name: Oikopleura dioica
+    lineage: Okinawa, haplotype-resolved assembly (2025)
+    role: core
+    genome: {source: ena_bioproject, bioproject: PRJEB91365}
+    status: to-verify   # listing seen on OmicsDI 2026-10-20; publication and annotation availability unknown
+    refs: []
+
+  - key: Odio_OSA
+    name: Oikopleura dioica
+    lineage: Osaka, OSKA2016
+    role: core
+    genome: {source: to-resolve, note: "Osaka genome database / Plessy et al. 2024 Suppl. Table 1"}
+    proteome: {source: to-resolve}
+    status: to-verify
+    refs: [Plessy2024]
+
+  - key: Odio_BER
+    name: Oikopleura dioica
+    lineage: Bergen (Norway), Plessy et al. 2024 chromosome-scale assembly
+    role: core
+    genome: {source: to-resolve, note: "accession from Plessy et al. 2024 Suppl. Table 1"}
+    proteome: {source: to-resolve}
+    status: to-verify
+    refs: [Plessy2024]
+
+  - key: Odio_BCN
+    name: Oikopleura dioica
+    lineage: Barcelona, Plessy et al. 2024 chromosome-scale assembly
+    role: core
+    genome: {source: to-resolve, note: "accession from Plessy et al. 2024 Suppl. Table 1"}
+    proteome: {source: to-resolve}
+    status: to-verify
+    refs: [Plessy2024]
+
+  - key: Odio_OdB3
+    name: Oikopleura dioica
+    lineage: Norway, legacy OdB3 reference and annotation (Genoscope; OikoBase)
+    role: core
+    genome: {source: to-resolve, note: "Genoscope OdB3; OikoBase"}
+    proteome: {source: to-resolve}
+    transcripts: {source: to-resolve, note: "OikoBase developmental transcriptomes"}
+    status: to-verify
+    refs: [Denoeud2010, Danks2013]
+
+  # ---------------- Other larvaceans (Naville et al. 2019 set; species and public status to verify) ----------------
+  - key: Larv_TBD
+    name: TO-RESOLVE
+    role: larvacean
+    status: to-verify
+    note: "List the larvacean assemblies from Naville et al. 2019 Curr Biol (doi:10.1016/j.cub.2019.01.080) and any later ones; one entry per species"
+    refs: [Naville2019]
+
+  # ---------------- Ascidians and thaliaceans (ANISEED / NCBI) ----------------
+  - key: Crob
+    name: Ciona intestinalis
+    note: "NCBI Taxonomy name for Ciona robusta (type A); verify current taxonomy and pick the best assembly (KY21/HT) at resolve time"
+    taxid: 7719
+    role: ascidian
+    proteome: {source: uniprot_reference}
+    genome: {source: ncbi_datasets, accession: TO-RESOLVE}
+    status: to-verify
+
+  - key: Csav
+    name: Ciona savignyi
+    role: ascidian
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Pmam
+    name: Phallusia mammillata
+    role: ascidian
+    proteome: {source: to-resolve, note: "ANISEED"}
+    status: to-verify
+
+  - key: Hror
+    name: Halocynthia roretzi
+    role: ascidian
+    proteome: {source: to-resolve, note: "ANISEED"}
+    status: to-verify
+
+  - key: Bsch
+    name: Botryllus schlosseri
+    role: ascidian
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Blea
+    name: Botrylloides leachii
+    role: ascidian
+    proteome: {source: to-resolve, note: "ANISEED"}
+    status: to-verify
+
+  - key: Mocc
+    name: Molgula occulta
+    role: ascidian
+    proteome: {source: to-resolve, note: "ANISEED"}
+    status: to-verify
+
+  - key: Mocu
+    name: Molgula oculata
+    role: ascidian
+    proteome: {source: to-resolve, note: "ANISEED"}
+    status: to-verify
+
+  - key: Scla
+    name: Styela clava
+    role: ascidian
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Stho
+    name: Salpa thompsoni
+    role: thaliacean
+    proteome: {source: to-resolve}
+    status: to-verify
+
+  # ---------------- Chordate backbone ----------------
+  - key: Bflo
+    name: Branchiostoma floridae
+    taxid: 7739
+    role: backbone
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Blan
+    name: Branchiostoma lanceolatum
+    taxid: 7740
+    role: backbone
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Drer
+    name: Danio rerio
+    taxid: 7955
+    role: backbone
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Xtro
+    name: Xenopus tropicalis
+    taxid: 8364
+    role: backbone
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Hsap
+    name: Homo sapiens
+    taxid: 9606
+    role: backbone
+    anchor: true
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Mmus
+    name: Mus musculus
+    taxid: 10090
+    role: backbone
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  # ---------------- Non-chordate references ----------------
+  - key: Crei
+    name: Chlamydomonas reinhardtii
+    taxid: 3055
+    role: control
+    note: full basal-body/flagellar toolkit
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Tthe
+    name: Tetrahymena thermophila
+    taxid: 5911
+    role: control
+    note: full basal-body toolkit, multiciliated
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Dmel
+    name: Drosophila melanogaster
+    taxid: 7227
+    role: control
+    note: reduced centriole/cilium repertoire
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Cele
+    name: Caenorhabditis elegans
+    taxid: 6239
+    role: control
+    note: divergent centrioles, sensory cilia only
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Atha
+    name: Arabidopsis thaliana
+    taxid: 3702
+    role: control
+    note: no centrioles or cilia
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+  - key: Scer
+    name: Saccharomyces cerevisiae
+    taxid: 4932
+    role: control
+    note: no centrioles or cilia
+    proteome: {source: uniprot_reference}
+    status: to-verify
+
+# Species whose proteomes are used to collect ortholog seeds for per-gene HMMs (must have proteomes).
+seed_species: [Hsap, Mmus, Xtro, Drer, Bflo, Crob, Crei, Tthe, Dmel, Cele]
+
+# Species run through the genome-level search (miniprot) for every absence candidate.
+genome_search_species: [Odio_OKI, Odio_OKI_hap, Odio_OSA, Odio_BER, Odio_BCN, Odio_OdB3]

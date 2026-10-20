@@ -1,0 +1,42 @@
+# Thresholds and run parameters. Change here, never inline in scripts; record changes in docs/decisions.md.
+
+threads: 12
+
+anchor_species_key: Hsap
+anchor_taxid: 9606
+
+hmmsearch:
+  evalue_max: 1.0e-5          # full-sequence E-value for a candidate hit
+  domain_evalue_max: 1.0e-3   # best-domain conditional E-value
+  min_profile_coverage: 0.50  # fraction of the profile spanned by aligned domains
+
+rbh:
+  evalue_max: 1.0e-5
+  min_query_coverage: 0.50
+  sensitivity: 7.5
+
+pfam:
+  enabled: false                     # set true once data/pfam/Pfam-A.hmm is downloaded (snakemake fetch_pfam)
+  evalue_max: 1.0e-3
+  min_shared_domain_fraction: 0.50   # fraction of the anchor's Pfam domains found in the candidate
+
+miniprot:
+  min_identity: 0.25
+  min_target_coverage: 0.50
+  max_intron_bp: 20000               # Oikopleura introns are short; generous to be safe
+  outn: 5
+
+foldseek:
+  evalue_max: 1.0e-3
+
+transcripts:
+  evalue_max: 1.0e-5
+  min_query_coverage: 0.50
+
+# Evidence tiers (see docs/evidence_tiers.md)
+#   E1  reciprocal best hit to the anchor AND profile hit passing hmmsearch thresholds AND Pfam architecture shared
+#   E2  profile hit (or Foldseek match) passing thresholds, but not RBH or architecture incomplete
+#   E3  no proteome gene model, but a genome (miniprot) or transcript hit passing thresholds
+#   E4  no evidence at any level after all searches
+tiers:
+  require_pfam_for_e1: false   # set true once Pfam-A is installed and the pfam stage runs
