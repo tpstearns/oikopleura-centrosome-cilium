@@ -17,7 +17,7 @@ FIELDS = ["key", "name", "ncbi_name", "taxid", "role", "lineage", "proteome_sour
 
 
 def main(panel_path: str, out_path: str) -> None:
-    rows = []
+    rows, errors = [], []
     for sp in load_species(panel_path):
         key, name = sp["key"], sp["name"]
         row = {"key": key, "name": name, "role": sp.get("role", ""), "lineage": sp.get("lineage", ""),
@@ -31,18 +31,23 @@ def main(panel_path: str, out_path: str) -> None:
             continue
         taxid, sci = ncbi_taxid_for_name(name)
         if "taxid" in sp and int(sp["taxid"]) != taxid:
-            die(f"[{key}] taxid mismatch: panel says {sp['taxid']}, NCBI says {taxid} for '{name}'")
+            errors.append(f"[{key}] taxid mismatch: panel says {sp['taxid']}, NCBI says {taxid} for '{name}'")
         if sci != name:
-            die(f"[{key}] NCBI scientific name '{sci}' differs from panel name '{name}'")
+            errors.append(f"[{key}] NCBI scientific name '{sci}' differs from panel name '{name}'")
         row.update({"ncbi_name": sci, "taxid": taxid, "upid": "", "proteome_type": "", "protein_count": ""})
         if row["proteome_source"] == "uniprot_reference":
-            prot = uniprot_reference_proteome(taxid)
+            # Reference proteomes may be attached to a strain-level taxid (`proteome_taxid` in the panel).
+            prot_taxid = int((sp.get("proteome") or {}).get("proteome_taxid") or taxid)
+            prot = uniprot_reference_proteome(prot_taxid)
             if prot is None:
-                die(f"[{key}] no UniProt proteome for taxid {taxid}; change proteome source in the panel")
-            row.update({"upid": prot["id"], "proteome_type": prot.get("proteomeType", ""),
-                        "protein_count": prot.get("proteinCount", "")})
+                errors.append(f"[{key}] no UniProt proteome for taxid {prot_taxid}; change proteome source in the panel")
+            else:
+                row.update({"upid": prot["id"], "proteome_type": prot.get("proteomeType", ""),
+                            "protein_count": prot.get("proteinCount", "")})
         log(f"[{key}] {sci} taxid={taxid} proteome={row['upid'] or row['proteome_source']}")
         rows.append(row)
+    if errors:
+        die("panel validation failed:\n  " + "\n  ".join(errors))
     write_tsv(out_path, rows, FIELDS)
     log(f"wrote {out_path} ({len(rows)} species)")
 

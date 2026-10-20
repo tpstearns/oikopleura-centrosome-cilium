@@ -161,14 +161,28 @@ def read_tsv(path: str | Path) -> list[dict]:
 
 # ---------------------------------------------------------------- NCBI Taxonomy
 
+NCBI_MIN_INTERVAL = 0.4  # seconds between E-utilities calls (NCBI allows 3 requests/s without an API key)
+_last_ncbi_call = 0.0
+
+
+def _ncbi_throttle() -> None:
+    global _last_ncbi_call
+    wait = NCBI_MIN_INTERVAL - (time.monotonic() - _last_ncbi_call)
+    if wait > 0:
+        time.sleep(wait)
+    _last_ncbi_call = time.monotonic()
+
+
 def ncbi_taxid_for_name(name: str) -> tuple[int, str]:
     """Resolve a scientific name to an NCBI taxon ID; returns (taxid, scientific_name). Exact-name match only."""
+    _ncbi_throttle()
     r = http_get(f"{NCBI_EUTILS}/esearch.fcgi",
                  params={"db": "taxonomy", "term": f'"{name}"[Scientific Name]', "retmode": "json"})
     ids = r.json().get("esearchresult", {}).get("idlist", [])
     if len(ids) != 1:
         die(f"NCBI Taxonomy: expected exactly one match for '{name}', got {ids}")
     taxid = int(ids[0])
+    _ncbi_throttle()
     r2 = http_get(f"{NCBI_EUTILS}/efetch.fcgi", params={"db": "taxonomy", "id": taxid, "retmode": "xml"})
     import xml.etree.ElementTree as ET
     root = ET.fromstring(r2.text)
@@ -187,9 +201,14 @@ def uniprot_reference_proteome(taxid: int) -> dict | None:
     results = r.json().get("results", [])
     if not results:
         return None
-    rank = {"Reference and representative proteome": 0, "Reference proteome": 1,
-            "Representative proteome": 2, "Other proteome": 3, "Redundant proteome": 4, "Excluded": 5}
-    results.sort(key=lambda p: (rank.get(p.get("proteomeType", ""), 9), -int(p.get("proteinCount", 0) or 0)))
+    # proteomeType values returned by the current REST API (checked 2026-10-20): "Reference proteome",
+    # "Non Reference proteome", "Redundant proteome", "Excluded". Older labels kept for safety.
+    rank = {"Reference and representative proteome": 0, "Reference proteome": 0, "Representative proteome": 1,
+            "Non Reference proteome": 2, "Other proteome": 2, "Redundant proteome": 3, "Excluded": 4}
+    unknown = [p.get("proteomeType", "") for p in results if p.get("proteomeType", "") not in rank]
+    if unknown:
+        die(f"UniProt returned an unrecognised proteomeType {sorted(set(unknown))} for taxid {taxid}; update rank map")
+    results.sort(key=lambda p: (rank[p["proteomeType"]], -int(p.get("proteinCount", 0) or 0)))
     return results[0]
 
 

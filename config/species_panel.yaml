@@ -9,7 +9,8 @@
 #   name       scientific name as in NCBI Taxonomy
 #   taxid      NCBI taxon ID (optional; validated when present)
 #   role       core | larvacean | ascidian | thaliacean | backbone | control
-#   proteome   where to get proteins: {source: uniprot_reference} resolves the reference proteome by taxid;
+#   proteome   where to get proteins: {source: uniprot_reference} resolves the reference proteome by taxid
+#              (add proteome_taxid: N when UniProt attaches the reference proteome to a strain-level taxid);
 #              {source: ncbi_datasets, accession: GCA_/GCF_} uses NCBI Datasets (genome+protein+gff3);
 #              {source: zenodo, record: N, files: [glob...]}; {source: url, url: ...}
 #   genome     assembly source, same forms as proteome
@@ -206,7 +207,7 @@ species:
     taxid: 5911
     role: control
     note: full basal-body toolkit, multiciliated
-    proteome: {source: uniprot_reference}
+    proteome: {source: uniprot_reference, proteome_taxid: 312017}   # UP000009168 is attached to strain SB210
     status: to-verify
 
   - key: Dmel
@@ -238,7 +239,7 @@ species:
     taxid: 4932
     role: control
     note: no centrioles or cilia
-    proteome: {source: uniprot_reference}
+    proteome: {source: uniprot_reference, proteome_taxid: 559292}   # UP000002311 is attached to strain S288c
     status: to-verify
 
 # Species whose proteomes are used to collect ortholog seeds for per-gene HMMs (must have proteomes).
