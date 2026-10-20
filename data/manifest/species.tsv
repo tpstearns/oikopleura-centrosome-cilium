@@ -1,0 +1,38 @@
+key	name	ncbi_name	taxid	role	lineage	proteome_source	proteome_taxid	upid	proteome_type	protein_count	genome_source	status
+Odio_OKI	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, OKI2018_I69 (chromosome-scale, single male)	zenodo					zenodo	verified
+Odio_OKI_hap	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, haplotype-resolved assembly (2025)						ena_bioproject	to-verify
+Odio_OSA	Oikopleura dioica	Oikopleura dioica	34765	core	Osaka, OSKA2016	to-resolve					to-resolve	to-verify
+Odio_BER	Oikopleura dioica	Oikopleura dioica	34765	core	Bergen (Norway), Plessy et al. 2024 chromosome-scale assembly	to-resolve					to-resolve	to-verify
+Odio_BCN	Oikopleura dioica	Oikopleura dioica	34765	core	Barcelona, Plessy et al. 2024 chromosome-scale assembly	to-resolve					to-resolve	to-verify
+Odio_OdB3	Oikopleura dioica	Oikopleura dioica	34765	core	Norway, legacy OdB3 reference and annotation (Genoscope; OikoBase)	to-resolve					to-resolve	to-verify
+Oalb	Oikopleura albicans	Oikopleura albicans	2500139	larvacean							ncbi_datasets	verified
+Olon	Oikopleura longicauda	Oikopleura longicauda	107032	larvacean							ncbi_datasets	verified
+Ovan	Oikopleura vanhoeffeni	Oikopleura vanhoeffeni	2056977	larvacean							ncbi_datasets	verified
+Bsty	Bathochordaeus stygius	Bathochordaeus stygius	2005485	larvacean							ncbi_datasets	verified
+Mery	Mesochordaeus erythrocephalus	Mesochordaeus erythrocephalus	2501294	larvacean							ncbi_datasets	verified
+Fbor	Fritillaria borealis	Fritillaria borealis	2507563	larvacean							ncbi_datasets	verified
+Crob	Ciona intestinalis	Ciona intestinalis	7719	ascidian	Ciona robusta (type A): KH assembly and UniProt reference proteome UP000008144 (17,311 proteins, Ensembl KH gene models) are filed under NCBI taxid 7719 'Ciona intestinalis'; a separate taxid 1774208 'Ciona robusta' carries only the KH GCA_000224145.2 record	uniprot_reference	7719	UP000008144	Reference proteome	17311	ncbi_datasets	verified
+Cint	Ciona intestinalis	Ciona intestinalis	7719	ascidian	Ciona intestinalis type B (Roscoff individual), ASM1832782v2, Kyoto University; BioProject PRJDB35706	ncbi_datasets					ncbi_datasets	verified
+Csav	Ciona savignyi	Ciona savignyi	51511	ascidian		uniprot_reference	51511	UP000007875	Reference proteome	20004	ncbi_datasets	verified
+Pmam	Phallusia mammillata	Phallusia mammillata	59560	ascidian		ncbi_datasets					ncbi_datasets	verified
+Hror	Halocynthia roretzi	Halocynthia roretzi	7729	ascidian		to-resolve					ncbi_datasets	to-verify
+Bsch	Botryllus schlosseri	Botryllus schlosseri	30301	ascidian		ncbi_datasets					ncbi_datasets	verified
+Blea	Botrylloides leachii	Botrylloides leachii	62808	ascidian		to-resolve						to-verify
+Mocc	Molgula occulta	Molgula occulta	30283	ascidian		to-resolve						to-verify
+Mocu	Molgula oculata	Molgula oculata	27575	ascidian		to-resolve						to-verify
+Scla	Styela clava	Styela clava	7725	ascidian		ncbi_datasets					ncbi_datasets	verified
+Clep	Clavelina lepadiformis	Clavelina lepadiformis	159417	ascidian		uniprot_reference	159417	UP001642483	Reference proteome	25263	ncbi_datasets	verified
+Stho	Salpa thompsoni	Salpa thompsoni	569448	thaliacean		to-resolve					ncbi_datasets	to-verify
+Tdem	Thalia democratica	Thalia democratica	34761	thaliacean		ncbi_datasets					ncbi_datasets	verified
+Bflo	Branchiostoma floridae	Branchiostoma floridae	7739	backbone		uniprot_reference	7739	UP000001554	Reference proteome	38650		verified
+Blan	Branchiostoma lanceolatum	Branchiostoma lanceolatum	7740	backbone		uniprot_reference	7740	UP000838412	Reference proteome	38783		verified
+Drer	Danio rerio	Danio rerio	7955	backbone		uniprot_reference	7955	UP000000437	Reference proteome	69241		verified
+Xtro	Xenopus tropicalis	Xenopus tropicalis	8364	backbone		uniprot_reference	8364	UP000008143	Reference proteome	37711		verified
+Hsap	Homo sapiens	Homo sapiens	9606	backbone		uniprot_reference	9606	UP000005640	Reference proteome	147520		verified
+Mmus	Mus musculus	Mus musculus	10090	backbone		uniprot_reference	10090	UP000000589	Reference proteome	54855		verified
+Crei	Chlamydomonas reinhardtii	Chlamydomonas reinhardtii	3055	control		uniprot_reference	3055	UP000006906	Reference proteome	18840		verified
+Tthe	Tetrahymena thermophila	Tetrahymena thermophila	5911	control		uniprot_reference	312017	UP000009168	Reference proteome	26975		verified
+Dmel	Drosophila melanogaster	Drosophila melanogaster	7227	control		uniprot_reference	7227	UP000000803	Reference proteome	21947		verified
+Cele	Caenorhabditis elegans	Caenorhabditis elegans	6239	control		uniprot_reference	6239	UP000001940	Reference proteome	26629		verified
+Atha	Arabidopsis thaliana	Arabidopsis thaliana	3702	control		uniprot_reference	3702	UP000006548	Reference proteome	39272		verified
+Scer	Saccharomyces cerevisiae	Saccharomyces cerevisiae	4932	control		uniprot_reference	559292	UP000002311	Reference proteome	6067		verified

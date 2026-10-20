@@ -5,9 +5,9 @@ Rule: a reference enters this file only after its DOI or source page has been ch
 ## Verified (checked 2026-10-20)
 
 - **Bliznina2021** — Bliznina A, Masunaga A, et al. (2021) Telomere-to-telomere assembly of the genome of an individual *Oikopleura dioica* from Okinawa using Nanopore-based sequencing. *BMC Genomics*. doi:10.1186/s12864-021-07512-6. Data: Zenodo 4023776; ENA PRJEB40135.
-- **Plessy2024** — Plessy C, et al. (2024) Extreme genome scrambling in marine planktonic *Oikopleura dioica* cryptic species. *Genome Res* 34:426–440. doi:10.1101/gr.278295.123.
+- **Plessy2024** — Plessy C, et al. (2024) Extreme genome scrambling in marine planktonic *Oikopleura dioica* cryptic species. *Genome Res* 34:426–440. doi:10.1101/gr.278295.123. PMID 38621828; PMC11067885. Reads: ENA PRJEB55052.
 - **Masunaga2022** — Masunaga A, et al. (2022) The cosmopolitan appendicularian *Oikopleura dioica* reveals hidden genetic diversity around the globe. bioRxiv doi:10.1101/2022.08.09.503427. Journal version DOI to pull.
-- **Naville2019** — Naville M, Henriet S, Warren I, Sumic S, Reeve M, Volff JN, Chourrout D (2019) Massive changes of genome size driven by expansions of non-autonomous transposable elements. *Curr Biol* 29:1161–1168.e6. doi:10.1016/j.cub.2019.01.080.
+- **Naville2019** — Naville M, Henriet S, Warren I, Sumic S, Reeve M, Volff JN, Chourrout D (2019) Massive changes of genome size driven by expansions of non-autonomous transposable elements. *Curr Biol* 29:1161–1168.e6. doi:10.1016/j.cub.2019.01.080. PMID 30880010. Assemblies: GenBank PRJNA512626 (F. borealis), PRJNA512629 (O. longicauda), PRJNA512633 (O. albicans), PRJNA512634 (O. vanhoeffeni), PRJNA513251 (B. stygius), PRJNA513252 (M. erythrocephalus); no reads deposited. STAR Methods availability text not read (publisher paywall/bot check).
 - **Seo2001** — Seo HC, et al. (2001) Miniature genome in the marine chordate *Oikopleura dioica*. *Science* 294:2506. DOI to pull.
 - **MartiSolans2015** — Martí-Solans J, et al. (2015) *Oikopleura dioica* culturing made easy: a low-cost facility for an emerging animal model in EvoDevo. *Genesis* 53:183–193. doi:10.1002/dvg.22800.
 - **Nishida2021** — Nishida H, Ohno N, Caicci F, Manni L (2021) 3D reconstruction of structures of hatched larva and young juvenile of the larvacean *Oikopleura dioica* using SBF-SEM. *Sci Rep* 11:4833. doi:10.1038/s41598-021-83706-y.
@@ -20,6 +20,9 @@ Rule: a reference enters this file only after its DOI or source page has been ch
 - Web resources (accessed 2026-10-20): Michael Sars Centre animal facilities (culture at 12 °C, seven-day cycle; CRISPR KO/KI, transgenesis, ChIP/ATAC/scRNA-seq established); EMBRC France *O. dioica* page; the Node, Cañestro lab PhD advertisement (project PID2025-170547NB-I00, July 2026).
 
 ## To verify before use
+- Henriet S, Colom Sanmartí B, Sumic S, Chourrout D (2019) Non-canonical introns in *Fritillaria borealis*. *Curr Biol* 29:3193–3199.e4. PMID 31543449 (PubMed metadata seen; full text not read).
+- Satou Y, et al. (2022) KY21 gene models for *Ciona robusta* HT assembly. *Zoolog Sci* doi:10.2108/zs210102 (DOI read from the Ghost download page only, not resolved).
+- Satou Y, et al. (2019) *Ciona robusta* HT chromosome-level assembly. *Genome Biol Evol* doi:10.1093/gbe/evz228 (DOI read from the Ghost download page only, not resolved).
 - Denoeud F, et al. (2010) Plasticity of animal genome architecture unmasked by rapid evolution of a pelagic tunicate. *Science*. (OdB3 genome.)
 - Wang K, et al. (2020) Genome assembly of the Osaka *O. dioica* population (OSKA2016).
 - Danks G, et al. (2013) OikoBase: a genomics and developmental transcriptomics resource for the urochordate *Oikopleura dioica*. *Nucleic Acids Res*.

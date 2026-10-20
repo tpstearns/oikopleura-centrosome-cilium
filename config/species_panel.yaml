@@ -77,121 +77,219 @@ species:
     status: to-verify
     refs: [Denoeud2010, Danks2013]
 
-  # ---------------- Other larvaceans (Naville et al. 2019 set; species and public status to verify) ----------------
-  - key: Larv_TBD
-    name: TO-RESOLVE
+  # ---------------- Other larvaceans: the six Naville et al. 2019 genomes (all verified 2026-10-20) ----------------
+  # All six are GenBank assemblies from the University of Bergen (released 2019-03-25, BioProjects linked to
+  # PMID 30880010) with NO protein annotation anywhere (NCBI annotation_info null, no GCF_, no lab deposit found;
+  # only unsupervised UCSC GenArk Augustus GTFs exist). They are genome-only species: searched with miniprot, never
+  # with proteome-level tiers. Bathochordaeus, Mesochordaeus and Fritillaria are highly fragmented (N50 1.3-2.8 kb);
+  # O. longicauda is a pool of 47 specimens that may contain two cryptic species. Raw reads were not deposited.
+  - key: Oalb
+    name: Oikopleura albicans
+    taxid: 2500139
     role: larvacean
-    status: to-verify
-    note: "List the larvacean assemblies from Naville et al. 2019 Curr Biol (doi:10.1016/j.cub.2019.01.080) and any later ones; one entry per species"
+    genome: {source: ncbi_datasets, accession: GCA_004367875.1}   # ASM436787v1, scaffold N50 214 kb, 366 Mb; PRJNA512633
+    status: verified
     refs: [Naville2019]
 
-  # ---------------- Ascidians and thaliaceans (ANISEED / NCBI) ----------------
+  - key: Olon
+    name: Oikopleura longicauda
+    taxid: 107032
+    role: larvacean
+    genome: {source: ncbi_datasets, accession: GCA_004367895.1}   # ASM436789v1, contig N50 2.4 kb, 309 Mb; PRJNA512629
+    note: "pool of 47 specimens (LaJolla-2011); may contain two cryptic species"
+    status: verified
+    refs: [Naville2019]
+
+  - key: Ovan
+    name: Oikopleura vanhoeffeni
+    taxid: 2056977
+    role: larvacean
+    genome: {source: ncbi_datasets, accession: GCA_004367855.1}   # ASM436785v1, scaffold N50 260 kb, 644 Mb; PRJNA512634
+    status: verified
+    refs: [Naville2019]
+
+  - key: Bsty
+    name: Bathochordaeus stygius
+    taxid: 2005485
+    role: larvacean
+    genome: {source: ncbi_datasets, accession: GCA_004367955.1}   # ASM436795v1, N50 1.3 kb, 396 Mb; PRJNA513251
+    status: verified
+    refs: [Naville2019]
+
+  - key: Mery
+    name: Mesochordaeus erythrocephalus
+    taxid: 2501294
+    role: larvacean
+    genome: {source: ncbi_datasets, accession: GCA_004367975.1}   # ASM436797v1, N50 1.9 kb, 874 Mb; PRJNA513252
+    status: verified
+    refs: [Naville2019]
+
+  - key: Fbor
+    name: Fritillaria borealis
+    taxid: 2507563
+    role: larvacean
+    genome: {source: ncbi_datasets, accession: GCA_004368075.1}   # ASM436807v1, N50 2.7 kb, 143 Mb; PRJNA512626
+    note: "pool of 110 specimens (Espegrend-2014). PacBio Iso-Seq exists (PRJNA1345077, public 2026-06) as a future transcript source"
+    status: verified
+    refs: [Naville2019]
+
+  # ---------------- Ascidians and thaliaceans ----------------
+  # UniProt holds only six tunicate proteomes (3x O. dioica, C. intestinalis, C. savignyi, Clavelina lepadiformis;
+  # checked 2026-10-20). Everything else comes from NCBI RefSeq annotations via the datasets CLI. ANISEED download
+  # links (Halocynthia, Molgula, Botrylloides, Phallusia) all redirect to the site index for scripted requests and
+  # could not be verified; those species stay to-verify until a file is obtained by hand and checksummed.
   - key: Crob
     name: Ciona intestinalis
-    note: "NCBI Taxonomy name for Ciona robusta (type A); verify current taxonomy and pick the best assembly (KY21/HT) at resolve time"
     taxid: 7719
     role: ascidian
+    lineage: "Ciona robusta (type A): KH assembly and UniProt reference proteome UP000008144 (17,311 proteins, Ensembl KH gene models) are filed under NCBI taxid 7719 'Ciona intestinalis'; a separate taxid 1774208 'Ciona robusta' carries only the KH GCA_000224145.2 record"
     proteome: {source: uniprot_reference}
-    genome: {source: ncbi_datasets, accession: TO-RESOLVE}
-    status: to-verify
+    genome: {source: ncbi_datasets, accession: GCF_000224145.3}   # KH, RefSeq Annotation Release 104 (13,726 protein-coding genes)
+    note: "Alternative: Kyoto HT assembly GCA_009617815.2 with KY21 gene models (Ghost: https://ghost.zool.kyoto-u.ac.jp/datas/HT.KY21Gene.protein.2.fasta.zip, 13.9 MB, HEAD 200); no NCBI annotation for HT"
+    status: verified
+
+  - key: Cint
+    name: Ciona intestinalis
+    taxid: 7719
+    role: ascidian
+    lineage: "Ciona intestinalis type B (Roscoff individual), ASM1832782v2, Kyoto University; BioProject PRJDB35706"
+    proteome: {source: ncbi_datasets, accession: GCF_018327825.1}   # RefSeq RS_2026_01, 15,365 protein-coding genes
+    genome: {source: ncbi_datasets, accession: GCF_018327825.1}
+    status: verified
 
   - key: Csav
     name: Ciona savignyi
+    taxid: 51511
     role: ascidian
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000007875, 20,004 proteins (Ensembl CSAV 2.0)
+    genome: {source: ncbi_datasets, accession: GCA_054131345.1}   # ASM5413134v1, chromosome-level, 2025, no NCBI annotation
+    status: verified
 
   - key: Pmam
     name: Phallusia mammillata
+    taxid: 59560
     role: ascidian
-    proteome: {source: to-resolve, note: "ANISEED"}
-    status: to-verify
+    proteome: {source: ncbi_datasets, accession: GCF_965637545.1}   # kaPhaMamm4.hap1.1, RefSeq RS_2026_02, 19,521 protein-coding genes
+    genome: {source: ncbi_datasets, accession: GCF_965637545.1}
+    status: verified
 
   - key: Hror
     name: Halocynthia roretzi
+    taxid: 7729
     role: ascidian
-    proteome: {source: to-resolve, note: "ANISEED"}
+    genome: {source: ncbi_datasets, accession: GCA_013436055.1}   # Harore_MTP2014, scaffold N50 200 kb, no NCBI annotation
+    proteome: {source: to-resolve, note: "ANISEED Harore.MTP2014.protein_2018.aa.gz listed but download redirects for scripted requests"}
     status: to-verify
 
   - key: Bsch
     name: Botryllus schlosseri
+    taxid: 30301
     role: ascidian
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: ncbi_datasets, accession: GCF_051294905.1}   # Bs_hap1, RefSeq RS_2026_02, 19,211 protein-coding genes
+    genome: {source: ncbi_datasets, accession: GCF_051294905.1}
+    status: verified
 
   - key: Blea
     name: Botrylloides leachii
+    taxid: 62808
     role: ascidian
-    proteome: {source: to-resolve, note: "ANISEED"}
+    proteome: {source: to-resolve, note: "no INSDC assembly; ANISEED Boleac_proteins_v4 listed but download unverifiable by script"}
     status: to-verify
 
   - key: Mocc
     name: Molgula occulta
+    taxid: 30283
     role: ascidian
-    proteome: {source: to-resolve, note: "ANISEED"}
+    proteome: {source: to-resolve, note: "no INSDC assembly; ANISEED has genome+GFF only (aug 2015), download unverifiable by script"}
     status: to-verify
 
   - key: Mocu
     name: Molgula oculata
+    taxid: 27575
     role: ascidian
-    proteome: {source: to-resolve, note: "ANISEED"}
+    proteome: {source: to-resolve, note: "no INSDC assembly; ANISEED molgula_oculata_protein_fasta listed, download unverifiable by script"}
     status: to-verify
 
   - key: Scla
     name: Styela clava
+    taxid: 7725
     role: ascidian
+    proteome: {source: ncbi_datasets, accession: GCF_964204865.1}   # kaStyClav1.hap1.2, RefSeq RS_2025_12, 19,380 protein-coding genes
+    genome: {source: ncbi_datasets, accession: GCF_964204865.1}
+    status: verified
+
+  - key: Clep
+    name: Clavelina lepadiformis
+    taxid: 159417
+    role: ascidian
+    note: aplousobranch; UniProt reference proteome UP001642483 (25,263 proteins, BUSCO 93%)
     proteome: {source: uniprot_reference}
-    status: to-verify
+    genome: {source: ncbi_datasets, accession: GCF_947623445.1}   # kaClaLepa1.1, RefSeq RS_2025_09, 17,001 protein-coding genes
+    status: verified
 
   - key: Stho
     name: Salpa thompsoni
+    taxid: 569448
     role: thaliacean
-    proteome: {source: to-resolve}
+    genome: {source: ncbi_datasets, accession: GCA_047495815.1}   # tSalTho2.1, contig N50 191 kb, 2025, no annotation
+    proteome: {source: to-resolve, note: "no annotated assembly; TSA GFCC01/GKHU01 exist as a possible transcript source"}
     status: to-verify
 
-  # ---------------- Chordate backbone ----------------
+  - key: Tdem
+    name: Thalia democratica
+    taxid: 34761
+    role: thaliacean
+    proteome: {source: ncbi_datasets, accession: GCF_965202585.1}   # ktThaDemo2.hap1.1, RefSeq RS_2026_04, 15,855 protein-coding genes
+    genome: {source: ncbi_datasets, accession: GCF_965202585.1}
+    status: verified
+
+  # Other annotated tunicates available on NCBI RefSeq if the panel is widened (checked 2026-10-20):
+  # Ascidiella aspersa GCF_963924565.1 (14,978), Ascidia mentula GCF_947561715.1 (18,740), Aplidium turbinatum
+  # GCF_918807975.1 (19,642), Corella eumyota GCF_963082875.1 (13,970).
+
+  # ---------------- Chordate backbone (UniProt reference proteomes, all checked live 2026-10-20) ----------------
   - key: Bflo
     name: Branchiostoma floridae
     taxid: 7739
     role: backbone
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000001554, 38,650 proteins
+    status: verified
 
   - key: Blan
     name: Branchiostoma lanceolatum
     taxid: 7740
     role: backbone
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000838412, 38,783 proteins
+    status: verified
 
   - key: Drer
     name: Danio rerio
     taxid: 7955
     role: backbone
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000000437, 69,241 proteins
+    status: verified
 
   - key: Xtro
     name: Xenopus tropicalis
     taxid: 8364
     role: backbone
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000008143, 37,711 proteins
+    status: verified
 
   - key: Hsap
     name: Homo sapiens
     taxid: 9606
     role: backbone
     anchor: true
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000005640, 147,520 proteins (canonical FASTA is smaller)
+    status: verified
 
   - key: Mmus
     name: Mus musculus
     taxid: 10090
     role: backbone
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000000589, 54,855 proteins
+    status: verified
 
   # ---------------- Non-chordate references ----------------
   - key: Crei
@@ -199,51 +297,51 @@ species:
     taxid: 3055
     role: control
     note: full basal-body/flagellar toolkit
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000006906, 18,840 proteins
+    status: verified
 
   - key: Tthe
     name: Tetrahymena thermophila
     taxid: 5911
     role: control
     note: full basal-body toolkit, multiciliated
-    proteome: {source: uniprot_reference, proteome_taxid: 312017}   # UP000009168 is attached to strain SB210
-    status: to-verify
+    proteome: {source: uniprot_reference, proteome_taxid: 312017}   # UP000009168 (strain SB210), 26,975 proteins
+    status: verified
 
   - key: Dmel
     name: Drosophila melanogaster
     taxid: 7227
     role: control
     note: reduced centriole/cilium repertoire
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000000803, 21,947 proteins
+    status: verified
 
   - key: Cele
     name: Caenorhabditis elegans
     taxid: 6239
     role: control
     note: divergent centrioles, sensory cilia only
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000001940, 26,629 proteins
+    status: verified
 
   - key: Atha
     name: Arabidopsis thaliana
     taxid: 3702
     role: control
     note: no centrioles or cilia
-    proteome: {source: uniprot_reference}
-    status: to-verify
+    proteome: {source: uniprot_reference}   # UP000006548, 39,272 proteins
+    status: verified
 
   - key: Scer
     name: Saccharomyces cerevisiae
     taxid: 4932
     role: control
     note: no centrioles or cilia
-    proteome: {source: uniprot_reference, proteome_taxid: 559292}   # UP000002311 is attached to strain S288c
-    status: to-verify
+    proteome: {source: uniprot_reference, proteome_taxid: 559292}   # UP000002311 (strain S288c), 6,067 proteins
+    status: verified
 
 # Species whose proteomes are used to collect ortholog seeds for per-gene HMMs (must have proteomes).
 seed_species: [Hsap, Mmus, Xtro, Drer, Bflo, Crob, Crei, Tthe, Dmel, Cele]
 
 # Species run through the genome-level search (miniprot) for every absence candidate.
-genome_search_species: [Odio_OKI, Odio_OKI_hap, Odio_OSA, Odio_BER, Odio_BCN, Odio_OdB3]
+genome_search_species: [Odio_OKI, Odio_OKI_hap, Odio_OSA, Odio_BER, Odio_BCN, Odio_OdB3, Oalb, Olon, Ovan, Bsty, Mery, Fbor]

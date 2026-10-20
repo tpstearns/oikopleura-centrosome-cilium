@@ -123,7 +123,7 @@ def main() -> None:
     if source == "uniprot_reference":
         if not srow["upid"]:
             die(f"[{args.key}] no UniProt proteome id in species.tsv")
-        fetch_uniprot_reference(srow["upid"], srow["taxid"], out, manifest)
+        fetch_uniprot_reference(srow["upid"], srow.get("proteome_taxid") or srow["taxid"], out, manifest)
     elif source == "zenodo":
         fetch_zenodo(int(spec["record"]), spec.get("files", ["*"]), out, manifest)
     elif source == "ncbi_datasets":
