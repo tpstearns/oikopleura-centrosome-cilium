@@ -5,7 +5,7 @@ A_tubulins	TUBG1		Hsap			gamma-tubulin
 A_tubulins	TUBG2		Hsap			gamma-tubulin paralog
 A_tubulins	TUBD1		Hsap			delta-tubulin (ZED module)
 A_tubulins	TUBE1		Hsap			epsilon-tubulin (ZED module)
-A_tubulins	TUBZ1	tubz1|zeta-tubulin	Xtro			zeta-tubulin (ZED module); reported absent from placental mammals (Turk et al. 2015, verify); resolve anchor from Xenopus or zebrafish
+A_tubulins	TUBZ1	tubz1|zeta-tubulin	Xtro	A0A6I8RNG6		zeta-tubulin (ZED module); reported absent from placental mammals (Turk et al. 2015, verify). Anchor: X. tropicalis tubz1 (Xenbase XB-GENE-5900222, GeneID 100492972, 422 aa; unreviewed entry, auto-named 'delta chain'; distinct from tubd1 Q6DIM3), verified 2026-10-20
 B_duplication_cartwheel	PLK4	SAK|STK18	Hsap			master duplication kinase
 B_duplication_cartwheel	STIL	SIL	Hsap
 B_duplication_cartwheel	SASS6	SAS6	Hsap			cartwheel hub

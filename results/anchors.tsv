@@ -1,0 +1,273 @@
+module	gene	anchor	taxid	accession	entry	gene_primary	protein_name	length	resolved_by
+A_tubulins	TUBA1A	Hsap	9606	Q71U36	TBA1A_HUMAN	TUBA1A	Tubulin alpha-1A chain (EC 3.6.5.-) (Alpha-tubulin 3) (Tubulin B-alpha-1) (Tubulin alpha-3 chain) [Cleaved into: Detyrosinated tubulin alpha-1A chain]	451	symbol:TUBA1A
+A_tubulins	TUBB	Hsap	9606	P07437	TBB5_HUMAN	TUBB	Tubulin beta chain (Tubulin beta-5 chain)	444	symbol:TUBB
+A_tubulins	TUBG1	Hsap	9606	P23258	TBG1_HUMAN	TUBG1	Tubulin gamma-1 chain (Gamma-1-tubulin) (Gamma-tubulin complex component 1) (GCP-1)	451	symbol:TUBG1
+A_tubulins	TUBG2	Hsap	9606	Q9NRH3	TBG2_HUMAN	TUBG2	Tubulin gamma-2 chain (Gamma-2-tubulin)	451	symbol:TUBG2
+A_tubulins	TUBD1	Hsap	9606	Q9UJT1	TBD_HUMAN	TUBD1	Tubulin delta chain (Delta-tubulin)	453	symbol:TUBD1
+A_tubulins	TUBE1	Hsap	9606	Q9UJT0	TBE_HUMAN	TUBE1	Tubulin epsilon chain (Epsilon-tubulin)	475	symbol:TUBE1
+A_tubulins	TUBZ1	Xtro	8364	A0A6I8RNG6	A0A6I8RNG6_XENTR	tubz1	Tubulin delta chain (Delta-tubulin)	422	accession
+B_duplication_cartwheel	PLK4	Hsap	9606	O00444	PLK4_HUMAN	PLK4	Serine/threonine-protein kinase PLK4 (EC 2.7.11.21) (Polo-like kinase 4) (PLK-4) (Serine/threonine-protein kinase 18) (Serine/threonine-protein kinase Sak)	970	symbol:PLK4
+B_duplication_cartwheel	STIL	Hsap	9606	Q15468	STIL_HUMAN	STIL	SCL-interrupting locus protein (TAL-1-interrupting locus protein)	1287	symbol:STIL
+B_duplication_cartwheel	SASS6	Hsap	9606	Q6UVJ0	SAS6_HUMAN	SASS6	Spindle assembly abnormal protein 6 homolog (HsSAS-6) (Spindle assembly defective protein 6)	657	symbol:SASS6
+B_duplication_cartwheel	CEP135	Hsap	9606	Q66GS9	CP135_HUMAN	CEP135	Centrosomal protein of 135 kDa (Cep135) (Centrosomal protein 4)	1140	symbol:CEP135
+B_duplication_cartwheel	CENPJ	Hsap	9606	Q9HC77	CPAP_HUMAN	CPAP	Centrosomal P4.1-associated protein (Centromere protein J) (CENP-J) (Centrosome assembly and centriole elongation protein) (LAG-3-associated protein) (LYST-interacting protein 1)	1338	symbol:CENPJ
+B_duplication_cartwheel	CEP152	Hsap	9606	O94986	CE152_HUMAN	CEP152	Centrosomal protein of 152 kDa (Cep152)	1710	symbol:CEP152
+B_duplication_cartwheel	CEP192	Hsap	9606	Q8TEP8	CE192_HUMAN	CEP192	Centrosomal protein of 192 kDa (Cep192) (Cep192/SPD-2)	2537	symbol:CEP192
+B_duplication_cartwheel	CEP63	Hsap	9606	Q96MT8	CEP63_HUMAN	CEP63	Centrosomal protein of 63 kDa (Cep63)	703	symbol:CEP63
+B_duplication_cartwheel	CEP57	Hsap	9606	Q86XR8	CEP57_HUMAN	CEP57	Centrosomal protein of 57 kDa (Cep57) (FGF2-interacting protein) (Testis-specific protein 57) (Translokin)	500	symbol:CEP57
+B_duplication_cartwheel	CEP57L1	Hsap	9606	Q8IYX8	CE57L_HUMAN	CEP57L1	Centrosomal protein CEP57L1 (Centrosomal protein 57kDa-like protein 1) (Centrosomal protein of 57 kDa-related protein) (Cep57R) (Cep57-related protein)	460	symbol:CEP57L1
+B_duplication_cartwheel	CEP120	Hsap	9606	Q8N960	CE120_HUMAN	CEP120	Centrosomal protein of 120 kDa (Cep120) (Coiled-coil domain-containing protein 100)	986	symbol:CEP120
+B_duplication_cartwheel	CEP295	Hsap	9606	Q9C0D2	CE295_HUMAN	CEP295	Centrosomal protein of 295 kDa	2601	symbol:CEP295
+B_duplication_cartwheel	CEP44	Hsap	9606	Q9C0F1	CEP44_HUMAN	CEP44	Centrosomal protein of 44 kDa (Cep44) (HBV PreS1-transactivated protein 3) (PS1TP3)	390	symbol:CEP44
+B_duplication_cartwheel	RTTN	Hsap	9606	Q86VV8	RTTN_HUMAN	RTTN	Rotatin	2226	symbol:RTTN
+B_duplication_cartwheel	POC1A	Hsap	9606	Q8NBT0	POC1A_HUMAN	POC1A	POC1 centriolar protein homolog A (Pix2) (Proteome of centriole protein 1A) (WD repeat-containing protein 51A)	407	symbol:POC1A
+B_duplication_cartwheel	POC1B	Hsap	9606	Q8TC44	POC1B_HUMAN	POC1B	POC1 centriolar protein homolog B (Pix1) (Proteome of centriole protein 1B) (WD repeat-containing protein 51B)	478	symbol:POC1B
+B_duplication_cartwheel	POC5	Hsap	9606	Q8NA72	POC5_HUMAN	POC5	Centrosomal protein POC5 (Protein of centriole 5) (hPOC5)	575	symbol:POC5
+B_duplication_cartwheel	CNTROB	Hsap	9606	Q8N137	CNTRB_HUMAN	CNTROB	Centrobin (Centrosomal BRCA2-interacting protein) (LYST-interacting protein 8)	903	symbol:CNTROB
+B_duplication_cartwheel	SPICE1	Hsap	9606	Q8N0Z3	SPICE_HUMAN	SPICE1	Spindle and centriole-associated protein 1 (Coiled-coil domain-containing protein 52) (Spindle and centriole-associated protein)	855	symbol:SPICE1
+B_duplication_cartwheel	WDR62	Hsap	9606	O43379	WDR62_HUMAN	WDR62	WD repeat-containing protein 62	1518	symbol:WDR62
+B_duplication_cartwheel	CEP78	Hsap	9606	Q5JTW2	CEP78_HUMAN	CEP78	Centrosomal protein of 78 kDa (Cep78)	689	symbol:CEP78
+B_duplication_cartwheel	CCDC14	Hsap	9606	Q49A88	CCD14_HUMAN	CCDC14	Coiled-coil domain-containing protein 14	953	symbol:CCDC14
+B_duplication_cartwheel	CEP85	Hsap	9606	Q6P2H3	CEP85_HUMAN	CEP85	Centrosomal protein of 85 kDa (Cep85) (Coiled-coil domain-containing protein 21)	762	symbol:CEP85
+B_duplication_cartwheel	CEP76	Hsap	9606	Q8TAP6	CEP76_HUMAN	CEP76	Centrosomal protein of 76 kDa (Cep76)	659	symbol:CEP76
+C_distal_end_length	CCP110	Hsap	9606	O43303	CP110_HUMAN	CCP110	Centriolar coiled-coil protein of 110 kDa (Centrosomal protein of 110 kDa) (CP110) (Cep110)	1012	symbol:CCP110
+C_distal_end_length	CEP97	Hsap	9606	Q8IW35	CEP97_HUMAN	CEP97	Centrosomal protein of 97 kDa (Cep97) (Leucine-rich repeat and IQ domain-containing protein 2)	865	symbol:CEP97
+C_distal_end_length	CEP104	Hsap	9606	O60308	CE104_HUMAN	CEP104	Centrosomal protein of 104 kDa (Cep104)	925	symbol:CEP104
+C_distal_end_length	KIF24	Hsap	9606	Q5T7B8	KIF24_HUMAN	KIF24	Kinesin-like protein KIF24	1368	symbol:KIF24
+C_distal_end_length	TTBK2	Hsap	9606	Q6IQ55	TTBK2_HUMAN	TTBK2	Tau-tubulin kinase 2 (EC 2.7.11.1)	1244	symbol:TTBK2
+C_distal_end_length	FAM161A	Hsap	9606	Q3B820	F161A_HUMAN	FAM161A	Protein FAM161A	660	symbol:FAM161A
+C_distal_end_length	WDR90	Hsap	9606	Q96KV7	WDR90_HUMAN	WDR90	WD repeat-containing protein 90	1748	symbol:WDR90
+C_distal_end_length	HYLS1	Hsap	9606	Q96M11	HYLS1_HUMAN	HYLS1	Centriolar and ciliogenesis-associated protein HYLS1 (Hydrolethalus syndrome protein 1)	299	symbol:HYLS1
+C_distal_end_length	CCDC61	Hsap	9606	Q9Y6R9	CCD61_HUMAN	CCDC61	Centrosomal protein CCDC61 (Coiled-coil domain-containing protein 61) (VFL3 homolog)	512	symbol:CCDC61
+C_distal_end_length	LRRC45	Hsap	9606	Q96CN5	LRC45_HUMAN	LRRC45	Leucine-rich repeat-containing protein 45	670	symbol:LRRC45
+C_distal_end_length	KIAA0586	Hsap	9606	Q9BVV6	TALD3_HUMAN	KIAA0586	Protein TALPID3	1533	symbol:KIAA0586
+D_PCM_gTuRC	TUBGCP2	Hsap	9606	Q9BSJ2	GCP2_HUMAN	TUBGCP2	Gamma-tubulin complex component 2 (GCP-2) (hGCP2) (Gamma-ring complex protein 103 kDa) (h103p) (hGrip103) (Spindle pole body protein Spc97 homolog) (hSpc97)	902	symbol:TUBGCP2
+D_PCM_gTuRC	TUBGCP3	Hsap	9606	Q96CW5	GCP3_HUMAN	TUBGCP3	Gamma-tubulin complex component 3 (GCP-3) (hGCP3) (Gamma-ring complex protein 104 kDa) (h104p) (hGrip104) (Spindle pole body protein Spc98 homolog) (hSpc98)	907	symbol:TUBGCP3
+D_PCM_gTuRC	TUBGCP4	Hsap	9606	Q9UGJ1	GCP4_HUMAN	TUBGCP4	Gamma-tubulin complex component 4 (GCP-4) (hGCP4) (Gamma-ring complex protein 76 kDa) (h76p) (hGrip76)	667	symbol:TUBGCP4
+D_PCM_gTuRC	TUBGCP5	Hsap	9606	Q96RT8	GCP5_HUMAN	TUBGCP5	Gamma-tubulin complex component 5 (GCP-5)	1024	symbol:TUBGCP5
+D_PCM_gTuRC	TUBGCP6	Hsap	9606	Q96RT7	GCP6_HUMAN	TUBGCP6	Gamma-tubulin complex component 6 (GCP-6)	1819	symbol:TUBGCP6
+D_PCM_gTuRC	MZT1	Hsap	9606	Q08AG7	MZT1_HUMAN	MZT1	Mitotic-spindle organizing protein 1 (Mitotic-spindle organizing protein associated with a ring of gamma-tubulin 1)	82	symbol:MZT1
+D_PCM_gTuRC	MZT2A	Hsap	9606	Q6P582	MZT2A_HUMAN	MZT2A	Mitotic-spindle organizing protein 2A (Mitotic-spindle organizing protein associated with a ring of gamma-tubulin 2A)	158	symbol:MZT2A
+D_PCM_gTuRC	MZT2B	Hsap	9606	Q6NZ67	MZT2B_HUMAN	MZT2B	Mitotic-spindle organizing protein 2B (Mitotic-spindle organizing protein associated with a ring of gamma-tubulin 2B)	158	symbol:MZT2B
+D_PCM_gTuRC	NEDD1	Hsap	9606	Q8NHV4	NEDD1_HUMAN	NEDD1	Protein NEDD1 (Neural precursor cell expressed developmentally down-regulated protein 1) (NEDD-1)	660	symbol:NEDD1
+D_PCM_gTuRC	PCNT	Hsap	9606	O95613	PCNT_HUMAN	PCNT	Pericentrin (Kendrin) (Pericentrin-B)	3336	symbol:PCNT
+D_PCM_gTuRC	CDK5RAP2	Hsap	9606	Q96SN8	CK5P2_HUMAN	CDK5RAP2	CDK5 regulatory subunit-associated protein 2 (CDK5 activator-binding protein C48) (Centrosome-associated protein 215)	1893	symbol:CDK5RAP2
+D_PCM_gTuRC	AKAP9	Hsap	9606	Q99996	AKAP9_HUMAN	AKAP9	A-kinase anchor protein 9 (AKAP-9) (A-kinase anchor protein 350 kDa) (AKAP 350) (hgAKAP 350) (A-kinase anchor protein 450 kDa) (AKAP 450) (AKAP 120-like protein) (Centrosome- and Golgi-localized PKN-associated protein) (CG-NAP) (Protein hyperion) (Protein kinase A-anchoring protein 9) (PRKA9) (Protein yotiao)	3907	symbol:AKAP9
+D_PCM_gTuRC	CEP170	Hsap	9606	Q5SW79	CE170_HUMAN	CEP170	Centrosomal protein of 170 kDa (Cep170) (KARP-1-binding protein) (KARP1-binding protein)	1584	symbol:CEP170
+D_PCM_gTuRC	CEP350	Hsap	9606	Q5VT06	CE350_HUMAN	CEP350	Centrosome-associated protein 350 (Cep350) (Centrosome-associated protein of 350 kDa)	3117	symbol:CEP350
+D_PCM_gTuRC	FGFR1OP	Hsap	9606	O95684	CEP43_HUMAN	CEP43	Centrosomal protein 43 (FGFR1 oncogene partner)	399	symbol:FGFR1OP
+D_PCM_gTuRC	CEP19	Hsap	9606	Q96LK0	CEP19_HUMAN	CEP19	Centrosomal protein of 19 kDa (Cep19)	163	symbol:CEP19
+D_PCM_gTuRC	CEP72	Hsap	9606	Q9P209	CEP72_HUMAN	CEP72	Centrosomal protein of 72 kDa (Cep72)	647	symbol:CEP72
+D_PCM_gTuRC	CEP41	Hsap	9606	Q9BYV8	CEP41_HUMAN	CEP41	Centrosomal protein of 41 kDa (Cep41) (Testis-specific gene A14 protein)	373	symbol:CEP41
+E_appendages_basal_foot	ODF2	Hsap	9606	Q5BJF6	ODFP2_HUMAN	ODF2	Outer dense fiber protein 2 (Cenexin) (Outer dense fiber of sperm tails protein 2)	829	symbol:ODF2
+E_appendages_basal_foot	NIN	Hsap	9606	Q8N4C6	NIN_HUMAN	NIN	Ninein (hNinein) (Glycogen synthase kinase 3 beta-interacting protein) (GSK3B-interacting protein)	2090	symbol:NIN
+E_appendages_basal_foot	NINL	Hsap	9606	Q9Y2I6	NINL_HUMAN	NINL	Ninein-like protein	1382	symbol:NINL
+E_appendages_basal_foot	CEP128	Hsap	9606	Q6ZU80	CE128_HUMAN	CEP128	Centrosomal protein 128 (Cep128) (Centrosomal protein of 128 kDa)	1094	symbol:CEP128
+E_appendages_basal_foot	CNTRL	Hsap	9606	Q7Z7A1	CNTRL_HUMAN	CNTRL	Centriolin (Centrosomal protein 1) (Centrosomal protein of 110 kDa) (Cep110)	2325	symbol:CNTRL
+E_appendages_basal_foot	CCDC120	Hsap	9606	Q96HB5	CC120_HUMAN	CCDC120	Coiled-coil domain-containing protein 120	630	symbol:CCDC120
+E_appendages_basal_foot	CCDC68	Hsap	9606	Q9H2F9	CCD68_HUMAN	CCDC68	Coiled-coil domain-containing protein 68 (Cutaneous T-cell lymphoma-associated antigen se57-1) (CTCL-associated antigen se57-1)	335	symbol:CCDC68
+E_appendages_basal_foot	CEP164	Hsap	9606	Q9UPV0	CE164_HUMAN	CEP164	Centrosomal protein of 164 kDa (Cep164)	1460	symbol:CEP164
+E_appendages_basal_foot	CEP83	Hsap	9606	Q9Y592	CEP83_HUMAN	CEP83	Centrosomal protein of 83 kDa (Cep83) (Coiled-coil domain-containing protein 41) (Renal carcinoma antigen NY-REN-58)	701	symbol:CEP83
+E_appendages_basal_foot	CEP89	Hsap	9606	Q96ST8	CEP89_HUMAN	CEP89	Centrosomal protein of 89 kDa (Cep89) (Centrosomal protein 123) (Cep123) (Coiled-coil domain-containing protein 123)	783	symbol:CEP89
+E_appendages_basal_foot	SCLT1	Hsap	9606	Q96NL6	SCLT1_HUMAN	SCLT1	Sodium channel and clathrin linker 1 (Sodium channel-associated protein 1)	688	symbol:SCLT1
+E_appendages_basal_foot	FBF1	Hsap	9606	Q8TES7	FBF1_HUMAN	FBF1	Fas-binding factor 1 (FBF-1) (Protein albatross)	1133	symbol:FBF1
+E_appendages_basal_foot	ANKRD26	Hsap	9606	Q9UPS8	ANR26_HUMAN	ANKRD26	Ankyrin repeat domain-containing protein 26	1710	symbol:ANKRD26
+E_appendages_basal_foot	C2CD3	Hsap	9606	Q4AC94	C2CD3_HUMAN	C2CD3	C2 domain-containing protein 3	2353	symbol:C2CD3
+E_appendages_basal_foot	OFD1	Hsap	9606	O75665	OFD1_HUMAN	OFD1	Centriole and centriolar satellite protein OFD1 (Oral-facial-digital syndrome 1 protein) (Protein 71-7A)	1012	symbol:OFD1
+E_appendages_basal_foot	KIAA0753	Hsap	9606	Q2KHM9	MOONR_HUMAN	KIAA0753	Protein moonraker (MNR) (OFD1- and FOPNL-interacting protein)	967	symbol:KIAA0753
+E_appendages_basal_foot	PIBF1	Hsap	9606	Q8WXW3	PIBF1_HUMAN	PIBF1	Progesterone-induced-blocking factor 1 (PIBF) (Centrosomal protein of 90 kDa) (CEP90)	757	symbol:PIBF1
+E_appendages_basal_foot	FOPNL	Hsap	9606	Q96NB1	CEP20_HUMAN	CEP20	Centrosomal protein 20 (FGFR1OP N-terminal-like protein) (FOP-related protein of 20 kDa) (LisH domain-containing protein FOPNL)	174	symbol:FOPNL
+E_appendages_basal_foot	TCHP	Hsap	9606	Q9BT92	TCHP_HUMAN	TCHP	Trichoplein keratin filament-binding protein (Protein TCHP) (Mitochondrial protein with oncostatic activity) (Mitostatin) (Tumor suppressor protein)	498	symbol:TCHP
+F_transition_zone	CEP290	Hsap	9606	O15078	CE290_HUMAN	CEP290	Centrosomal protein of 290 kDa (Cep290) (Bardet-Biedl syndrome 14 protein) (Cancer/testis antigen 87) (CT87) (Nephrocystin-6) (Tumor antigen se2-2)	2479	symbol:CEP290
+F_transition_zone	RPGRIP1L	Hsap	9606	Q68CZ1	FTM_HUMAN	RPGRIP1L	Protein fantom (Nephrocystin-8) (RPGR-interacting protein 1-like protein) (RPGRIP1-like protein)	1315	symbol:RPGRIP1L
+F_transition_zone	RPGRIP1	Hsap	9606	Q96KN7	RPGR1_HUMAN	RPGRIP1	X-linked retinitis pigmentosa GTPase regulator-interacting protein 1 (RPGR-interacting protein 1)	1286	symbol:RPGRIP1
+F_transition_zone	NPHP1	Hsap	9606	O15259	NPHP1_HUMAN	NPHP1	Nephrocystin-1 (Juvenile nephronophthisis 1 protein)	732	symbol:NPHP1
+F_transition_zone	NPHP4	Hsap	9606	O75161	NPHP4_HUMAN	NPHP4	Nephrocystin-4 (Nephroretinin)	1426	symbol:NPHP4
+F_transition_zone	MKS1	Hsap	9606	Q9NXB0	MKS1_HUMAN	MKS1	Tectonic-like complex member MKS1 (Meckel syndrome type 1 protein)	559	symbol:MKS1
+F_transition_zone	TMEM67	Hsap	9606	Q5HYA8	MKS3_HUMAN	TMEM67	Meckelin (Meckel syndrome type 3 protein) (Transmembrane protein 67)	995	symbol:TMEM67
+F_transition_zone	TCTN1	Hsap	9606	Q2MV58	TECT1_HUMAN	TCTN1	Tectonic-1	587	symbol:TCTN1
+F_transition_zone	TCTN2	Hsap	9606	Q96GX1	TECT2_HUMAN	TCTN2	Tectonic-2	697	symbol:TCTN2
+F_transition_zone	TCTN3	Hsap	9606	Q6NUS6	TECT3_HUMAN	TCTN3	Tectonic-3	607	symbol:TCTN3
+F_transition_zone	B9D1	Hsap	9606	Q9UPM9	B9D1_HUMAN	B9D1	B9 domain-containing protein 1 (MKS1-related protein 1)	204	symbol:B9D1
+F_transition_zone	B9D2	Hsap	9606	Q9BPU9	B9D2_HUMAN	B9D2	B9 domain-containing protein 2 (MKS1-related protein 2)	175	symbol:B9D2
+F_transition_zone	AHI1	Hsap	9606	Q8N157	AHI1_HUMAN	AHI1	Jouberin (Abelson helper integration site 1 protein homolog) (AHI-1)	1196	symbol:AHI1
+F_transition_zone	CC2D2A	Hsap	9606	Q9P2K1	C2D2A_HUMAN	CC2D2A	Coiled-coil and C2 domain-containing protein 2A	1620	symbol:CC2D2A
+F_transition_zone	TMEM216	Hsap	9606	Q9P0N5	TM216_HUMAN	TMEM216	Transmembrane protein 216	145	symbol:TMEM216
+F_transition_zone	TMEM231	Hsap	9606	Q9H6L2	TM231_HUMAN	TMEM231	Transmembrane protein 231	316	symbol:TMEM231
+F_transition_zone	TMEM237	Hsap	9606	Q96Q45	TM237_HUMAN	TMEM237	Transmembrane protein 237 (Amyotrophic lateral sclerosis 2 chromosomal region candidate gene 4 protein)	408	symbol:TMEM237
+F_transition_zone	TMEM17	Hsap	9606	Q86X19	TMM17_HUMAN	TMEM17	Transmembrane protein 17	198	symbol:TMEM17
+F_transition_zone	TMEM107	Hsap	9606	Q6UX40	TM107_HUMAN	TMEM107	Transmembrane protein 107	140	symbol:TMEM107
+F_transition_zone	CEP162	Hsap	9606	Q5TB80	CE162_HUMAN	CEP162	Centrosomal protein of 162 kDa (Cep162) (Protein QN1 homolog)	1403	symbol:CEP162
+F_transition_zone	INVS	Hsap	9606	Q9Y283	INVS_HUMAN	INVS	Inversin (Inversion of embryo turning homolog) (Nephrocystin-2)	1065	symbol:INVS
+F_transition_zone	NEK8	Hsap	9606	Q86SG6	NEK8_HUMAN	NEK8	Serine/threonine-protein kinase Nek8 (EC 2.7.11.1) (Never in mitosis A-related kinase 8) (NimA-related protein kinase 8) (Nima-related protein kinase 12a)	692	symbol:NEK8
+F_transition_zone	ANKS6	Hsap	9606	Q68DC2	ANKS6_HUMAN	ANKS6	Ankyrin repeat and SAM domain-containing protein 6 (Ankyrin repeat domain-containing protein 14) (SamCystin) (Sterile alpha motif domain-containing protein 6) (SAM domain-containing protein 6)	871	symbol:ANKS6
+F_transition_zone	NPHP3	Hsap	9606	Q7Z494	NPHP3_HUMAN	NPHP3	Nephrocystin-3	1330	symbol:NPHP3
+G_IFT_BBSome_motors	IFT20	Hsap	9606	Q8IY31	IFT20_HUMAN	IFT20	Intraflagellar transport protein 20 homolog (hIFT20)	132	symbol:IFT20
+G_IFT_BBSome_motors	IFT22	Hsap	9606	Q9H7X7	IFT22_HUMAN	IFT22	Intraflagellar transport protein 22 homolog (Rab-like protein 5)	185	symbol:IFT22
+G_IFT_BBSome_motors	IFT25	Hsap	9606	Q9Y547	IFT25_HUMAN	IFT25	Intraflagellar transport protein 25 homolog (Heat shock protein beta-11) (Hspb11) (Heat shock protein family B member 11) (Placental protein 25) (PP25)	144	symbol:IFT25
+G_IFT_BBSome_motors	IFT27	Hsap	9606	Q9BW83	IFT27_HUMAN	IFT27	Intraflagellar transport protein 27 homolog (Putative GTP-binding protein RAY-like) (Rab-like protein 4)	186	symbol:IFT27
+G_IFT_BBSome_motors	IFT46	Hsap	9606	Q9NQC8	IFT46_HUMAN	IFT46	Intraflagellar transport protein 46 homolog	304	symbol:IFT46
+G_IFT_BBSome_motors	IFT52	Hsap	9606	Q9Y366	IFT52_HUMAN	IFT52	Intraflagellar transport protein 52 homolog (Protein NGD5 homolog)	437	symbol:IFT52
+G_IFT_BBSome_motors	IFT54	Hsap	9606	Q8TDR0	IFT54_HUMAN	IFT54	Intraflagellar transport protein 54 (Interleukin-13 receptor alpha 1-binding protein 1) (Microtubule-interacting protein associated with TRAF3) (MIP-T3) (TRAF3-interacting protein 1)	691	symbol:IFT54
+G_IFT_BBSome_motors	IFT56	Hsap	9606	A0AVF1	IFT56_HUMAN	IFT56	Intraflagellar transport protein 56 (Tetratricopeptide repeat protein 26) (TPR repeat protein 26)	554	symbol:IFT56
+G_IFT_BBSome_motors	IFT57	Hsap	9606	Q9NWB7	IFT57_HUMAN	IFT57	Intraflagellar transport protein 57 homolog (Dermal papilla-derived protein 8) (Estrogen-related receptor beta-like protein 1) (HIP1-interacting protein) (MHS4R2)	429	symbol:IFT57
+G_IFT_BBSome_motors	IFT70A	Hsap	9606	Q86WT1	IT70A_HUMAN	IFT70A	Intraflagellar transport protein 70A (Tetratricopeptide repeat protein 30A) (TPR repeat protein 30A)	665	symbol:IFT70A
+G_IFT_BBSome_motors	IFT74	Hsap	9606	Q96LB3	IFT74_HUMAN	IFT74	Intraflagellar transport protein 74 homolog (Capillary morphogenesis gene 1 protein) (CMG-1) (Coiled-coil domain-containing protein 2)	600	symbol:IFT74
+G_IFT_BBSome_motors	IFT80	Hsap	9606	Q9P2H3	IFT80_HUMAN	IFT80	Intraflagellar transport protein 80 homolog (WD repeat-containing protein 56)	777	symbol:IFT80
+G_IFT_BBSome_motors	IFT81	Hsap	9606	Q8WYA0	IFT81_HUMAN	IFT81	Intraflagellar transport protein 81 homolog (Carnitine deficiency-associated protein expressed in ventricle 1) (CDV-1)	676	symbol:IFT81
+G_IFT_BBSome_motors	IFT88	Hsap	9606	Q13099	IFT88_HUMAN	IFT88	Intraflagellar transport protein 88 homolog (Recessive polycystic kidney disease protein Tg737 homolog) (Tetratricopeptide repeat protein 10) (TPR repeat protein 10)	824	symbol:IFT88
+G_IFT_BBSome_motors	IFT172	Hsap	9606	Q9UG01	IF172_HUMAN	IFT172	Intraflagellar transport protein 172 homolog	1749	symbol:IFT172
+G_IFT_BBSome_motors	CLUAP1	Hsap	9606	Q96AJ1	IFT38_HUMAN	IFT38	Intraflagellar transport protein 38 (Clusterin-associated protein 1) (Qilin)	413	symbol:CLUAP1
+G_IFT_BBSome_motors	IFT43	Hsap	9606	Q96FT9	IFT43_HUMAN	IFT43	Intraflagellar transport protein 43 homolog	208	symbol:IFT43
+G_IFT_BBSome_motors	IFT121	Hsap	9606	Q9P2L0	WDR35_HUMAN	WDR35	WD repeat-containing protein 35 (Intraflagellar transport protein 121 homolog)	1181	symbol:IFT121
+G_IFT_BBSome_motors	IFT122	Hsap	9606	Q9HBG6	IF122_HUMAN	IFT122	Intraflagellar transport protein 122 homolog (WD repeat-containing protein 10) (WD repeat-containing protein 140)	1241	symbol:IFT122
+G_IFT_BBSome_motors	IFT139	Hsap	9606	Q7Z4L5	TT21B_HUMAN	TTC21B	Tetratricopeptide repeat protein 21B (TPR repeat protein 21B) (Intraflagellar transport 139 homolog)	1316	symbol:IFT139
+G_IFT_BBSome_motors	IFT140	Hsap	9606	Q96RY7	IF140_HUMAN	IFT140	Intraflagellar transport protein 140 homolog (WD and tetratricopeptide repeats protein 2)	1462	symbol:IFT140
+G_IFT_BBSome_motors	IFT144	Hsap	9606	Q8NEZ3	WDR19_HUMAN	WDR19	WD repeat-containing protein 19 (Intraflagellar transport 144 homolog)	1342	symbol:IFT144
+G_IFT_BBSome_motors	BBS1	Hsap	9606	Q8NFJ9	BBS1_HUMAN	BBS1	BBSome complex member BBS1 (BBS2-like protein 2) (Bardet-Biedl syndrome 1 protein)	593	symbol:BBS1
+G_IFT_BBSome_motors	BBS2	Hsap	9606	Q9BXC9	BBS2_HUMAN	BBS2	BBSome complex member BBS2 (Bardet-Biedl syndrome 2 protein)	721	symbol:BBS2
+G_IFT_BBSome_motors	BBS4	Hsap	9606	Q96RK4	BBS4_HUMAN	BBS4	BBSome complex member BBS4 (Bardet-Biedl syndrome 4 protein)	519	symbol:BBS4
+G_IFT_BBSome_motors	BBS5	Hsap	9606	Q8N3I7	BBS5_HUMAN	BBS5	BBSome complex member BBS5 (Bardet-Biedl syndrome 5 protein)	341	symbol:BBS5
+G_IFT_BBSome_motors	BBS7	Hsap	9606	Q8IWZ6	BBS7_HUMAN	BBS7	BBSome complex member BBS7 (BBS2-like protein 1) (Bardet-Biedl syndrome 7 protein)	715	symbol:BBS7
+G_IFT_BBSome_motors	BBS8	Hsap	9606	Q8TAM2	TTC8_HUMAN	TTC8	Tetratricopeptide repeat protein 8 (TPR repeat protein 8) (Bardet-Biedl syndrome 8 protein)	541	symbol:BBS8
+G_IFT_BBSome_motors	BBS9	Hsap	9606	Q3SYG4	PTHB1_HUMAN	BBS9	Protein PTHB1 (Bardet-Biedl syndrome 9 protein) (Parathyroid hormone-responsive B1 gene protein)	887	symbol:BBS9
+G_IFT_BBSome_motors	BBIP1	Hsap	9606	A8MTZ0	BBIP1_HUMAN	BBIP1	BBSome-interacting protein 1 (BBSome-interacting protein of 10 kDa)	92	symbol:BBIP1
+G_IFT_BBSome_motors	ARL6	Hsap	9606	Q9H0F7	ARL6_HUMAN	ARL6	ADP-ribosylation factor-like protein 6 (Bardet-Biedl syndrome 3 protein)	186	symbol:ARL6
+G_IFT_BBSome_motors	LZTFL1	Hsap	9606	Q9NQ48	LZTL1_HUMAN	LZTFL1	Leucine zipper transcription factor-like protein 1	299	symbol:LZTFL1
+G_IFT_BBSome_motors	BBS10	Hsap	9606	Q8TAM1	BBS10_HUMAN	BBS10	BBSome complex assembly protein BBS10 (Bardet-Biedl syndrome 10 protein)	723	symbol:BBS10
+G_IFT_BBSome_motors	BBS12	Hsap	9606	Q6ZW61	BBS12_HUMAN	BBS12	Chaperonin-containing T-complex member BBS12 (Bardet-Biedl syndrome 12 protein)	710	symbol:BBS12
+G_IFT_BBSome_motors	MKKS	Hsap	9606	Q9NPJ1	MKKS_HUMAN	MKKS	Molecular chaperone MKKS (Bardet-Biedl syndrome 6 protein) (McKusick-Kaufman/Bardet-Biedl syndromes putative chaperonin)	570	symbol:MKKS
+G_IFT_BBSome_motors	DYNC2H1	Hsap	9606	Q8NCM8	DYHC2_HUMAN	DYNC2H1	Cytoplasmic dynein 2 heavy chain 1 (Cytoplasmic dynein 2 heavy chain) (Dynein cytoplasmic heavy chain 2) (Dynein heavy chain 11) (hDHC11) (Dynein heavy chain isotype 1B)	4307	symbol:DYNC2H1
+G_IFT_BBSome_motors	DYNC2I1	Hsap	9606	Q8WVS4	DC2I1_HUMAN	DYNC2I1	Cytoplasmic dynein 2 intermediate chain 1 (Dynein 2 intermediate chain 1) (WD repeat-containing protein 60)	1066	symbol:DYNC2I1
+G_IFT_BBSome_motors	DYNC2I2	Hsap	9606	Q96EX3	DC2I2_HUMAN	DYNC2I2	Cytoplasmic dynein 2 intermediate chain 2 (Dynein 2 intermediate chain 2) (WD repeat-containing protein 34)	536	symbol:DYNC2I2
+G_IFT_BBSome_motors	DYNC2LI1	Hsap	9606	Q8TCX1	DC2L1_HUMAN	DYNC2LI1	Cytoplasmic dynein 2 light intermediate chain 1 (Dynein 2 light intermediate chain)	351	symbol:DYNC2LI1
+G_IFT_BBSome_motors	DYNLT2B	Hsap	9606	Q8WW35	DYT2B_HUMAN	DYNLT2B	Dynein light chain Tctex-type protein 2B (Tctex1 domain-containing protein 2)	142	symbol:DYNLT2B
+G_IFT_BBSome_motors	KIF3A	Hsap	9606	Q9Y496	KIF3A_HUMAN	KIF3A	Kinesin-like protein KIF3A (EC 3.6.4.-) (Microtubule plus end-directed kinesin motor 3A)	699	symbol:KIF3A
+G_IFT_BBSome_motors	KIF3B	Hsap	9606	O15066	KIF3B_HUMAN	KIF3B	Kinesin-like protein KIF3B (HH0048) (Microtubule plus end-directed kinesin motor 3B) [Cleaved into: Kinesin-like protein KIF3B, N-terminally processed]	747	symbol:KIF3B
+G_IFT_BBSome_motors	KIF3C	Hsap	9606	O14782	KIF3C_HUMAN	KIF3C	Kinesin-like protein KIF3C	793	symbol:KIF3C
+G_IFT_BBSome_motors	KIFAP3	Hsap	9606	Q92845	KIFA3_HUMAN	KIFAP3	Kinesin-associated protein 3 (KAP-3) (KAP3) (Smg GDS-associated protein)	792	symbol:KIFAP3
+G_IFT_BBSome_motors	KIF17	Hsap	9606	Q9P2E2	KIF17_HUMAN	KIF17	Kinesin-like protein KIF17 (KIF3-related motor protein)	1029	symbol:KIF17
+G_IFT_BBSome_motors	TULP3	Hsap	9606	O75386	TULP3_HUMAN	TULP3	Tubby-related protein 3 (Tubby-like protein 3)	442	symbol:TULP3
+G_IFT_BBSome_motors	ARL3	Hsap	9606	P36405	ARL3_HUMAN	ARL3	ADP-ribosylation factor-like protein 3	182	symbol:ARL3
+G_IFT_BBSome_motors	UNC119	Hsap	9606	Q13432	U119A_HUMAN	UNC119	Protein unc-119 homolog A (Retinal protein 4) (hRG4)	240	symbol:UNC119
+H_motile_axoneme	DNAH5	Hsap	9606	Q8TE73	DYH5_HUMAN	DNAH5	Dynein axonemal heavy chain 5 (Axonemal beta dynein heavy chain 5) (Ciliary dynein heavy chain 5)	4624	symbol:DNAH5
+H_motile_axoneme	DNAH11	Hsap	9606	Q96DT5	DYH11_HUMAN	DNAH11	Dynein axonemal heavy chain 11 (Axonemal beta dynein heavy chain 11) (Ciliary dynein heavy chain 11)	4516	symbol:DNAH11
+H_motile_axoneme	DNAH9	Hsap	9606	Q9NYC9	DYH9_HUMAN	DNAH9	Dynein axonemal heavy chain 9 (Axonemal beta dynein heavy chain 9) (Ciliary dynein heavy chain 9)	4486	symbol:DNAH9
+H_motile_axoneme	DNAI1	Hsap	9606	Q9UI46	DNAI1_HUMAN	DNAI1	Dynein axonemal intermediate chain 1 (Axonemal dynein intermediate chain 1)	699	symbol:DNAI1
+H_motile_axoneme	DNAI2	Hsap	9606	Q9GZS0	DNAI2_HUMAN	DNAI2	Dynein axonemal intermediate chain 2 (Axonemal dynein intermediate chain 2)	605	symbol:DNAI2
+H_motile_axoneme	DNAL1	Hsap	9606	Q4LDG9	DNAL1_HUMAN	DNAL1	Dynein axonemal light chain 1 (LC1)	190	symbol:DNAL1
+H_motile_axoneme	DNAL4	Hsap	9606	O96015	DNAL4_HUMAN	DNAL4	Dynein axonemal light chain 4	105	symbol:DNAL4
+H_motile_axoneme	ODAD1	Hsap	9606	Q96M63	ODAD1_HUMAN	ODAD1	Outer dynein arm-docking complex subunit 1 (Coiled-coil domain-containing protein 114)	670	symbol:ODAD1
+H_motile_axoneme	ODAD2	Hsap	9606	Q5T2S8	ODAD2_HUMAN	ODAD2	Outer dynein arm-docking complex subunit 2 (Armadillo repeat-containing protein 4)	1044	symbol:ODAD2
+H_motile_axoneme	ODAD3	Hsap	9606	A5D8V7	ODAD3_HUMAN	ODAD3	Outer dynein arm-docking complex subunit 3 (Coiled-coil domain-containing protein 151)	595	symbol:ODAD3
+H_motile_axoneme	ODAD4	Hsap	9606	Q96NG3	ODAD4_HUMAN	ODAD4	Outer dynein arm-docking complex subunit 4 (Tetratricopeptide repeat protein 25) (TPR repeat protein 25)	672	symbol:ODAD4
+H_motile_axoneme	DNAH1	Hsap	9606	Q9P2D7	DYH1_HUMAN	DNAH1	Dynein axonemal heavy chain 1 (Axonemal beta dynein heavy chain 1) (Ciliary dynein heavy chain 1) (Heat shock regulated protein 1) (HSRF-1) (hDHC7)	4265	symbol:DNAH1
+H_motile_axoneme	DNAH2	Hsap	9606	Q9P225	DYH2_HUMAN	DNAH2	Dynein axonemal heavy chain 2 (Axonemal beta dynein heavy chain 2) (Ciliary dynein heavy chain 2) (Dynein heavy chain domain-containing protein 3)	4427	symbol:DNAH2
+H_motile_axoneme	DNAH6	Hsap	9606	Q9C0G6	DYH6_HUMAN	DNAH6	Dynein axonemal heavy chain 6 (Axonemal beta dynein heavy chain 6) (Ciliary dynein heavy chain 6)	4158	symbol:DNAH6
+H_motile_axoneme	DNAH7	Hsap	9606	Q8WXX0	DYH7_HUMAN	DNAH7	Dynein axonemal heavy chain 7 (Axonemal beta dynein heavy chain 7) (Ciliary dynein heavy chain 7) (Dynein heavy chain-like protein 2) (hDHC2)	4024	symbol:DNAH7
+H_motile_axoneme	DNAH10	Hsap	9606	Q8IVF4	DYH10_HUMAN	DNAH10	Dynein axonemal heavy chain 10 (Axonemal beta dynein heavy chain 10) (Ciliary dynein heavy chain 10)	4471	symbol:DNAH10
+H_motile_axoneme	DNAH12	Hsap	9606	Q6ZR08	DYH12_HUMAN	DNAH12	Dynein axonemal heavy chain 12 (Axonemal beta dynein heavy chain 12) (Axonemal dynein heavy chain 12-like protein) (Axonemal dynein heavy chain 7-like protein) (Ciliary dynein heavy chain 12) (Dynein axonemal heavy chain 7-like) (Dynein heavy chain domain-containing protein 2)	3092	symbol:DNAH12
+H_motile_axoneme	DNALI1	Hsap	9606	O14645	IDLC_HUMAN	DNALI1	Axonemal dynein light intermediate polypeptide 1 (Inner dynein arm light chain, axonemal) (hp28)	258	symbol:DNALI1
+H_motile_axoneme	RSPH1	Hsap	9606	Q8WYR4	RSPH1_HUMAN	RSPH1	Radial spoke head 1 homolog (Cancer/testis antigen 79) (CT79) (Male meiotic metaphase chromosome-associated acidic protein) (Meichroacidin) (Testis-specific gene A2 protein)	309	symbol:RSPH1
+H_motile_axoneme	RSPH3	Hsap	9606	Q86UC2	RSPH3_HUMAN	RSPH3	Radial spoke head protein 3 homolog (A-kinase anchor protein RSPH3) (Radial spoke head-like protein 2)	560	symbol:RSPH3
+H_motile_axoneme	RSPH4A	Hsap	9606	Q5TD94	RSH4A_HUMAN	RSPH4A	Radial spoke head protein 4 homolog A (Radial spoke head-like protein 3)	716	symbol:RSPH4A
+H_motile_axoneme	RSPH9	Hsap	9606	Q9H1X1	RSPH9_HUMAN	RSPH9	Radial spoke head protein 9 homolog	276	symbol:RSPH9
+H_motile_axoneme	CCDC39	Hsap	9606	Q9UFE4	CCD39_HUMAN	CCDC39	Coiled-coil domain-containing protein 39	941	symbol:CCDC39
+H_motile_axoneme	CCDC40	Hsap	9606	Q4G0X9	CCD40_HUMAN	CCDC40	Coiled-coil domain-containing protein 40	1142	symbol:CCDC40
+H_motile_axoneme	CFAP43	Hsap	9606	Q8NDM7	CFA43_HUMAN	CFAP43	Cilia- and flagella-associated protein 43 (WD repeat-containing protein 96)	1665	symbol:CFAP43
+H_motile_axoneme	CFAP44	Hsap	9606	Q96MT7	CFA44_HUMAN	CFAP44	Cilia- and flagella-associated protein 44 (WD repeat-containing protein 52)	1854	symbol:CFAP44
+H_motile_axoneme	HYDIN	Hsap	9606	Q4G0P3	HYDIN_HUMAN	HYDIN	Axonemal central pair apparatus protein HYDIN (Hydrocephalus-inducing protein homolog)	5121	symbol:HYDIN
+H_motile_axoneme	SPAG6	Hsap	9606	O75602	SPAG6_HUMAN	SPAG6	Sperm-associated antigen 6 (Protein PF16 homolog) (Repro-SA-1) (Sperm flagellar protein)	509	symbol:SPAG6
+H_motile_axoneme	SPAG16	Hsap	9606	Q8N0X2	SPG16_HUMAN	SPAG16	Sperm-associated antigen 16 protein (Pf20 protein homolog)	631	symbol:SPAG16
+H_motile_axoneme	CFAP221	Hsap	9606	Q4G0U5	PCDP1_HUMAN	CFAP221	Cilia- and flagella-associated protein 221 (Primary ciliary dyskinesia protein 1)	840	symbol:CFAP221
+H_motile_axoneme	CFAP54	Hsap	9606	Q96N23	CFA54_HUMAN	CFAP54	Cilia- and flagella-associated protein 54	3096	symbol:CFAP54
+H_motile_axoneme	DRC1	Hsap	9606	Q96MC2	DRC1_HUMAN	DRC1	Dynein regulatory complex protein 1 (Coiled-coil domain-containing protein 164)	740	symbol:DRC1
+H_motile_axoneme	CCDC65	Hsap	9606	Q8IXS2	DRC2_HUMAN	DRC2	Dynein regulatory complex subunit 2 (Coiled-coil domain-containing protein 65) (Testis development protein NYD-SP28)	484	symbol:CCDC65
+H_motile_axoneme	GAS8	Hsap	9606	O95995	DRC4_HUMAN	DRC4	Dynein regulatory complex subunit 4 (Growth arrest-specific protein 11) (GAS-11) (Growth arrest-specific protein 8) (GAS-8)	478	symbol:GAS8
+H_motile_axoneme	TEKT1	Hsap	9606	Q969V4	TEKT1_HUMAN	TEKT1	Tektin-1	418	symbol:TEKT1
+H_motile_axoneme	TEKT2	Hsap	9606	Q9UIF3	TEKT2_HUMAN	TEKT2	Tektin-2 (Tektin-t) (Testicular tektin) (Testicular tektin B1-like protein) (TEKTB1) (Tektin-B1)	430	symbol:TEKT2
+H_motile_axoneme	MNS1	Hsap	9606	Q8NEH6	MNS1_HUMAN	MNS1	Meiosis-specific nuclear structural protein 1	495	symbol:MNS1
+H_motile_axoneme	CFAP20	Hsap	9606	Q9Y6A4	CFA20_HUMAN	CFAP20	Cilia- and flagella-associated protein 20 (Basal body up-regulated protein 22) (Transcription factor IIB)	193	symbol:CFAP20
+H_motile_axoneme	CFAP53	Hsap	9606	Q96M91	CFA53_HUMAN	CFAP53	Cilia- and flagella-associated protein 53 (Coiled-coil domain-containing protein 11)	514	symbol:CFAP53
+H_motile_axoneme	ENKUR	Hsap	9606	Q8TC29	ENKUR_HUMAN	ENKUR	Enkurin	256	symbol:ENKUR
+H_motile_axoneme	DNAAF1	Hsap	9606	Q8NEP3	DAAF1_HUMAN	DNAAF1	Dynein axonemal assembly factor 1 (Leucine-rich repeat-containing protein 50)	725	symbol:DNAAF1
+H_motile_axoneme	DNAAF2	Hsap	9606	Q9NVR5	KTU_HUMAN	DNAAF2	Protein kintoun (Dynein assembly factor 2, axonemal)	837	symbol:DNAAF2
+H_motile_axoneme	DNAAF3	Hsap	9606	Q8N9W5	DAAF3_HUMAN	DNAAF3	Dynein axonemal assembly factor 3	541	symbol:DNAAF3
+H_motile_axoneme	DNAAF4	Hsap	9606	Q8WXU2	DAAF4_HUMAN	DNAAF4	Dynein axonemal assembly factor 4 (Dyslexia susceptibility 1 candidate gene 1 protein)	420	symbol:DNAAF4
+H_motile_axoneme	DNAAF5	Hsap	9606	Q86Y56	DAAF5_HUMAN	DNAAF5	Dynein axonemal assembly factor 5 (HEAT repeat-containing protein 2)	855	symbol:DNAAF5
+H_motile_axoneme	DNAAF6	Hsap	9606	Q9NQM4	DAAF6_HUMAN	DNAAF6	Dynein axonemal assembly factor 6 (PIH1 domain-containing protein 3) (Sarcoma antigen NY-SAR-97)	214	symbol:DNAAF6
+H_motile_axoneme	ZMYND10	Hsap	9606	O75800	ZMY10_HUMAN	ZMYND10	Zinc finger MYND domain-containing protein 10 (Protein BLu)	440	symbol:ZMYND10
+H_motile_axoneme	LRRC6	Hsap	9606	Q86X45	DAA11_HUMAN	DNAAF11	Dynein axonemal assembly factor 11 (DNAAF11) (Leucine-rich repeat-containing protein 6) (Leucine-rich testis-specific protein) (Protein tilB homolog) (Testis-specific leucine-rich repeat protein)	466	symbol:LRRC6
+H_motile_axoneme	SPAG1	Hsap	9606	Q07617	SPAG1_HUMAN	SPAG1	Sperm-associated antigen 1 (HSD-3.8) (Infertility-related sperm protein Spag-1)	926	symbol:SPAG1
+H_motile_axoneme	CFAP298	Hsap	9606	P57076	CF298_HUMAN	CFAP298	Cilia- and flagella-associated protein 298 (Protein kurly homolog)	290	symbol:CFAP298
+H_motile_axoneme	CFAP300	Hsap	9606	Q9BRQ4	CF300_HUMAN	CFAP300	Cilia- and flagella-associated protein 300	267	symbol:CFAP300
+I_multiciliogenesis	MCIDAS	Hsap	9606	D6RGH6	MCIN_HUMAN	MCIDAS	Multicilin (Multiciliate differentiation and DNA synthesis-associated cell cycle protein) (McIdas protein) (Protein Idas)	385	symbol:MCIDAS
+I_multiciliogenesis	GMNC	Hsap	9606	A6NCL1	GEMC1_HUMAN	GMNC	Geminin coiled-coil domain-containing protein 1	334	symbol:GMNC
+I_multiciliogenesis	GMNN	Hsap	9606	O75496	GEMI_HUMAN	GMNN	Geminin	209	symbol:GMNN
+I_multiciliogenesis	E2F4	Hsap	9606	Q16254	E2F4_HUMAN	E2F4	Transcription factor E2F4 (E2F-4)	413	symbol:E2F4
+I_multiciliogenesis	E2F5	Hsap	9606	Q15329	E2F5_HUMAN	E2F5	Transcription factor E2F5 (E2F-5)	346	symbol:E2F5
+I_multiciliogenesis	CCNO	Hsap	9606	P22674	CCNO_HUMAN	CCNO	Cyclin-O	350	symbol:CCNO
+I_multiciliogenesis	CDC20B	Hsap	9606	Q86Y33	CD20B_HUMAN	CDC20B	Cell division cycle protein 20 homolog B	519	symbol:CDC20B
+I_multiciliogenesis	DEUP1	Hsap	9606	Q05D60	DEUP1_HUMAN	DEUP1	Deuterosome assembly protein 1 (Coiled-coil domain-containing protein 67)	604	symbol:DEUP1
+I_multiciliogenesis	CCDC78	Hsap	9606	A2IDD5	CCD78_HUMAN	CCDC78	Coiled-coil domain-containing protein 78 (hsCCDC78)	438	symbol:CCDC78
+I_multiciliogenesis	FOXJ1	Hsap	9606	Q92949	FOXJ1_HUMAN	FOXJ1	Forkhead box protein J1 (Forkhead-related protein FKHL13) (Hepatocyte nuclear factor 3 forkhead homolog 4) (HFH-4)	421	symbol:FOXJ1
+I_multiciliogenesis	RFX2	Hsap	9606	P48378	RFX2_HUMAN	RFX2	DNA-binding protein RFX2 (Regulatory factor X 2)	723	symbol:RFX2
+I_multiciliogenesis	RFX3	Hsap	9606	P48380	RFX3_HUMAN	RFX3	Transcription factor RFX3 (Regulatory factor X 3)	749	symbol:RFX3
+I_multiciliogenesis	MYB	Hsap	9606	P10242	MYB_HUMAN	MYB	Transcriptional activator Myb (Proto-oncogene c-Myb)	640	symbol:MYB
+I_multiciliogenesis	TP73	Hsap	9606	O15350	P73_HUMAN	TP73	Tumor protein p73 (p53-like transcription factor) (p53-related protein)	636	symbol:TP73
+J_ciliary_signaling	SHH	Hsap	9606	Q15465	SHH_HUMAN	SHH	Sonic hedgehog protein (SHH) (EC 3.1.-.-) (HHG-1) (Shh unprocessed N-terminal signaling and C-terminal autoprocessing domains) (ShhNC) [Cleaved into: Sonic hedgehog protein N-product (ShhN) (Shh N-terminal processed signaling domains) (ShhNp)]	462	symbol:SHH
+J_ciliary_signaling	IHH	Hsap	9606	Q14623	IHH_HUMAN	IHH	Indian hedgehog protein (IHH) (EC 3.1.-.-) (HHG-2) [Cleaved into: Indian hedgehog protein N-product]	411	symbol:IHH
+J_ciliary_signaling	DHH	Hsap	9606	O43323	DHH_HUMAN	DHH	Desert hedgehog protein (DHH) (EC 3.1.-.-) (HHG-3) [Cleaved into: Desert hedgehog protein N-product (DHH-N)]	396	symbol:DHH
+J_ciliary_signaling	PTCH1	Hsap	9606	Q13635	PTC1_HUMAN	PTCH1	Protein patched homolog 1 (PTC) (PTC1)	1447	symbol:PTCH1
+J_ciliary_signaling	PTCH2	Hsap	9606	Q9Y6C5	PTC2_HUMAN	PTCH2	Protein patched homolog 2 (PTC2)	1203	symbol:PTCH2
+J_ciliary_signaling	SMO	Hsap	9606	Q99835	SMO_HUMAN	SMO	Protein smoothened (Protein Gx)	787	symbol:SMO
+J_ciliary_signaling	GLI1	Hsap	9606	P08151	GLI1_HUMAN	GLI1	Transcription activator GLI1 (Glioma-associated oncogene) (Oncogene GLI)	1106	symbol:GLI1
+J_ciliary_signaling	GLI2	Hsap	9606	P10070	GLI2_HUMAN	GLI2	Transcription activator GLI2 (GLI family zinc finger protein 2) (Tax helper protein) [Cleaved into: Transcription repressor GLI2R]	1586	symbol:GLI2
+J_ciliary_signaling	GLI3	Hsap	9606	P10071	GLI3_HUMAN	GLI3	Transcription activator GLI3 (GLI3 form of 190 kDa) (GLI3-190) (GLI3 full-length protein) (GLI3FL) [Cleaved into: Transcription repressor GLI3R (GLI3 C-terminally truncated form) (GLI3 form of 83 kDa) (GLI3-83)]	1580	symbol:GLI3
+J_ciliary_signaling	KIF7	Hsap	9606	Q2M1P5	KIF7_HUMAN	KIF7	Kinesin-like protein KIF7	1343	symbol:KIF7
+J_ciliary_signaling	SUFU	Hsap	9606	Q9UMX1	SUFU_HUMAN	SUFU	Suppressor of fused homolog (SUFUH)	484	symbol:SUFU
+J_ciliary_signaling	GPR161	Hsap	9606	Q8N6U8	GP161_HUMAN	GPR161	G protein-coupled receptor 161 (G protein-coupled receptor RE2)	529	symbol:GPR161
+J_ciliary_signaling	INPP5E	Hsap	9606	Q9NRR6	INP5E_HUMAN	INPP5E	Phosphatidylinositol polyphosphate 5-phosphatase type IV (72 kDa inositol polyphosphate 5-phosphatase) (Inositol polyphosphate-5-phosphatase E) (Phosphatidylinositol 4,5-bisphosphate 5-phosphatase) (EC 3.1.3.36) (Phosphatidylinositol-3,4,5-trisphosphate 5-phosphatase) (EC 3.1.3.86)	644	symbol:INPP5E
+J_ciliary_signaling	ARL13B	Hsap	9606	Q3SXY8	AR13B_HUMAN	ARL13B	ADP-ribosylation factor-like protein 13B (ADP-ribosylation factor-like protein 2-like 1) (ARL2-like protein 1)	428	symbol:ARL13B
+J_ciliary_signaling	PKD1	Hsap	9606	P98161	PKD1_HUMAN	PKD1	Polycystin-1 (PC1) (Autosomal dominant polycystic kidney disease 1 protein)	4303	symbol:PKD1
+J_ciliary_signaling	PKD2	Hsap	9606	Q13563	PKD2_HUMAN	PKD2	Polycystin-2 (PC2) (Autosomal dominant polycystic kidney disease type II protein) (Polycystic kidney disease 2 protein) (Polycystwin) (R48321) (Transient receptor potential cation channel subfamily P member 2)	968	symbol:PKD2
+J_ciliary_signaling	PKD1L1	Hsap	9606	Q8TDX9	PK1L1_HUMAN	PKD1L1	Polycystin-1-like protein 1 (Polycystin-1L1) (PC1-like 1 protein) (Polycystic kidney disease protein 1-like 1)	2849	symbol:PKD1L1
+J_ciliary_signaling	PKD2L1	Hsap	9606	Q9P0L9	PK2L1_HUMAN	PKD2L1	Polycystin-2-like protein 1 (Polycystin-2L1) (Polycystic kidney disease 2-like 1 protein) (Polycystin-2 homolog) (Polycystin-L) (Polycystin-L1)	805	symbol:PKD2L1
+J_ciliary_signaling	EVC	Hsap	9606	P57679	EVC_HUMAN	EVC	EvC complex member EVC (DWF-1) (Ellis-van Creveld syndrome protein)	992	symbol:EVC
+J_ciliary_signaling	EVC2	Hsap	9606	Q86UK5	LBN_HUMAN	EVC2	Limbin (Ellis-van Creveld syndrome protein 2) (EVC2)	1308	symbol:EVC2
+J_ciliary_signaling	ADCY3	Hsap	9606	O60266	ADCY3_HUMAN	ADCY3	Adenylate cyclase type 3 (EC 4.6.1.1) (ATP pyrophosphate-lyase 3) (Adenylate cyclase type III) (AC-III) (Adenylate cyclase, olfactive type) (Adenylyl cyclase 3) (AC3)	1144	symbol:ADCY3
+K_linkers_satellites_IDPs	CEP250	Hsap	9606	Q9BV73	CP250_HUMAN	CEP250	Centrosome-associated protein CEP250 (250 kDa centrosomal protein) (Cep250) (Centrosomal Nek2-associated protein 1) (C-Nap1) (Centrosomal protein 2)	2442	symbol:CEP250
+K_linkers_satellites_IDPs	CROCC	Hsap	9606	Q5TZA2	CROCC_HUMAN	CROCC	Rootletin (Ciliary rootlet coiled-coil protein)	2017	symbol:CROCC
+K_linkers_satellites_IDPs	CEP68	Hsap	9606	Q76N32	CEP68_HUMAN	CEP68	Centrosomal protein of 68 kDa (Cep68)	757	symbol:CEP68
+K_linkers_satellites_IDPs	PCM1	Hsap	9606	Q15154	PCM1_HUMAN	PCM1	Pericentriolar material 1 protein (PCM-1) (hPCM-1)	2024	symbol:PCM1
+K_linkers_satellites_IDPs	CEP131	Hsap	9606	Q9UPN4	CP131_HUMAN	CEP131	Centrosomal protein of 131 kDa (5-azacytidine-induced protein 1) (Pre-acrosome localization protein 1)	1083	symbol:CEP131
+K_linkers_satellites_IDPs	SSX2IP	Hsap	9606	Q9Y2D8	ADIP_HUMAN	SSX2IP	Afadin- and alpha-actinin-binding protein (ADIP) (Afadin DIL domain-interacting protein) (SSX2-interacting protein)	614	symbol:SSX2IP
+K_linkers_satellites_IDPs	CSPP1	Hsap	9606	Q1MSJ5	CSPP1_HUMAN	CSPP1	Centrosome and spindle pole-associated protein 1	1256	symbol:CSPP1
+K_linkers_satellites_IDPs	ALMS1	Hsap	9606	Q8TCU4	ALMS1_HUMAN	ALMS1	Centrosome-associated protein ALMS1 (Alstrom syndrome protein 1)	4168	symbol:ALMS1
+L_tubulin_PTM	TTLL1	Hsap	9606	O95922	TTLL1_HUMAN	TTLL1	Polyglutamylase complex subunit TTLL1 (EC 6.3.2.-) (Tubulin polyglutamylase TTLL1) (Tubulin polyglutamylase complex subunit 3) (PGs3) (Tubulin--tyrosine ligase-like protein 1)	423	symbol:TTLL1
+L_tubulin_PTM	TTLL3	Hsap	9606	Q9Y4R7	TTLL3_HUMAN	TTLL3	Tubulin monoglycylase TTLL3 (EC 6.3.2.-) (HOTTL) (Tubulin--tyrosine ligase-like protein 3)	772	symbol:TTLL3
+L_tubulin_PTM	TTLL4	Hsap	9606	Q14679	TTLL4_HUMAN	TTLL4	Tubulin monoglutamylase TTLL4 (EC 6.3.2.-) (Protein monoglutamylase TTLL4) (Tubulin--tyrosine ligase-like protein 4)	1199	symbol:TTLL4
+L_tubulin_PTM	TTLL5	Hsap	9606	Q6EMB2	TTLL5_HUMAN	TTLL5	Tubulin polyglutamylase TTLL5 (EC 6.3.2.-) (SRC1 and TIF2-associated modulatory protein) (STAMP protein) (Tubulin--tyrosine ligase-like protein 5)	1281	symbol:TTLL5
+L_tubulin_PTM	TTLL6	Hsap	9606	Q8N841	TTLL6_HUMAN	TTLL6	Tubulin polyglutamylase TTLL6 (EC 6.3.2.-) (Protein polyglutamylase TTLL6) (Tubulin--tyrosine ligase-like protein 6)	891	symbol:TTLL6
+L_tubulin_PTM	TTLL7	Hsap	9606	Q6ZT98	TTLL7_HUMAN	TTLL7	Tubulin polyglutamylase TTLL7 (EC 6.3.2.-) (Testis development protein NYD-SP30) (Tubulin--tyrosine ligase-like protein 7)	887	symbol:TTLL7
+L_tubulin_PTM	TTLL8	Hsap	9606	A6PVC2	TTLL8_HUMAN	TTLL8	Protein monoglycylase TTLL8 (EC 6.3.2.-) (Tubulin--tyrosine ligase-like protein 8)	850	symbol:TTLL8
+L_tubulin_PTM	TTLL9	Hsap	9606	Q3SXZ7	TTLL9_HUMAN	TTLL9	Probable tubulin polyglutamylase TTLL9 (EC 6.3.2.-) (Tubulin--tyrosine ligase-like protein 9)	439	symbol:TTLL9
+L_tubulin_PTM	TTLL10	Hsap	9606	Q6ZVT0	TTL10_HUMAN	TTLL10	Inactive polyglycylase TTLL10 (Tubulin--tyrosine ligase-like protein 10)	673	symbol:TTLL10
+L_tubulin_PTM	TTLL11	Hsap	9606	Q8NHH1	TTL11_HUMAN	TTLL11	Tubulin polyglutamylase TTLL11 (EC 6.3.2.-) (Tubulin--tyrosine ligase-like protein 11)	710	symbol:TTLL11
+L_tubulin_PTM	TTLL13	Hsap	9606	A6NNM8	TTL13_HUMAN	TTLL13	Tubulin polyglutamylase TTLL13 (EC 6.3.2.-) (Tubulin tyrosine ligase like 13) (Tubulin tyrosine ligase-like family member 13 pseudogene) (Tubulin--tyrosine ligase-like protein 13)	815	symbol:TTLL13
+L_tubulin_PTM	AGTPBP1	Hsap	9606	Q9UPW5	CBPC1_HUMAN	AGTPBP1	Cytosolic carboxypeptidase 1 (EC 3.4.17.-) (EC 3.4.17.24) (ATP/GTP-binding protein 1) (Nervous system nuclear protein induced by axotomy protein 1 homolog) (Protein deglutamylase CCP1)	1226	symbol:AGTPBP1
+L_tubulin_PTM	AGBL2	Hsap	9606	Q5U5Z8	CBPC2_HUMAN	AGBL2	Cytosolic carboxypeptidase 2 (EC 3.4.17.-) (ATP/GTP-binding protein-like 2) (Protein deglutamylase CCP2)	902	symbol:AGBL2
+L_tubulin_PTM	AGBL3	Hsap	9606	Q8NEM8	CBPC3_HUMAN	AGBL3	Cytosolic carboxypeptidase 3 (EC 3.4.17.-) (ATP/GTP-binding protein-like 3) (Protein deglutamylase CCP3)	1001	symbol:AGBL3
+L_tubulin_PTM	AGBL1	Hsap	9606	Q96MI9	CBPC4_HUMAN	AGBL1	Cytosolic carboxypeptidase 4 (EC 3.4.17.-) (EC 3.4.17.24) (ATP/GTP-binding protein-like 1) (Protein deglutamylase CCP4)	1112	symbol:AGBL1
+L_tubulin_PTM	AGBL5	Hsap	9606	Q8NDL9	CBPC5_HUMAN	AGBL5	Cytosolic carboxypeptidase-like protein 5 (EC 3.4.17.-) (EC 3.4.17.24) (ATP/GTP-binding protein-like 5) (Protein deglutamylase CCP5)	886	symbol:AGBL5
+L_tubulin_PTM	AGBL4	Hsap	9606	Q5VU57	CBPC6_HUMAN	AGBL4	Cytosolic carboxypeptidase 6 (EC 3.4.17.24) (ATP/GTP-binding protein-like 4) (Protein deglutamylase CCP6)	503	symbol:AGBL4
+L_tubulin_PTM	VASH1	Hsap	9606	Q7L8A9	VASH1_HUMAN	VASH1	Tubulinyl-Tyr carboxypeptidase 1 (EC 3.4.17.17) (Tubulin carboxypeptidase 1) (Tyrosine carboxypeptidase 1) (TTCP 1) (Vasohibin-1)	365	symbol:VASH1
+L_tubulin_PTM	VASH2	Hsap	9606	Q86V25	VASH2_HUMAN	VASH2	Tubulinyl-Tyr carboxypeptidase 2 (EC 3.4.17.17) (Vasohibin-2) (Vasohibin-like protein)	355	symbol:VASH2
+L_tubulin_PTM	SVBP	Hsap	9606	Q8N300	SVBP_HUMAN	SVBP	Small vasohibin-binding protein (Coiled coil domain-containing protein 23)	66	symbol:SVBP
+L_tubulin_PTM	TTL	Hsap	9606	Q8NG68	TTL_HUMAN	TTL	Tubulin--tyrosine ligase (TTL) (EC 6.3.2.25)	377	symbol:TTL
+L_tubulin_PTM	ATAT1	Hsap	9606	Q5SQI0	ATAT_HUMAN	ATAT1	Alpha-tubulin N-acetyltransferase 1 (Alpha-TAT) (Alpha-TAT1) (TAT) (EC 2.3.1.108) (Acetyltransferase mec-17 homolog)	421	symbol:ATAT1
+L_tubulin_PTM	HDAC6	Hsap	9606	Q9UBN7	HDAC6_HUMAN	HDAC6	Protein deacetylase HDAC6 (EC 3.5.1.-) (E3 ubiquitin-protein ligase HDAC6) (EC 2.3.2.-) (Tubulin-lysine deacetylase HDAC6) (EC 3.5.1.-)	1215	symbol:HDAC6
+M_controls	ACTB	Hsap	9606	P60709	ACTB_HUMAN	ACTB	Actin, cytoplasmic 1 (EC 3.6.4.-) (Beta-actin) [Cleaved into: Actin, cytoplasmic 1, N-terminally processed]	375	symbol:ACTB
+M_controls	EEF1A1	Hsap	9606	P68104	EF1A1_HUMAN	EEF1A1	Elongation factor 1-alpha 1 (EF-1-alpha-1) (EC 3.6.5.-) (Elongation factor Tu) (EF-Tu) (Eukaryotic elongation factor 1 A-1) (eEF1A-1) (Leukocyte receptor cluster member 7)	462	symbol:EEF1A1
+M_controls	RPL3	Hsap	9606	P39023	RL3_HUMAN	RPL3	Large ribosomal subunit protein uL3 (60S ribosomal protein L3) (HIV-1 TAR RNA-binding protein B) (TARBP-B)	403	symbol:RPL3
+M_controls	PSMA1	Hsap	9606	P25786	PSA1_HUMAN	PSMA1	Proteasome subunit alpha type-1 (30 kDa prosomal protein) (PROS-30) (Macropain subunit C2) (Multicatalytic endopeptidase complex subunit C2) (Proteasome component C2) (Proteasome nu chain) (Proteasome subunit alpha-6) (alpha-6)	263	symbol:PSMA1
