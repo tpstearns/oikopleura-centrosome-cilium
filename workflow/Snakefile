@@ -104,6 +104,7 @@ rule anchors:
 rule seeds:
     input:
         anchors="data/genes/anchors.faa",
+        exclude="config/seed_exclude.tsv",
         proteomes=expand("data/proteomes/{key}.faa", key=SEED_SPECIES),
     output:
         expand("data/seeds/{gene}.faa", gene=GENES),
@@ -112,7 +113,7 @@ rule seeds:
     threads: THREADS
     shell:
         "python scripts/seeds_collect.py --anchors {input.anchors} --params {PARAMS} --outdir data/seeds "
-        "--threads {threads} --proteomes {params.prots}"
+        "--exclude {input.exclude} --threads {threads} --proteomes {params.prots}"
 
 
 rule profile:

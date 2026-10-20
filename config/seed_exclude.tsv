@@ -1,0 +1,6 @@
+gene	species	accession	reason
+AKAP9	Dmel	A0A0B4KG35	Strn-Mlck (stretchin-MLCK, 8255 aa): coiled-coil RBH, not an AKAP9 ortholog
+GLI1	Crei	A0A2K3CT35	pherophorin-domain cell-wall glycoprotein (3003 aa); Chlamydomonas has no GLI/Hedgehog pathway
+PTCH2	Crei	A0A2K3E1H5	SSD/RND-transporter family protein (PF00873+PF12349), not a Patched Hedgehog receptor; Chlamydomonas lacks Hedgehog signalling
+RSPH1	Cele	Q22667	junctophilin-1: MORN-repeat match only; C. elegans has no motile cilia or radial spokes
+TCHP	Cele	A0A1C3NSL9	ajm-1 apical junction molecule: coiled-coil RBH, not a trichoplein ortholog

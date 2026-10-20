@@ -12,7 +12,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import load_yaml, log, write_tsv  # noqa: E402
+from common import canonical_name, fasta_name_map, load_yaml, log, write_tsv  # noqa: E402
 
 FIELDS = ["gene", "anchor", "target", "pident", "evalue", "bits", "query_coverage", "target_coverage"]
 
@@ -34,9 +34,11 @@ def main() -> None:
                "-s", str(p["sensitivity"]), "-e", "10", "--format-output",
                "query,target,pident,alnlen,qstart,qend,qlen,tstart,tend,tlen,evalue,bits"]
         subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    anchor_names, prot_names = fasta_name_map(args.anchors), fasta_name_map(args.proteome)
     rows = []
     for line in open(raw):
         q, t, pident, alnlen, qstart, qend, qlen, tstart, tend, tlen, evalue, bits = line.rstrip("\n").split("\t")
+        q, t = canonical_name(q, anchor_names), canonical_name(t, prot_names)
         rows.append({"gene": q.split("|")[0], "anchor": q, "target": t, "pident": pident, "evalue": evalue,
                      "bits": bits, "query_coverage": f"{(int(qend) - int(qstart) + 1) / int(qlen):.3f}",
                      "target_coverage": f"{(int(tend) - int(tstart) + 1) / int(tlen):.3f}"})

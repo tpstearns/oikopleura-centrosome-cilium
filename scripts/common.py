@@ -322,3 +322,39 @@ def zenodo_files(record: int) -> list[dict]:
         die(f"Zenodo record {record}: no files listed")
     return [{"name": f["key"], "url": f["links"]["self"], "size": f.get("size"), "checksum": f.get("checksum")}
             for f in files]
+
+
+# ---------------------------------------------------------------- FASTA name handling
+
+def fasta_name_map(path: str | Path) -> dict[str, str]:
+    """Map every identifier MMseqs2 may report for a sequence back to the first token of its FASTA header.
+
+    MMseqs2 parses UniProt-style headers (sp|ACC|NAME, tr|ACC|NAME) and our anchor headers (GENE|ACC) and
+    reports the accession instead of the full token; pyhmmer and Biopython keep the full token. Every stage
+    that reads MMseqs2 output passes names through this map so hit tables use one naming convention.
+    """
+    m: dict[str, str] = {}
+    with open(path) as fh:
+        for line in fh:
+            if not line.startswith(">"):
+                continue
+            name = line[1:].split()[0]
+            aliases = {name}
+            parts = name.split("|")
+            if len(parts) >= 2:
+                aliases.update(x for x in parts if x)
+            for a in aliases:
+                if a in m and m[a] != name:
+                    # ambiguous short form (two headers share a field): keep only exact full-token mapping
+                    if a != name:
+                        m[a] = m[a] if m[a] == a else "__AMBIGUOUS__"
+                    continue
+                m[a] = name
+    return {k: v for k, v in m.items() if v != "__AMBIGUOUS__"}
+
+
+def canonical_name(name: str, name_map: dict[str, str]) -> str:
+    """Resolve an MMseqs2-reported identifier to the FASTA first token; fail if it is unknown."""
+    if name in name_map:
+        return name_map[name]
+    die(f"sequence id {name!r} from MMseqs2 output is not in the FASTA name map")
