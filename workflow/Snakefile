@@ -33,7 +33,12 @@ PROT_SPECIES = [s["key"] for s in SPECIES if source_of(s, "proteome") in FETCHAB
 GENOME_SPECIES = [s["key"] for s in SPECIES
                   if source_of(s, "genome") in FETCHABLE and s["key"] in panel.get("genome_search_species", [])]
 SEED_SPECIES = [k for k in panel.get("seed_species", []) if k in PROT_SPECIES]
-GENES = [r["gene"] for r in csv.DictReader(open(GENES_TSV), delimiter="\t")]
+GENE_ROWS = list(csv.DictReader(open(GENES_TSV), delimiter="\t"))
+GENES = [r["gene"] for r in GENE_ROWS]
+ANCHOR_SPECIES = sorted({(r.get("anchor") or "Hsap") for r in GENE_ROWS})
+for _sp in ANCHOR_SPECIES:
+    if _sp not in PROT_SPECIES:
+        raise ValueError(f"anchor species {_sp} has no fetchable proteome in the panel")
 USE_PFAM = bool(config.get("pfam", {}).get("enabled", False))
 
 wildcard_constraints:
@@ -104,16 +109,17 @@ rule anchors:
 rule seeds:
     input:
         anchors="data/genes/anchors.faa",
+        anchors_tsv="data/genes/anchors.tsv",
         exclude="config/seed_exclude.tsv",
-        proteomes=expand("data/proteomes/{key}.faa", key=SEED_SPECIES),
+        proteomes=expand("data/proteomes/{key}.faa", key=sorted(set(SEED_SPECIES) | set(ANCHOR_SPECIES))),
     output:
         expand("data/seeds/{gene}.faa", gene=GENES),
     params:
-        prots=lambda wc, input: " ".join(f"{k}={p}" for k, p in zip(SEED_SPECIES, input.proteomes)),
+        prots=lambda wc, input: " ".join(f"{k}={p}" for k, p in zip(sorted(set(SEED_SPECIES) | set(ANCHOR_SPECIES)), input.proteomes)),
     threads: THREADS
     shell:
-        "python scripts/seeds_collect.py --anchors {input.anchors} --params {PARAMS} --outdir data/seeds "
-        "--exclude {input.exclude} --threads {threads} --proteomes {params.prots}"
+        "python scripts/seeds_collect.py --anchors {input.anchors} --anchors-tsv {input.anchors_tsv} --params {PARAMS} "
+        "--outdir data/seeds --exclude {input.exclude} --threads {threads} --proteomes {params.prots}"
 
 
 rule profile:
@@ -146,12 +152,17 @@ rule hmmsearch:
 rule rbh:
     input:
         anchors="data/genes/anchors.faa",
+        anchors_tsv="data/genes/anchors.tsv",
+        anchor_proteomes=expand("data/proteomes/{key}.faa", key=ANCHOR_SPECIES),
         proteome="data/proteomes/{key}.faa",
     output:
         "results/rbh/{key}.tsv",
+    params:
+        aprots=lambda wc, input: " ".join(f"{k}={p}" for k, p in zip(ANCHOR_SPECIES, input.anchor_proteomes)),
     threads: THREADS
     shell:
-        "python scripts/rbh.py --anchors {input.anchors} --proteome {input.proteome} --out {output} "
+        "python scripts/rbh.py --anchors {input.anchors} --anchors-tsv {input.anchors_tsv} "
+        "--anchor-proteomes {params.aprots} --proteome {input.proteome} --out {output} "
         "--params {PARAMS} --threads {threads}"
 
 

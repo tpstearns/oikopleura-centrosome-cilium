@@ -9,6 +9,9 @@ Every cell of the gene × species matrix carries one tier. Thresholds are in `co
 | E3 | Present in genome or transcripts, missing from annotation | No proteome hit; miniprot spliced alignment (identity ≥ 25%, ≥50% query coverage) or transcript hit passing thresholds |
 | E4 | No evidence | Nothing above threshold in proteome, genome, or transcripts |
 
+## Paralog families
+A profile hit counts toward a gene only when that gene's profile is the best-scoring profile for the target protein. Tubulin, cyclin, E2F and kinesin profiles all hit their whole family; without this rule a β-tubulin would register as ε-tubulin wherever the true ε protein is missing from the annotation. Cross-hits are recorded in the notes column. Reciprocal best hits are reciprocal against the full anchor-species proteome, so a paralog outside the gene list (CDC20 for CDC20B) cannot be returned as the listed gene.
+
 ## Why absence is hard here
 - *Oikopleura* proteins are highly divergent, so sequence similarity to human orthologs is often marginal. Per-gene profiles built from diverse seeds (vertebrates, amphioxus, *Ciona*, *Chlamydomonas*, *Tetrahymena*, fly, worm) are used instead of pairwise search alone.
 - Annotations are incomplete and differ among the cryptic-lineage assemblies; the genome-level search (miniprot) is mandatory before any E4 is reported for a core species.

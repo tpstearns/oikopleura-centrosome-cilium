@@ -358,3 +358,61 @@ def canonical_name(name: str, name_map: dict[str, str]) -> str:
     if name in name_map:
         return name_map[name]
     die(f"sequence id {name!r} from MMseqs2 output is not in the FASTA name map")
+
+
+# ---------------------------------------------------------------- reciprocal best hits against a full proteome
+
+def accession_of(name: str) -> str:
+    """UniProt-style 'sp|ACC|NAME' or anchor-style 'GENE|ACC' -> ACC; otherwise the name itself."""
+    parts = name.split("|")
+    return parts[1] if len(parts) >= 2 and parts[1] else name
+
+
+def anchor_table(anchors_faa: str | Path, anchors_tsv: str | Path) -> dict[str, dict]:
+    """gene -> {accession, species} from data/genes/anchors.faa headers (GENE|ACC) and anchors.tsv (anchor species)."""
+    species = {r["gene"]: r["anchor"] for r in read_tsv(anchors_tsv)}
+    out = {}
+    with open(anchors_faa) as fh:
+        for line in fh:
+            if line.startswith(">"):
+                gene, acc = line[1:].split()[0].split("|")[:2]
+                if gene not in species:
+                    die(f"anchor {gene} in {anchors_faa} has no row in {anchors_tsv}")
+                out[gene] = {"accession": acc, "species": species[gene]}
+    return out
+
+
+def rbh_full_proteome(anchor_proteome: str | Path, target_proteome: str | Path, wanted: dict[str, str], threads: int,
+                      sensitivity: float, evalue: float = 10.0) -> list[dict]:
+    """MMseqs2 easy-rbh of the WHOLE anchor-species proteome against the target proteome, kept for the anchors.
+
+    `wanted` maps anchor accession -> gene. A target protein counts as the reciprocal best hit of an anchor only if
+    its best hit among all proteins of the anchor species is that anchor, so paralogs outside the gene list
+    (e.g. CDC20 for CDC20B) cannot be mistaken for the listed gene. Returns rows with gene, anchor, target,
+    pident, alnlen, qstart, qend, qlen, tstart, tend, tlen, evalue, bits (names canonicalised to FASTA tokens).
+    """
+    import subprocess
+    import tempfile
+    anchor_proteome, target_proteome = str(anchor_proteome), str(target_proteome)
+    amap, tmap = fasta_name_map(anchor_proteome), fasta_name_map(target_proteome)
+    present = {accession_of(n) for n in set(amap.values())}
+    missing = [a for a in wanted if a not in present]
+    if missing:
+        die(f"anchor accessions not found in {anchor_proteome}: {missing}")
+    rows = []
+    with tempfile.TemporaryDirectory() as tmp:
+        out = Path(tmp) / "rbh.tsv"
+        cmd = ["mmseqs", "easy-rbh", anchor_proteome, target_proteome, str(out), tmp, "--threads", str(threads),
+               "-s", str(sensitivity), "-e", str(evalue), "--format-output",
+               "query,target,pident,alnlen,qstart,qend,qlen,tstart,tend,tlen,evalue,bits"]
+        res = subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True)
+        if res.returncode != 0:
+            die(f"mmseqs easy-rbh failed ({anchor_proteome} vs {target_proteome}):\n{res.stderr[-2000:]}")
+        for line in open(out):
+            f = line.rstrip("\n").split("\t")
+            q, t = canonical_name(f[0], amap), canonical_name(f[1], tmap)
+            acc = accession_of(q)
+            if acc in wanted:
+                rows.append(dict(zip(["gene", "anchor", "target", "pident", "alnlen", "qstart", "qend", "qlen", "tstart",
+                                      "tend", "tlen", "evalue", "bits"], [wanted[acc], q, t] + f[2:])))
+    return rows

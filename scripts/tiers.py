@@ -42,11 +42,26 @@ def main() -> None:
     ph, pr, pp, pm, pt, pf = (P["hmmsearch"], P["rbh"], P["pfam"], P["miniprot"], P["transcripts"], P["foldseek"])
     require_pfam = bool(P.get("tiers", {}).get("require_pfam_for_e1", False))
 
+    # A target protein is credited only to the profile that scores it best ("owner"); hits from other profiles
+    # are cross-hits within a family (tubulins, cyclins, E2Fs) and do not count as presence of that gene.
+    hits = read_tsv(args.hmmsearch)
+    owner: dict[str, str] = {}
+    owner_bits: dict[str, float] = {}
+    for r in hits:
+        if r["target"] not in owner_bits or fnum(r["bits"], 0) > owner_bits[r["target"]]:
+            owner[r["target"]], owner_bits[r["target"]] = r["gene"], fnum(r["bits"], 0)
     hmm_best: dict[str, dict] = {}
-    for r in read_tsv(args.hmmsearch):
+    cross_best: dict[str, dict] = {}
+    for r in hits:
         ok = (fnum(r["evalue"], 1e9) <= ph["evalue_max"] and fnum(r["best_domain_ievalue"], 1e9) <= ph["domain_evalue_max"]
               and fnum(r["profile_coverage"], 0) >= ph["min_profile_coverage"])
-        if ok and (r["gene"] not in hmm_best or fnum(r["bits"], 0) > fnum(hmm_best[r["gene"]]["bits"], 0)):
+        if not ok:
+            continue
+        if owner[r["target"]] != r["gene"]:
+            if r["gene"] not in cross_best or fnum(r["bits"], 0) > fnum(cross_best[r["gene"]]["bits"], 0):
+                cross_best[r["gene"]] = r
+            continue
+        if r["gene"] not in hmm_best or fnum(r["bits"], 0) > fnum(hmm_best[r["gene"]]["bits"], 0):
             hmm_best[r["gene"]] = r
 
     rbh_best: dict[str, dict] = {}
@@ -90,6 +105,11 @@ def main() -> None:
         notes = []
         if h and rb and h["target"] != rb["target"]:
             notes.append(f"hmm best target {h['target']} differs from RBH target {rb['target']}")
+        if not h and gene in cross_best:
+            x = cross_best[gene]
+            notes.append(f"profile cross-hit only: {x['target']} is best explained by {owner[x['target']]}")
+        if rb and owner.get(rb["target"], gene) != gene:
+            notes.append(f"RBH target {rb['target']} is best explained by profile {owner[rb['target']]}")
         if shared is None and require_pfam:
             notes.append("no Pfam comparison available")
         if h and rb and pfam_ok:
