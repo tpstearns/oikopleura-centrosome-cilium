@@ -2,6 +2,8 @@
 
 Newest first. One line per decision with the reason; longer rationale in the relevant doc.
 
+- 2026-10-20 — Proteomes for Osaka, Barcelona, Kume and Aomori are the longest-isoform Augustus models from the Plessy 2024 Zenodo supplement (`AugustusAnnotation.tar.gz`: OSKA2016v1.9.sm, Bar2_p4_Flye.sm, KUM-M3-7f.sm.OKI-CDS, AOM-5-5f.sm.OSKA-CDS; 14–17k proteins, mean ~460 aa). The same archive holds Augustus runs for the six Naville 2019 larvacean genomes; those are used as uncurated proteomes for Oalb, Olon, Ovan, Bsty, Mery, Fbor (the larger `cionamodel` run where one exists) so hmmsearch can see predicted proteins, while the miniprot genome search stays mandatory for any absence. Their short mean lengths (146–350 aa) reflect genome fragmentation, so E1/E2 recovery in these species will understate presence.
+
 - 2026-10-20 — Seed curation: RBH at E ≤ 1e-5 / 50% anchor coverage admits spurious seeds for coiled-coil and repeat proteins (fly Strn-Mlck for AKAP9, Chlamydomonas pherophorin for GLI1 and an SSD/RND transporter for PTCH2, worm junctophilin for RSPH1 and ajm-1 for TCHP). These are listed with reasons in `config/seed_exclude.tsv`, which the seeds stage honours; all other length outliers checked (DNAAF4, FAM161A, MKS1, RSPH1, INPP5E in Chlamydomonas; HYLS1 zebrafish isoform; SVBP amphioxus/Ciona; TTL Tetrahymena) carry the expected domains and are kept. Seeds per gene and weak profiles (≤3 seeds) are reported in `results/profiles_summary.md`; the human anchor is never duplicated by its own human RBH.
 - 2026-10-20 — MMseqs2 reports UniProt accessions instead of full FASTA tokens; all MMseqs2-reading stages map names back through `common.fasta_name_map` so hit tables share one naming convention with pyhmmer.
 

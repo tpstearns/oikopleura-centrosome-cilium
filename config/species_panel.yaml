@@ -66,9 +66,9 @@ species:
     lineage: "Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923"
     role: core
     genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/OSKA2016v1.9.fa}
-    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/OSKA2016v1.9.sm/FASTA/OSKA2016v1.9.prot.longest.fa}
     note: "no INSDC assembly (PRJDB9887 holds reads only; description says the assembly was deposited at ANISEED, whose download links are not scriptable). Proteome = Plessy 2024 Augustus gene models, not a curated annotation."
-    status: to-verify   # archive members to be set once the tarballs are listed
+    status: verified
     refs: [Plessy2024, Wang2020]
 
   - key: Odio_BCN
@@ -77,9 +77,9 @@ species:
     lineage: "Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286"
     role: core
     genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/Bar2_p4.fa}
-    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Bar2_p4_Flye.sm/FASTA/Bar2_p4.Flye.prot.longest.fa}
     note: "no INSDC assembly; proteome = Plessy 2024 Augustus gene models"
-    status: to-verify
+    status: verified
     refs: [Plessy2024]
 
   - key: Odio_KUM
@@ -88,8 +88,8 @@ species:
     lineage: "Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290"
     role: core
     genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/KUM-M3-7f.fa}
-    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
-    status: to-verify
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/KUM-M3-7f.sm.OKI-CDS/FASTA/KUM-M3-7f.prot.longest.fa}
+    status: verified
     refs: [Plessy2024]
 
   - key: Odio_AOM
@@ -98,8 +98,8 @@ species:
     lineage: "Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288"
     role: core
     genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/AOM-5-5f.fa}
-    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
-    status: to-verify
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/AOM-5-5f.sm.OSKA-CDS/FASTA/AOM-5-5f.prot.longest.fa}
+    status: verified
     refs: [Plessy2024]
 
   - key: Odio_OdB3
@@ -117,14 +117,15 @@ species:
   # ---------------- Other larvaceans: the six Naville et al. 2019 genomes (all verified 2026-10-20) ----------------
   # All six are GenBank assemblies from the University of Bergen (released 2019-03-25, BioProjects linked to
   # PMID 30880010) with NO protein annotation anywhere (NCBI annotation_info null, no GCF_, no lab deposit found;
-  # only unsupervised UCSC GenArk Augustus GTFs exist). They are genome-only species: searched with miniprot, never
-  # with proteome-level tiers. Bathochordaeus, Mesochordaeus and Fritillaria are highly fragmented (N50 1.3-2.8 kb);
+  # only unsupervised Augustus models exist: UCSC GenArk GTFs, and the Plessy 2024 Zenodo supplement's Augustus runs,
+  # which are used here as uncurated proteomes alongside the mandatory miniprot genome search). Bathochordaeus, Mesochordaeus and Fritillaria are highly fragmented (N50 1.3-2.8 kb);
   # O. longicauda is a pool of 47 specimens that may contain two cryptic species. Raw reads were not deposited.
   - key: Oalb
     name: Oikopleura albicans
     taxid: 2500139
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004367875.1}   # ASM436787v1, scaffold N50 214 kb, 366 Mb; PRJNA512633
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Oalb_SCLG01.1.sm.abi.cionamodel/O_alb.prot.longest.fa}   # ab initio Augustus models (cionamodel) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     status: verified
     refs: [Naville2019]
 
@@ -133,6 +134,7 @@ species:
     taxid: 107032
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004367895.1}   # ASM436789v1, contig N50 2.4 kb, 309 Mb; PRJNA512629
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Olon_SCLD01.1.sm.abi/O_lon.prot.longest.fa}   # ab initio Augustus models (abi) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     note: "pool of 47 specimens (LaJolla-2011); may contain two cryptic species"
     status: verified
     refs: [Naville2019]
@@ -142,6 +144,7 @@ species:
     taxid: 2056977
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004367855.1}   # ASM436785v1, scaffold N50 260 kb, 644 Mb; PRJNA512634
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Ovan_SCLH01.1.sm.abi.cionamodel/O_van.prot.longest.fa}   # ab initio Augustus models (cionamodel) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     status: verified
     refs: [Naville2019]
 
@@ -150,6 +153,7 @@ species:
     taxid: 2005485
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004367955.1}   # ASM436795v1, N50 1.3 kb, 396 Mb; PRJNA513251
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Bsty_SCLE01.1.sm.abi.cionamodel/B_sty.prot.longest.fa}   # ab initio Augustus models (cionamodel) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     status: verified
     refs: [Naville2019]
 
@@ -158,6 +162,7 @@ species:
     taxid: 2501294
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004367975.1}   # ASM436797v1, N50 1.9 kb, 874 Mb; PRJNA513252
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Mery_SCLF01.1.sm.abi.cionamodel/M_ery.prot.longest.fa}   # ab initio Augustus models (cionamodel) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     status: verified
     refs: [Naville2019]
 
@@ -166,6 +171,7 @@ species:
     taxid: 2507563
     role: larvacean
     genome: {source: ncbi_datasets, accession: GCA_004368075.1}   # ASM436807v1, N50 2.7 kb, 143 Mb; PRJNA512626
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: run_augustus/Fbor_SDII01.1.sm.abi/F_bor.prot.longest.fa}   # ab initio Augustus models (abi) from the Plessy 2024 Zenodo supplement; uncurated, supplements the genome search
     note: "pool of 110 specimens (Espegrend-2014). PacBio Iso-Seq exists (PRJNA1345077, public 2026-06) as a future transcript source"
     status: verified
     refs: [Naville2019]

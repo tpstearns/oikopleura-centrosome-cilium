@@ -2,17 +2,17 @@ key	species	taxid	role	lineage	proteome_source	proteome_id	n_proteins	uniprot_pr
 Odio_OKI	Oikopleura dioica	34765	core	Okinawa, OKI2018_I69_1.0 (Bliznina et al. 2021), OIST gene models	ncbi_datasets	GCA_907165135.1	18751		ncbi_datasets	GCA_907165135.1	19 / 64,281,565	verified
 Odio_OKI_refseq	Oikopleura dioica	34765	core	Okinawa, OKI2018 — same assembly as Odio_OKI, NCBI RefSeq annotation RS_2026_03 (EGAP)	ncbi_datasets	GCF_907165135.1	17869					verified
 Odio_OKI_hap	Oikopleura dioica	34765	core	Okinawa, haplotype-resolved assembly (PRJEB91365, OIST, 2025)					ena_bioproject	PRJEB91365		to-verify
-Odio_OSA	Oikopleura dioica	34765	core	Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/OSKA2016v1.9.fa	483 / 56,625,162	to-verify
-Odio_BCN	Oikopleura dioica	34765	core	Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/Bar2_p4.fa	68 / 55,793,437	to-verify
-Odio_KUM	Oikopleura dioica	34765	core	Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/KUM-M3-7f.fa	55 / 64,653,574	to-verify
-Odio_AOM	Oikopleura dioica	34765	core	Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/AOM-5-5f.fa	33 / 56,753,784	to-verify
+Odio_OSA	Oikopleura dioica	34765	core	Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923	zenodo_archive	OSKA2016v1.9.prot.longest.fa	15720		zenodo_archive	OSKA2016v1.9.fa	483 / 56,625,162	verified
+Odio_BCN	Oikopleura dioica	34765	core	Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286	zenodo_archive	Bar2_p4.Flye.prot.longest.fa	14272		zenodo_archive	Bar2_p4.fa	68 / 55,793,437	verified
+Odio_KUM	Oikopleura dioica	34765	core	Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290	zenodo_archive	KUM-M3-7f.prot.longest.fa	16852		zenodo_archive	KUM-M3-7f.fa	55 / 64,653,574	verified
+Odio_AOM	Oikopleura dioica	34765	core	Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288	zenodo_archive	AOM-5-5f.prot.longest.fa	15224		zenodo_archive	AOM-5-5f.fa	33 / 56,753,784	verified
 Odio_OdB3	Oikopleura dioica	34765	core	Bergen (Norway), OdB3 reference (Denoeud et al. 2010, Genoscope); Barcelona lineage per Plessy et al. 2024 Table 1	ncbi_datasets	GCA_000209535.1	17152		ncbi_datasets	GCA_000209535.1	1,260 / 70,471,451	verified
-Oalb	Oikopleura albicans	2500139	larvacean						ncbi_datasets	GCA_004367875.1	92,906 / 365,958,051	verified
-Olon	Oikopleura longicauda	107032	larvacean						ncbi_datasets	GCA_004367895.1	178,440 / 308,740,099	verified
-Ovan	Oikopleura vanhoeffeni	2056977	larvacean						ncbi_datasets	GCA_004367855.1	79,827 / 643,662,591	verified
-Bsty	Bathochordaeus stygius	2005485	larvacean						ncbi_datasets	GCA_004367955.1	467,514 / 396,466,979	verified
-Mery	Mesochordaeus erythrocephalus	2501294	larvacean						ncbi_datasets	GCA_004367975.1	745,784 / 874,018,965	verified
-Fbor	Fritillaria borealis	2507563	larvacean						ncbi_datasets	GCA_004368075.1	142,328 / 143,085,447	verified
+Oalb	Oikopleura albicans	2500139	larvacean		zenodo_archive	O_alb.prot.longest.fa	24943		ncbi_datasets	GCA_004367875.1	92,906 / 365,958,051	verified
+Olon	Oikopleura longicauda	107032	larvacean		zenodo_archive	O_lon.prot.longest.fa	27566		ncbi_datasets	GCA_004367895.1	178,440 / 308,740,099	verified
+Ovan	Oikopleura vanhoeffeni	2056977	larvacean		zenodo_archive	O_van.prot.longest.fa	18686		ncbi_datasets	GCA_004367855.1	79,827 / 643,662,591	verified
+Bsty	Bathochordaeus stygius	2005485	larvacean		zenodo_archive	B_sty.prot.longest.fa	25023		ncbi_datasets	GCA_004367955.1	467,514 / 396,466,979	verified
+Mery	Mesochordaeus erythrocephalus	2501294	larvacean		zenodo_archive	M_ery.prot.longest.fa	48793		ncbi_datasets	GCA_004367975.1	745,784 / 874,018,965	verified
+Fbor	Fritillaria borealis	2507563	larvacean		zenodo_archive	F_bor.prot.longest.fa	17861		ncbi_datasets	GCA_004368075.1	142,328 / 143,085,447	verified
 Crob	Ciona intestinalis	7719	ascidian		uniprot_reference	UP000008144	16680	17311	ncbi_datasets	GCF_000224145.3		verified
 Cint	Ciona intestinalis	7719	ascidian		ncbi_datasets	GCF_018327825.1	19614		ncbi_datasets	GCF_018327825.1		verified
 Csav	Ciona savignyi	51511	ascidian		uniprot_reference	UP000007875	11592	20004	ncbi_datasets	GCA_054131345.1		verified
