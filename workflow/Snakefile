@@ -19,7 +19,7 @@ PANEL = "config/species_panel.yaml"
 GENES_TSV = "config/gene_modules.tsv"
 PARAMS = "config/params.yaml"
 THREADS = int(config.get("threads", 8))
-FETCHABLE = {"uniprot_reference", "zenodo", "ncbi_datasets", "url"}
+FETCHABLE = {"uniprot_reference", "zenodo", "zenodo_archive", "ncbi_datasets", "url"}
 
 panel = yaml.safe_load(open(PANEL))
 SPECIES = [s for s in panel["species"] if s["name"] != "TO-RESOLVE"]

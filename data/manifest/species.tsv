@@ -1,10 +1,12 @@
 key	name	ncbi_name	taxid	role	lineage	proteome_source	proteome_taxid	upid	proteome_type	protein_count	genome_source	status
-Odio_OKI	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, OKI2018_I69 (chromosome-scale, single male)	zenodo					zenodo	verified
-Odio_OKI_hap	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, haplotype-resolved assembly (2025)						ena_bioproject	to-verify
-Odio_OSA	Oikopleura dioica	Oikopleura dioica	34765	core	Osaka, OSKA2016	to-resolve					to-resolve	to-verify
-Odio_BER	Oikopleura dioica	Oikopleura dioica	34765	core	Bergen (Norway), Plessy et al. 2024 chromosome-scale assembly	to-resolve					to-resolve	to-verify
-Odio_BCN	Oikopleura dioica	Oikopleura dioica	34765	core	Barcelona, Plessy et al. 2024 chromosome-scale assembly	to-resolve					to-resolve	to-verify
-Odio_OdB3	Oikopleura dioica	Oikopleura dioica	34765	core	Norway, legacy OdB3 reference and annotation (Genoscope; OikoBase)	to-resolve					to-resolve	to-verify
+Odio_OKI	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, OKI2018_I69_1.0 (Bliznina et al. 2021), OIST gene models	ncbi_datasets					ncbi_datasets	verified
+Odio_OKI_refseq	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, OKI2018 — same assembly as Odio_OKI, NCBI RefSeq annotation RS_2026_03 (EGAP)	ncbi_datasets						verified
+Odio_OKI_hap	Oikopleura dioica	Oikopleura dioica	34765	core	Okinawa, haplotype-resolved assembly (PRJEB91365, OIST, 2025)						ena_bioproject	to-verify
+Odio_OSA	Oikopleura dioica	Oikopleura dioica	34765	core	Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923	zenodo_archive					zenodo_archive	to-verify
+Odio_BCN	Oikopleura dioica	Oikopleura dioica	34765	core	Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286	zenodo_archive					zenodo_archive	to-verify
+Odio_KUM	Oikopleura dioica	Oikopleura dioica	34765	core	Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290	zenodo_archive					zenodo_archive	to-verify
+Odio_AOM	Oikopleura dioica	Oikopleura dioica	34765	core	Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288	zenodo_archive					zenodo_archive	to-verify
+Odio_OdB3	Oikopleura dioica	Oikopleura dioica	34765	core	Bergen (Norway), OdB3 reference (Denoeud et al. 2010, Genoscope); Barcelona lineage per Plessy et al. 2024 Table 1	ncbi_datasets					ncbi_datasets	verified
 Oalb	Oikopleura albicans	Oikopleura albicans	2500139	larvacean							ncbi_datasets	verified
 Olon	Oikopleura longicauda	Oikopleura longicauda	107032	larvacean							ncbi_datasets	verified
 Ovan	Oikopleura vanhoeffeni	Oikopleura vanhoeffeni	2056977	larvacean							ncbi_datasets	verified

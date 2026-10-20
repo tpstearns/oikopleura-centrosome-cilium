@@ -40,8 +40,11 @@ Manuscript (GBE / MBE / Current Biology depending on the biology); evidence-tier
 
 Division of labor: TS curates the gene list, adjudicates ambiguous calls, owns interpretation; Claude runs the pipeline, analyses, and drafts.
 
-## Status (2026-10-20)
-- Repo scaffold written: config, scripts for stages 1–8, Snakefile, docs.
-- Data inventory: OKI2018_I69 verified (Zenodo 4023776, ENA PRJEB40135); PRJEB91365 seen (2025 haplotype-resolved, publication unknown); Osaka/Bergen/Barcelona accessions to pull from Plessy 2024 Suppl. Table 1; OdB3 and OikoBase locations to resolve; larvacean set from Naville 2019 to list; ascidian proteomes via ANISEED/NCBI to resolve.
+## Status (2026-10-20, evening)
+- Environment: `oiko-cc` built natively on TS's MacBook (osx-arm64, no fallbacks); `snakemake -n` clean.
+- Panel (`config/species_panel.yaml`, 37 entries): verified and fetched — 20 proteomes (6 tunicates, 6 chordate backbone, 6 non-chordate controls, plus Ciona type B and Thalia) and 6 larvacean genomes (Naville 2019; genome-only, no annotations exist). Still to-verify: Halocynthia, Molgula ×2, Botrylloides (ANISEED downloads not scriptable), Salpa thompsoni (no annotation). *O. dioica* core: Okinawa OKI2018 (OIST + RefSeq annotations, genome), OdB3 = Bergen (GenBank annotation, genome), and the four Plessy 2024 Zenodo genomes (Osaka OSKA2016v1.9, Barcelona Bar2_p4, Kume KUM-M3-7f, Aomori AOM-5-5f; lengths match Table 1 exactly) are fetched; their Augustus proteomes (AugustusAnnotation.tar.gz, 1.7 GB) are downloading. PRJEB91365 is reads only. Summary: `results/panel_summary.md`.
+- Genes: 272/272 symbols resolved to anchors (`results/anchors.tsv`); TUBZ1 anchored on *X. tropicalis* tubz1 by accession.
+- Next: Od proteome/genome fetches; seeds + profiles; proteome searches on Od lineages and *C. robusta* (ZED and multiciliogenesis modules as first checkpoint); genome-only species need a tiers path without proteome evidence (miniprot-only), to add to the Snakefile.
+- GitHub: commits are local; no GitHub credential on this Mac yet (no gh, SSH key, or keychain entry), so pushes wait for TS.
 - Novelty: Hodges 2010 (45 genomes) does not include *Oikopleura*; Dobbelaere 2023 (147 genomes) tunicate inclusion to check (Dataset EV1A); no *Oikopleura*-focused survey found.
-- Open for TS: panel breadth; gene list curation.
+- Open for TS: panel breadth (four more RefSeq-annotated ascidians available); gene list curation.

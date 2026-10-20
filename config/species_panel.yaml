@@ -10,6 +10,7 @@
 #   taxid      NCBI taxon ID (optional; validated when present)
 #   role       core | larvacean | ascidian | thaliacean | backbone | control
 #   proteome   where to get proteins: {source: uniprot_reference} resolves the reference proteome by taxid
+#              ({source: zenodo_archive, record: N, archive: file.tar.gz, member: path/inside.fa} extracts one tar member)
 #              (add proteome_taxid: N when UniProt attaches the reference proteome to a strain-level taxid);
 #              {source: ncbi_datasets, accession: GCA_/GCF_} uses NCBI Datasets (genome+protein+gff3);
 #              {source: zenodo, record: N, files: [glob...]}; {source: url, url: ...}
@@ -20,62 +21,98 @@
 
 species:
 
-  # ---------------- Core: Oikopleura dioica cryptic lineages ----------------
+  # ---------------- Core: Oikopleura dioica cryptic lineages (all checked live 2026-10-20) ----------------
+  # Assemblies named in Plessy et al. 2024 Table 1 (PMC11067885): OKI2018_I69_1.0 (Okinawa), KUM-M3-7f (Kume,
+  # Okinawa lineage), OSKA2016v1.9 (Osaka), AOM-5-5f (Aomori, Osaka lineage), Bar2_p4 (Barcelona), OdB3 (Bergen,
+  # Barcelona lineage). Only OKI2018 and OdB3 are in INSDC; the other four exist as FASTAs in the Plessy 2024 Zenodo
+  # supplement (concept 10.5281/zenodo.6601988, v2.1.0 = record 12913342: Oidioi_genomes.tar.gz, plus
+  # AugustusAnnotation.tar.gz with their gene models). Raw reads: PRJEB55052 (ONT/Hi-C), PRJDB9887 (OSKA2016).
   - key: Odio_OKI
     name: Oikopleura dioica
-    lineage: Okinawa, OKI2018_I69 (chromosome-scale, single male)
+    taxid: 34765
+    lineage: "Okinawa, OKI2018_I69_1.0 (Bliznina et al. 2021), OIST gene models"
     role: core
-    proteome: {source: zenodo, record: 4023776, files: ["*protein*", "*.faa*", "*pep*"]}
-    genome:   {source: zenodo, record: 4023776, files: ["*.fa*", "*.fna*"]}
-    annotation: {source: zenodo, record: 4023776, files: ["*.gff*", "*.gtf*"]}
+    proteome: {source: ncbi_datasets, accession: GCA_907165135.1}   # submitter (OIST) annotation, 17,220 protein-coding genes
+    genome:   {source: ncbi_datasets, accession: GCA_907165135.1}   # INSDC assembly name OKI2018_I68_1.0; BioSample SAMEA7282646 is individual I69
+    annotation: {source: zenodo, record: 4604144, files: ["OKI2018_I69_1.0.gm.gff"]}   # v1.1 cited by the paper; FASTA md5 ef2180eb...
     ena_bioproject: PRJEB40135
-    status: verified   # Zenodo record and BMC Genomics paper checked 2026-10-20; file names inside the record still to be confirmed at fetch time
+    note: "INSDC calls this assembly OKI2018_I68_1.0; BioSample, the paper and Plessy 2024 call it I69 (same individual, same submission); the FASTA fetched from NCBI Datasets is 64,281,565 bp in 19 sequences, exactly the length in Plessy 2024 Table 1 (the 64,272,340 shown in NCBI's assembly stats excludes the non-nuclear unit). Zenodo 4023776 now redirects to record 23472675 (2026-10-19: FASTA, GFF, Trinity.fasta.gz transcripts); no protein FASTA on Zenodo."
+    status: verified
+    refs: [Bliznina2021, Plessy2024]
+
+  - key: Odio_OKI_refseq
+    name: Oikopleura dioica
+    taxid: 34765
+    lineage: "Okinawa, OKI2018 — same assembly as Odio_OKI, NCBI RefSeq annotation RS_2026_03 (EGAP)"
+    role: core
+    proteome: {source: ncbi_datasets, accession: GCF_907165135.1}   # 15,457 protein-coding genes; independent annotation of the same genome
+    note: "annotation-independence control for the Okinawa genome: a gene missing from the OIST models but present here is an annotation artefact, not a loss"
+    status: verified
     refs: [Bliznina2021]
 
   - key: Odio_OKI_hap
     name: Oikopleura dioica
-    lineage: Okinawa, haplotype-resolved assembly (2025)
+    taxid: 34765
+    lineage: "Okinawa, haplotype-resolved assembly (PRJEB91365, OIST, 2025)"
     role: core
     genome: {source: ena_bioproject, bioproject: PRJEB91365}
-    status: to-verify   # listing seen on OmicsDI 2026-10-20; publication and annotation availability unknown
+    note: "ENA holds only one ONT run (ERR15172616, 9.25 Gb; sample SAMEA118628451, taxid 3071372 'Oikopleura sp. OKI2018'); no assembly/ERZ record. Preprint: Dierckxsens et al. 2025 bioRxiv 10.1101/2025.08.08.669243 (NOVOLoci) says assemblies are on github.com/ndierckx/NOVOLoci, not located there. Not fetchable until an assembly is released."
+    status: to-verify
     refs: []
 
   - key: Odio_OSA
     name: Oikopleura dioica
-    lineage: Osaka, OSKA2016
+    taxid: 34765
+    lineage: "Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923"
     role: core
-    genome: {source: to-resolve, note: "Osaka genome database / Plessy et al. 2024 Suppl. Table 1"}
-    proteome: {source: to-resolve}
-    status: to-verify
-    refs: [Plessy2024]
-
-  - key: Odio_BER
-    name: Oikopleura dioica
-    lineage: Bergen (Norway), Plessy et al. 2024 chromosome-scale assembly
-    role: core
-    genome: {source: to-resolve, note: "accession from Plessy et al. 2024 Suppl. Table 1"}
-    proteome: {source: to-resolve}
-    status: to-verify
-    refs: [Plessy2024]
+    genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/OSKA2016v1.9.fa}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
+    note: "no INSDC assembly (PRJDB9887 holds reads only; description says the assembly was deposited at ANISEED, whose download links are not scriptable). Proteome = Plessy 2024 Augustus gene models, not a curated annotation."
+    status: to-verify   # archive members to be set once the tarballs are listed
+    refs: [Plessy2024, Wang2020]
 
   - key: Odio_BCN
     name: Oikopleura dioica
-    lineage: Barcelona, Plessy et al. 2024 chromosome-scale assembly
+    taxid: 34765
+    lineage: "Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286"
     role: core
-    genome: {source: to-resolve, note: "accession from Plessy et al. 2024 Suppl. Table 1"}
-    proteome: {source: to-resolve}
+    genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/Bar2_p4.fa}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
+    note: "no INSDC assembly; proteome = Plessy 2024 Augustus gene models"
+    status: to-verify
+    refs: [Plessy2024]
+
+  - key: Odio_KUM
+    name: Oikopleura dioica
+    taxid: 34765
+    lineage: "Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290"
+    role: core
+    genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/KUM-M3-7f.fa}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
+    status: to-verify
+    refs: [Plessy2024]
+
+  - key: Odio_AOM
+    name: Oikopleura dioica
+    taxid: 34765
+    lineage: "Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288"
+    role: core
+    genome:   {source: zenodo_archive, record: 12913342, archive: Oidioi_genomes.tar.gz, member: Oidioi_genomes/AOM-5-5f.fa}
+    proteome: {source: zenodo_archive, record: 12913342, archive: AugustusAnnotation.tar.gz, member: TO-SET}
     status: to-verify
     refs: [Plessy2024]
 
   - key: Odio_OdB3
     name: Oikopleura dioica
-    lineage: Norway, legacy OdB3 reference and annotation (Genoscope; OikoBase)
+    taxid: 34765
+    lineage: "Bergen (Norway), OdB3 reference (Denoeud et al. 2010, Genoscope); Barcelona lineage per Plessy et al. 2024 Table 1"
     role: core
-    genome: {source: to-resolve, note: "Genoscope OdB3; OikoBase"}
-    proteome: {source: to-resolve}
-    transcripts: {source: to-resolve, note: "OikoBase developmental transcriptomes"}
-    status: to-verify
-    refs: [Denoeud2010, Danks2013]
+    proteome: {source: ncbi_datasets, accession: GCA_000209535.1}   # ASM20953v1, GenBank annotation 17,152 protein-coding genes; 70.5 Mb, 1,260 scaffolds, N50 395 kb
+    genome:   {source: ncbi_datasets, accession: GCA_000209535.1}
+    transcripts: {source: to-resolve, note: "OikoBase (oikoarrays.biology.uiowa.edu) unreachable 2026-10-20; Genoscope cDNA.fa.bz2 available at https://www.genoscope.cns.fr/externe/Download/Projets/Projet_HG/data/annotation/"}
+    note: "Genoscope also serves Oikopleura_peptide_v1.0.fa.gz (4.2 MB, 2010) and Oikopleura_annot_v1.0.gff.gz but no genome FASTA; GCA_000209555.1 (45 Mb, same BioProject) is a second Genoscope assembly of unverified nature. Plessy 2024 uses OdB3 as the Bergen genome, so there is no separate Bergen entry."
+    status: verified
+    refs: [Denoeud2010, Plessy2024]
 
   # ---------------- Other larvaceans: the six Naville et al. 2019 genomes (all verified 2026-10-20) ----------------
   # All six are GenBank assemblies from the University of Bergen (released 2019-03-25, BioProjects linked to
@@ -344,4 +381,4 @@ species:
 seed_species: [Hsap, Mmus, Xtro, Drer, Bflo, Crob, Crei, Tthe, Dmel, Cele]
 
 # Species run through the genome-level search (miniprot) for every absence candidate.
-genome_search_species: [Odio_OKI, Odio_OKI_hap, Odio_OSA, Odio_BER, Odio_BCN, Odio_OdB3, Oalb, Olon, Ovan, Bsty, Mery, Fbor]
+genome_search_species: [Odio_OKI, Odio_OKI_hap, Odio_OSA, Odio_BCN, Odio_KUM, Odio_AOM, Odio_OdB3, Oalb, Olon, Ovan, Bsty, Mery, Fbor]

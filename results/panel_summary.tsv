@@ -1,0 +1,40 @@
+key	species	taxid	role	lineage	proteome_source	proteome_id	n_proteins	uniprot_protein_count	genome_source	genome_id	genome_seqs_bp	status
+Odio_OKI	Oikopleura dioica	34765	core	Okinawa, OKI2018_I69_1.0 (Bliznina et al. 2021), OIST gene models	ncbi_datasets	GCA_907165135.1	18751		ncbi_datasets	GCA_907165135.1	19 / 64,281,565	verified
+Odio_OKI_refseq	Oikopleura dioica	34765	core	Okinawa, OKI2018 — same assembly as Odio_OKI, NCBI RefSeq annotation RS_2026_03 (EGAP)	ncbi_datasets	GCF_907165135.1	17869					verified
+Odio_OKI_hap	Oikopleura dioica	34765	core	Okinawa, haplotype-resolved assembly (PRJEB91365, OIST, 2025)					ena_bioproject	PRJEB91365		to-verify
+Odio_OSA	Oikopleura dioica	34765	core	Osaka, OSKA2016v1.9 (Wang et al. 2020, rescaffolded with ONT by Plessy et al. 2024); BioSample SAMD00227923	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/OSKA2016v1.9.fa	483 / 56,625,162	to-verify
+Odio_BCN	Oikopleura dioica	34765	core	Barcelona, Bar2_p4 (Plessy et al. 2024; ONT + Illumina + Hi-C); BioSample SAMEA111279286	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/Bar2_p4.fa	68 / 55,793,437	to-verify
+Odio_KUM	Oikopleura dioica	34765	core	Kume island, KUM-M3-7f (Plessy et al. 2024; ONT scaffold-level); Okinawa lineage; BioSample SAMEA111279290	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/KUM-M3-7f.fa	55 / 64,653,574	to-verify
+Odio_AOM	Oikopleura dioica	34765	core	Aomori, AOM-5-5f (Plessy et al. 2024; ONT scaffold-level); Osaka lineage; BioSample SAMEA111279288	zenodo_archive	TO-SET			zenodo_archive	Oidioi_genomes/AOM-5-5f.fa	33 / 56,753,784	to-verify
+Odio_OdB3	Oikopleura dioica	34765	core	Bergen (Norway), OdB3 reference (Denoeud et al. 2010, Genoscope); Barcelona lineage per Plessy et al. 2024 Table 1	ncbi_datasets	GCA_000209535.1	17152		ncbi_datasets	GCA_000209535.1	1,260 / 70,471,451	verified
+Oalb	Oikopleura albicans	2500139	larvacean						ncbi_datasets	GCA_004367875.1	92,906 / 365,958,051	verified
+Olon	Oikopleura longicauda	107032	larvacean						ncbi_datasets	GCA_004367895.1	178,440 / 308,740,099	verified
+Ovan	Oikopleura vanhoeffeni	2056977	larvacean						ncbi_datasets	GCA_004367855.1	79,827 / 643,662,591	verified
+Bsty	Bathochordaeus stygius	2005485	larvacean						ncbi_datasets	GCA_004367955.1	467,514 / 396,466,979	verified
+Mery	Mesochordaeus erythrocephalus	2501294	larvacean						ncbi_datasets	GCA_004367975.1	745,784 / 874,018,965	verified
+Fbor	Fritillaria borealis	2507563	larvacean						ncbi_datasets	GCA_004368075.1	142,328 / 143,085,447	verified
+Crob	Ciona intestinalis	7719	ascidian		uniprot_reference	UP000008144	16680	17311	ncbi_datasets	GCF_000224145.3		verified
+Cint	Ciona intestinalis	7719	ascidian		ncbi_datasets	GCF_018327825.1	19614		ncbi_datasets	GCF_018327825.1		verified
+Csav	Ciona savignyi	51511	ascidian		uniprot_reference	UP000007875	11592	20004	ncbi_datasets	GCA_054131345.1		verified
+Pmam	Phallusia mammillata	59560	ascidian		ncbi_datasets	GCF_965637545.1	27517		ncbi_datasets	GCF_965637545.1		verified
+Hror	Halocynthia roretzi	7729	ascidian		to-resolve				ncbi_datasets	GCA_013436055.1		to-verify
+Bsch	Botryllus schlosseri	30301	ascidian		ncbi_datasets	GCF_051294905.1	29009		ncbi_datasets	GCF_051294905.1		verified
+Blea	Botrylloides leachii	62808	ascidian		to-resolve							to-verify
+Mocc	Molgula occulta	30283	ascidian		to-resolve							to-verify
+Mocu	Molgula oculata	27575	ascidian		to-resolve							to-verify
+Scla	Styela clava	7725	ascidian		ncbi_datasets	GCF_964204865.1	26946		ncbi_datasets	GCF_964204865.1		verified
+Clep	Clavelina lepadiformis	159417	ascidian		uniprot_reference	UP001642483	22422	25263	ncbi_datasets	GCF_947623445.1		verified
+Stho	Salpa thompsoni	569448	thaliacean		to-resolve				ncbi_datasets	GCA_047495815.1		to-verify
+Tdem	Thalia democratica	34761	thaliacean		ncbi_datasets	GCF_965202585.1	19084		ncbi_datasets	GCF_965202585.1		verified
+Bflo	Branchiostoma floridae	7739	backbone		uniprot_reference	UP000001554	26616	38650				verified
+Blan	Branchiostoma lanceolatum	7740	backbone		uniprot_reference	UP000838412	26322	38783				verified
+Drer	Danio rerio	7955	backbone		uniprot_reference	UP000000437	26567	69241				verified
+Xtro	Xenopus tropicalis	8364	backbone		uniprot_reference	UP000008143	21732	37711				verified
+Hsap	Homo sapiens	9606	backbone		uniprot_reference	UP000005640	20652	147520				verified
+Mmus	Mus musculus	10090	backbone		uniprot_reference	UP000000589	21860	54855				verified
+Crei	Chlamydomonas reinhardtii	3055	control		uniprot_reference	UP000006906	17625	18840				verified
+Tthe	Tetrahymena thermophila	5911	control		uniprot_reference	UP000009168	26975	26975				verified
+Dmel	Drosophila melanogaster	7227	control		uniprot_reference	UP000000803	13814	21947				verified
+Cele	Caenorhabditis elegans	6239	control		uniprot_reference	UP000001940	19792	26629				verified
+Atha	Arabidopsis thaliana	3702	control		uniprot_reference	UP000006548	27496	39272				verified
+Scer	Saccharomyces cerevisiae	4932	control		uniprot_reference	UP000002311	6066	6067				verified

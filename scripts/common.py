@@ -108,16 +108,97 @@ def http_get(url: str, params: dict | None = None, stream: bool = False, retries
     die(f"GET failed after {retries} attempts: {url} ({last})")
 
 
+PARALLEL_MIN_BYTES = 64 << 20   # files above this size are fetched in parallel byte ranges when the server allows
+PARALLEL_PARTS = 8
+
+
+def _ranged_download(url: str, size: int, tmp: Path, parts: int, retries: int = 20) -> None:
+    """Fetch `url` in `parts` concurrent byte ranges into `tmp`, resuming each range after dropped connections.
+
+    Progress per range is kept in <tmp>.progress so an interrupted run continues where it stopped.
+    (Zenodo serves ~0.3 MB/s per IP and drops long connections.)
+    """
+    from concurrent.futures import ThreadPoolExecutor
+    bounds = [(i * size // parts, (i + 1) * size // parts - 1) for i in range(parts)]
+    prog_path = tmp.with_suffix(tmp.suffix + ".progress")
+    progress = [0] * parts
+    if tmp.exists() and prog_path.exists():
+        saved = json.loads(prog_path.read_text())
+        if saved.get("size") == size and len(saved.get("done", [])) == parts:
+            progress = saved["done"]
+            log(f"  resuming: {sum(progress) / 1e6:.0f} of {size / 1e6:.0f} MB already present")
+    if not tmp.exists() or tmp.stat().st_size != size:
+        with open(tmp, "wb") as fh:
+            fh.truncate(size)
+        progress = [0] * parts
+
+    def save() -> None:
+        prog_path.write_text(json.dumps({"size": size, "done": progress}))
+
+    def fetch(i: int) -> int:
+        start, end = bounds[i]
+        attempt = 0
+        while progress[i] < end - start + 1:
+            pos = start + progress[i]
+            try:
+                r = http_get(url, stream=True, timeout=600, retries=1, headers={"Range": f"bytes={pos}-{end}"})
+                if r.status_code != 206:
+                    raise RuntimeError(f"expected 206 for range {pos}-{end}, got {r.status_code}")
+                with open(tmp, "r+b") as fh:
+                    fh.seek(pos)
+                    for block in r.iter_content(1 << 20):
+                        fh.write(block)
+                        progress[i] += len(block)
+            except SystemExit as exc:  # http_get dies after its retries; treat as a transient failure here
+                attempt += 1
+                if attempt > retries:
+                    raise RuntimeError(f"range {i} failed {retries} times for {url}") from exc
+                log(f"  range {i}: connection error at byte {start + progress[i]}, retry {attempt}/{retries}")
+                time.sleep(min(60, 2 ** attempt))
+            except Exception as exc:  # noqa: BLE001  (dropped connection mid-stream)
+                attempt += 1
+                if attempt > retries:
+                    raise RuntimeError(f"range {i} failed {retries} times for {url}: {exc}") from exc
+                log(f"  range {i}: {type(exc).__name__} at byte {start + progress[i]}, retry {attempt}/{retries}")
+                time.sleep(min(60, 2 ** attempt))
+            finally:
+                save()
+        return progress[i]
+
+    with ThreadPoolExecutor(max_workers=parts) as ex:
+        got = sum(ex.map(fetch, range(parts)))
+    if got != size:
+        die(f"ranged download of {url} returned {got} bytes, expected {size}")
+    prog_path.unlink(missing_ok=True)
+
+
 def download(url: str, dest: str | Path, params: dict | None = None) -> Path:
     dest = Path(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
     tmp = dest.with_suffix(dest.suffix + ".part")
     r = http_get(url, params=params, stream=True, timeout=600)
-    with open(tmp, "wb") as fh:
-        for block in r.iter_content(1 << 20):
-            fh.write(block)
+    size = int(r.headers.get("Content-Length") or 0)
+    ranges_ok = r.headers.get("Accept-Ranges", "").lower() == "bytes"
+    if params is None and size >= PARALLEL_MIN_BYTES and ranges_ok:
+        r.close()
+        log(f"  parallel download ({size / 1e6:.0f} MB, {PARALLEL_PARTS} ranges): {url}")
+        _ranged_download(r.url, size, tmp, PARALLEL_PARTS)
+    else:
+        with open(tmp, "wb") as fh:
+            for block in r.iter_content(1 << 20):
+                fh.write(block)
+    if size and tmp.stat().st_size != size:
+        die(f"download of {url} is {tmp.stat().st_size} bytes, server announced {size}")
     tmp.replace(dest)
     return dest
+
+
+def md5_of(path: str | Path, chunk: int = 1 << 20) -> str:
+    h = hashlib.md5()
+    with open(path, "rb") as fh:
+        for block in iter(lambda: fh.read(chunk), b""):
+            h.update(block)
+    return h.hexdigest()
 
 
 def record_file(manifest: str | Path, path: str | Path, source: str, note: str = "") -> None:

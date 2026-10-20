@@ -8,7 +8,9 @@ usage:
   fetch_data.py pfam     --out data/pfam/Pfam-A.hmm --manifest data/manifest/files.tsv
 
 Sources handled: uniprot_reference (reference proteome FASTA, one sequence per gene), zenodo (record + file
-globs), ncbi_datasets (GCA_/GCF_ accession via the `datasets` CLI), url. Any other source value stops the run.
+globs), zenodo_archive (record + archive file name + exact member path inside the tar; the archive is kept under
+data/downloads/), ncbi_datasets (GCA_/GCF_ accession via the `datasets` CLI), url. Any other source value stops
+the run.
 """
 import argparse
 import fnmatch
@@ -20,7 +22,7 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from common import (UNIPROT_FTP_REF, die, download, log, read_tsv, record_file,  # noqa: E402
+from common import (UNIPROT_FTP_REF, die, download, log, md5_of, read_tsv, record_file,  # noqa: E402
                     species_by_key, zenodo_files)
 
 PFAM_URL = "https://ftp.ebi.ac.uk/pub/databases/Pfam/current_release/Pfam-A.hmm.gz"
@@ -65,6 +67,48 @@ def fetch_zenodo(record: int, globs: list[str], out: Path, manifest: Path) -> No
     else:
         dest.replace(out)
     record_file(manifest, out, f"zenodo:{record}/{f['name']}", note=f"zenodo md5 {f.get('checksum')}")
+
+
+def zenodo_archive(record: int, archive: str, manifest: Path) -> Path:
+    """Download one archive from a Zenodo record into data/downloads (once) and record it; return its path."""
+    files = {f["name"]: f for f in zenodo_files(record)}
+    if archive not in files:
+        die(f"Zenodo record {record}: no file named {archive!r}; files: {sorted(files)}")
+    f = files[archive]
+    dest = Path("data/downloads") / f"zenodo_{record}" / archive
+    if dest.exists() and dest.stat().st_size == int(f["size"] or 0):
+        log(f"  archive already present: {dest}")
+    else:
+        log(f"  downloading {archive} ({int(f['size'] or 0) / 1e6:.0f} MB) from Zenodo record {record}")
+        download(f["url"], dest)
+        expected = (f.get("checksum") or "").replace("md5:", "")
+        if expected and md5_of(dest) != expected:
+            die(f"{dest}: md5 {md5_of(dest)} does not match Zenodo checksum {expected}")
+        record_file(manifest, dest, f"zenodo:{record}/{archive}", note=f"zenodo md5 {f.get('checksum')} verified")
+    return dest
+
+
+def fetch_zenodo_archive(record: int, archive: str, member: str, out: Path, manifest: Path) -> None:
+    """Extract one member (exact path inside the tar) from a Zenodo archive into `out`."""
+    import tarfile
+    arc = zenodo_archive(record, archive, manifest)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with tarfile.open(arc) as tf:
+        try:
+            info = tf.getmember(member)
+        except KeyError:
+            names = [n for n in tf.getnames() if not n.endswith("/")]
+            die(f"{arc}: no member {member!r}. Members ({len(names)}): {names[:60]}{' ...' if len(names) > 60 else ''}")
+        if not info.isfile():
+            die(f"{arc}: member {member!r} is not a regular file")
+        src = tf.extractfile(info)
+        if member.endswith(".gz"):
+            with gzip.open(src, "rb") as fin, open(out, "wb") as fout:
+                shutil.copyfileobj(fin, fout)
+        else:
+            with open(out, "wb") as fout:
+                shutil.copyfileobj(src, fout)
+    record_file(manifest, out, f"zenodo:{record}/{archive}!{member}")
 
 
 def fetch_ncbi_datasets(accession: str, kind: str, out: Path, manifest: Path) -> None:
@@ -131,6 +175,11 @@ def main() -> None:
         if not acc or acc == "TO-RESOLVE" or not acc.startswith(("GCA_", "GCF_")):
             die(f"[{args.key}] ncbi_datasets accession not set: {acc!r}")
         fetch_ncbi_datasets(acc, args.kind, out, manifest)
+    elif source == "zenodo_archive":
+        for k in ("record", "archive", "member"):
+            if not spec.get(k):
+                die(f"[{args.key}] zenodo_archive source needs {k}")
+        fetch_zenodo_archive(int(spec["record"]), spec["archive"], spec["member"], out, manifest)
     elif source == "url":
         fetch_url(spec["url"], out, manifest)
     else:

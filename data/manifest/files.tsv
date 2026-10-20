@@ -25,3 +25,13 @@ data/genomes/Fbor.fna	ncbi_datasets:GCA_004368075.1:genome	7f275f6efa5d7ce288957
 data/genomes/Oalb.fna	ncbi_datasets:GCA_004367875.1:genome	e2970d182ba199da3184aa728ba3b8c7c5f933e8d99c30e27274605b20c99dd9	379949369	2026-10-20	
 data/proteomes/Scer.faa	https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000002311/UP000002311_559292.fasta.gz	8ca7d8ccfd337f039527d136c3d10ec9c81be3aae33578cadef3abf2093792cb	3855160	2026-10-20	UniProt reference proteome UP000002311, one sequence per gene
 data/proteomes/Tthe.faa	https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/reference_proteomes/Eukaryota/UP000009168/UP000009168_312017.fasta.gz	9edbda7c057361b6fc1cf3877a8df58ef34d3280e8ed6968fc2025e469ccca8d	20858441	2026-10-20	UniProt reference proteome UP000009168, one sequence per gene
+data/proteomes/Odio_OdB3.faa	ncbi_datasets:GCA_000209535.1:protein	2d836894e2aba1f1bbff968d1b570f9d299f61f160bef3a700f351acdef9bcd0	7916132	2026-10-20	
+data/proteomes/Odio_OKI.faa	ncbi_datasets:GCA_907165135.1:protein	ad55530d95e37f8984caed1ff9d9edd286845bd47a6b3e600d136b0c124373e5	10256477	2026-10-20	
+data/proteomes/Odio_OKI_refseq.faa	ncbi_datasets:GCF_907165135.1:protein	f4c3ec594c6ab5a1817abd9651a9c90e3e97324929571ca596c4d0d96a4d1bdd	9510023	2026-10-20	
+data/genomes/Odio_OdB3.fna	ncbi_datasets:GCA_000209535.1:genome	22df502a8120cf0309a578fcb44f04c09369dfe1b5f71d511caf36a0bc80dbf0	71528261	2026-10-20	
+data/genomes/Odio_OKI.fna	ncbi_datasets:GCA_907165135.1:genome	bf724d80278cb29aec50078aaf11b7075a6dc685833f1dac3a6111a431fc71a5	65086785	2026-10-20	
+data/downloads/zenodo_12913342/Oidioi_genomes.tar.gz	zenodo:12913342/Oidioi_genomes.tar.gz	fae88534a393c31f00ee7e42c500944c33970b6bea1343c2941c26ad90ce54f8	517810534	2026-10-20	zenodo md5 md5:1d9bae5a63b319f8f6bd5a1ab6e13999 verified
+data/genomes/Odio_KUM.fna	zenodo:12913342/Oidioi_genomes.tar.gz!Oidioi_genomes/KUM-M3-7f.fa	c10a3283cf3429c8d60167232eb8a069757967dd0fa14c9c105fd34c3876dcf0	64654338	2026-10-20	
+data/genomes/Odio_BCN.fna	zenodo:12913342/Oidioi_genomes.tar.gz!Oidioi_genomes/Bar2_p4.fa	722e20a34eced81bfb35d1b992f2eebcbc2a40c47fad53f962bace9b752fc572	56910814	2026-10-20	
+data/genomes/Odio_OSA.fna	zenodo:12913342/Oidioi_genomes.tar.gz!Oidioi_genomes/OSKA2016v1.9.fa	ef900557081cd7999f3f01be57818820540b5db2c45fb4ca8cb9d28ba6ebc8b3	57572037	2026-10-20	
+data/genomes/Odio_AOM.fna	zenodo:12913342/Oidioi_genomes.tar.gz!Oidioi_genomes/AOM-5-5f.fa	0b669432b9d387de738b7600b86df2d1d75c76c7105e048dc0fe128b54f35a87	56754240	2026-10-20	
