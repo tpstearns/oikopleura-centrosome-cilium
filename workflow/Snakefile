@@ -233,3 +233,24 @@ rule matrix:
     shell:
         "python scripts/matrix.py --genes {GENES_TSV} --tiers {input.tiers} --out {output.matrix} "
         "--summary {output.summary} --md {output.md}"
+
+
+# ---------------------------------------------------------------- targeted analyses
+
+rule tubulin_tree:
+    """Tubulin-family phylogeny placing the Oikopleura tubulins against alpha/beta/gamma/delta/epsilon/zeta references."""
+    input:
+        profiles=expand("data/profiles/{gene}.hmm", gene=["TUBA1A", "TUBB", "TUBG1", "TUBG2", "TUBD1", "TUBE1", "TUBZ1"]),
+        seeds=expand("data/seeds/{gene}.faa", gene=["TUBA1A", "TUBB", "TUBG1", "TUBD1", "TUBE1", "TUBZ1"]),
+        queries=expand("data/proteomes/{key}.faa", key=["Odio_OKI", "Odio_OdB3"]),
+        owners=expand("data/proteomes/{key}.faa", key=["Bflo", "Blan", "Clep", "Cint", "Pmam", "Bsch", "Scla", "Tdem"]),
+        extra="data/genes/extra_refs/Xla_zeta.faa",
+    output:
+        "results/tubulin_tree/tubulin_tree.md",
+        "results/tubulin_tree/tubulins.treefile",
+        "results/figures/tubulin_tree.pdf",
+    threads: THREADS
+    shell:
+        "python scripts/tubulin_tree.py --query-species Odio_OKI Odio_OdB3 "
+        "--owner-species Bflo Blan Clep Cint Pmam Bsch Scla Tdem --extra Xla_zeta={input.extra} "
+        "--outdir results/tubulin_tree --threads {threads}"

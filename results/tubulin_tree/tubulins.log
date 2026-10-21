@@ -1,0 +1,292 @@
+IQ-TREE version 3.1.4 for MacOS ARM 64-bit built Sep 29 2026
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    TPS-Blackbook-16.local (SSE4.2, 128 GB RAM)
+Command: iqtree3 -s results/tubulin_tree/tubulins.trim.faa -m MFP -B 1000 -alrt 1000 -T 12 --prefix results/tubulin_tree/tubulins -redo --quiet
+Seed:    93550 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Wed Oct 21 09:32:12 2026
+Kernel:  SSE2 - 12 threads (18 CPU cores detected)
+
+Reading alignment file results/tubulin_tree/tubulins.trim.faa ... Fasta format detected
+Reading fasta file: done in 0.000741959 secs using 82.08% CPU
+Alignment most likely contains protein sequences
+Constructing alignment: done in 0.00102305 secs using 70.77% CPU
+Alignment has 112 sequences with 437 columns, 430 distinct patterns
+419 parsimony-informative, 4 singleton sites, 14 constant sites
+                                       Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 9.32217e-05 secs using 121.2% CPU
+   1  REF_alpha_Hsap_Q71U36                    0.00%    passed     71.94%
+   2  REF_alpha_Bflo_A0A9J7LSS1                0.00%    passed     72.30%
+   3  REF_alpha_Cele_P91910                    0.00%    passed     96.25%
+   4  REF_alpha_Crei_Q540H1                    0.00%    passed     94.84%
+   5  REF_alpha_Crob_A0A1W2WKY9                0.00%    passed     67.50%
+   6  REF_alpha_Dmel_P06603                    0.00%    passed     70.64%
+   7  REF_alpha_Drer_A0ACM8Q3Y1                0.00%    passed     70.59%
+   8  REF_alpha_Tthe_I7M9N6                    0.00%    passed     95.79%
+   9  REF_beta_Hsap_P07437                     0.23%    passed     85.11%
+  10  REF_beta_Drer_A0A8M1PB93                 0.23%    passed     85.41%
+  11  REF_beta_Xtro_Q6GLE7                     0.23%    passed     85.11%
+  12  REF_gamma_Hsap_P23258                    1.14%    passed     71.49%
+  13  REF_gamma_Bflo_A0A9J7N0Y8                0.92%    passed     89.27%
+  14  REF_gamma_Cele_P34475                    3.20%    passed     19.52%
+  15  REF_gamma_Crei_A8INY3                    1.14%    passed     95.35%
+  16  REF_gamma_Crob_H2XQX6                    1.14%    passed     74.62%
+  17  REF_gamma_Dmel_P23257                    0.46%    passed     76.34%
+  18  REF_gamma_Drer_A0ACM8Q045                1.14%    passed     56.72%
+  19  REF_gamma_Mmus_P83887                    1.14%    passed     72.29%
+  20  REF_gamma_Tthe_Q23FR3                    1.14%    passed     15.04%
+  21  REF_gamma_Xtro_A0A8J0PLR4                1.14%    passed     57.72%
+  22  REF_delta_Hsap_Q9UJT1                    4.58%    passed     15.41%
+  23  REF_delta_Bflo_A0A9J7LZS5                4.35%    passed     87.71%
+  24  REF_delta_Crei_A0A2K3DY61               19.68%    failed      0.00%
+  25  REF_delta_Crob_H2XR71                    3.89%    passed     29.37%
+  26  REF_delta_Drer_A0ACM8Q488                6.18%    passed     50.57%
+  27  REF_delta_Mmus_Q9R1K7                    4.12%    passed     30.67%
+  28  REF_delta_Tthe_I7MJY7                    7.78%    failed      0.00%
+  29  REF_delta_Xtro_Q6DIM3                    4.58%    passed     92.53%
+  30  REF_epsilon_Hsap_Q9UJT0                  2.52%    passed     70.45%
+  31  REF_epsilon_Bflo_A0A9J7MWZ3              2.52%    passed     95.74%
+  32  REF_epsilon_Crei_A0A2K3DX56              4.12%    passed     19.39%
+  33  REF_epsilon_Crob_F6WWC7                  3.43%    passed     57.04%
+  34  REF_epsilon_Drer_Q5SNS3                  3.20%    passed     42.51%
+  35  REF_epsilon_Mmus_Q9D6T1                  2.52%    passed     76.76%
+  36  REF_epsilon_Tthe_Q22YZ9                  4.12%    passed      6.35%
+  37  REF_epsilon_Xtro_A0A8J0PGY7              2.52%    passed     92.05%
+  38  REF_zeta_Xtro_A0A6I8RNG6                10.07%    failed      3.13%
+  39  REF_zeta_Bflo_A0A9J7MKF5                10.76%    passed     15.62%
+  40  REF_zeta_Crei_A0A2K3D3M8                 5.72%    failed      0.00%
+  41  REF_zeta_Crob_H2XTC6                    12.59%    passed     46.57%
+  42  REF_zeta_Tthe_A4VDW7                     8.24%    failed      0.00%
+  43  REF_zeta_Xla_Q8AVA7                     10.07%    passed     13.09%
+  44  CAND_epsilon_Blan_A0A8K0A658             2.52%    passed     93.34%
+  45  CAND_delta_Blan_A0A8J9W0E8               4.35%    passed     79.61%
+  46  CAND_zeta_Blan_A0A8J9ZBA1               10.76%    passed     24.48%
+  47  CAND_epsilon_Clep_A0ABP0FH64             2.52%    passed     59.93%
+  48  CAND_delta_Clep_A0ABP0FP81               5.72%    passed     18.50%
+  49  CAND_zeta_Clep_A0ABP0EX16                9.38%    passed      9.92%
+  50  CAND_epsilon_Cint_XP_002128990.2         2.52%    passed     73.56%
+  51  CAND_delta_Cint_XP_078488146.1           3.89%    passed     47.31%
+  52  CAND_zeta_Cint_XP_078486481.1           11.90%    passed     59.83%
+  53  CAND_epsilon_Pmam_XP_079940638.1         2.52%    passed     78.01%
+  54  CAND_delta_Pmam_XP_079945951.1           4.81%    passed     50.52%
+  55  CAND_zeta_Pmam_XP_079942672.1           11.21%    passed      7.74%
+  56  CAND_zeta_Pmam_XP_079943484.1           11.21%    passed      7.80%
+  57  CAND_zeta_Pmam_XP_079942312.1           10.53%    failed      2.23%
+  58  CAND_zeta_Pmam_XP_079942314.1           23.57%    passed      5.42%
+  59  CAND_zeta_Pmam_XP_079942313.1           16.48%    failed      1.34%
+  60  CAND_epsilon_Bsch_XP_080191106.1         2.52%    passed     64.00%
+  61  CAND_delta_Bsch_XP_080189683.1           2.97%    failed      0.12%
+  62  CAND_zeta_Bsch_XP_080167382.1            6.18%    passed      7.90%
+  63  CAND_epsilon_Scla_XP_039268620.2         2.52%    passed     91.16%
+  64  CAND_delta_Scla_XP_039252693.2           3.66%    passed     34.32%
+  65  CAND_zeta_Scla_XP_039268503.2            6.18%    passed     20.80%
+  66  CAND_epsilon_Tdem_XP_082811024.1         2.52%    passed     21.75%
+  67  CAND_delta_Tdem_XP_082807781.1           5.26%    failed      1.64%
+  68  CAND_zeta_Tdem_XP_082804231.1            8.92%    failed      0.38%
+  69  OD_Odio_OKI_CAG5113797.1_best-alpha      0.00%    passed     63.64%
+  70  OD_Odio_OKI_CAG5110905.1_best-alpha      0.00%    passed     94.42%
+  71  OD_Odio_OKI_CAG5108204.1_best-alpha      0.00%    passed     87.49%
+  72  OD_Odio_OKI_CAG5113536.1_best-alpha      0.00%    passed     84.30%
+  73  OD_Odio_OKI_CAG5079083.1_best-alpha      0.00%    passed     86.98%
+  74  OD_Odio_OKI_CAG5110003.1_best-alpha      0.23%    passed     96.45%
+  75  OD_Odio_OKI_CAG5112687.1_best-alpha      0.69%    passed     95.86%
+  76  OD_Odio_OKI_CAG5112626.1_best-alpha      0.69%    passed     97.21%
+  77  OD_Odio_OKI_CAG5110781.1_best-alpha      1.60%    passed     93.63%
+  78  OD_Odio_OKI_CAG5077807.1_best-alpha      0.00%    passed     84.91%
+  79  OD_Odio_OKI_CAG5098897.1_best-beta       0.23%    passed     66.33%
+  80  OD_Odio_OKI_CAG5096646.1_best-beta       0.23%    passed     36.47%
+  81  OD_Odio_OKI_CAG5101981.1_best-beta       0.23%    passed     67.03%
+  82  OD_Odio_OKI_CAG5094151.1_best-beta       0.23%    passed     85.27%
+  83  OD_Odio_OKI_CAG5086493.1_best-beta       0.23%    passed     41.08%
+  84  OD_Odio_OKI_CAG5095855.1_best-beta      18.99%    passed     97.36%
+  85  OD_Odio_OKI_CAG5086235.1_best-alpha     16.25%    failed      0.79%
+  86  OD_Odio_OKI_CAG5105093.1_best-gamma      0.92%    passed     92.33%
+  87  OD_Odio_OKI_CAG5094636.1_best-epsilon   34.78%    passed     63.04%
+  88  OD_Odio_OKI_CAG5091327.1_best-delta      8.92%    passed     67.84%
+  89  OD_Odio_OdB3_CBY22196.1_best-alpha       0.00%    passed     86.35%
+  90  OD_Odio_OdB3_CBY11506.1_best-alpha       0.00%    passed     87.49%
+  91  OD_Odio_OdB3_CBY18811.1_best-alpha       0.00%    passed     90.91%
+  92  OD_Odio_OdB3_CBY23980.1_best-alpha       0.00%    passed     86.36%
+  93  OD_Odio_OdB3_CBY13029.1_best-alpha       0.00%    passed     87.07%
+  94  OD_Odio_OdB3_CBY10478.1_best-alpha       0.23%    passed     96.93%
+  95  OD_Odio_OdB3_CBY18333.1_best-alpha       0.69%    passed     97.54%
+  96  OD_Odio_OdB3_CBY20907.1_best-alpha       0.69%    passed     97.06%
+  97  OD_Odio_OdB3_CBY08200.1_best-alpha       0.23%    passed     90.48%
+  98  OD_Odio_OdB3_CBY15763.1_best-alpha       1.60%    passed     98.78%
+  99  OD_Odio_OdB3_CBY08781.1_best-alpha       0.23%    passed     85.89%
+ 100  OD_Odio_OdB3_CBY20617.1_best-alpha       5.26%    passed     94.36%
+ 101  OD_Odio_OdB3_CBY13728.1_best-alpha      21.05%    passed     77.03%
+ 102  OD_Odio_OdB3_CBY23956.1_best-alpha      27.69%    passed     89.70%
+ 103  OD_Odio_OdB3_CBY08384.1_best-beta        0.23%    passed     76.83%
+ 104  OD_Odio_OdB3_CBY07085.1_best-beta        0.23%    passed     68.45%
+ 105  OD_Odio_OdB3_CBY12859.1_best-beta        0.23%    passed     49.88%
+ 106  OD_Odio_OdB3_CBY24440.1_best-beta        0.23%    passed     80.22%
+ 107  OD_Odio_OdB3_CBY15537.1_best-beta        0.23%    passed     41.08%
+ 108  OD_Odio_OdB3_CBY22337.1_best-alpha       5.95%    passed     27.63%
+ 109  OD_Odio_OdB3_CBY21563.1_best-gamma       0.92%    passed     92.38%
+ 110  OD_Odio_OdB3_CBY21560.1_best-gamma      13.04%    passed     86.92%
+ 111  OD_Odio_OdB3_CBY08394.1_best-epsilon     3.89%    passed     45.63%
+ 112  OD_Odio_OdB3_CBY19037.1_best-delta       8.92%    passed     34.16%
+****  TOTAL                                    4.47%  11 sequences failed composition chi2 test (p-value<5%; df=19)
+NOTE: REF_beta_Xtro_Q6GLE7 is identical to REF_beta_Hsap_P07437 but kept for subsequent analysis
+NOTE: OD_Odio_OdB3_CBY15537.1_best-beta is identical to OD_Odio_OKI_CAG5086493.1_best-beta but kept for subsequent analysis
+Checking for duplicate sequences: done in 0.000313044 secs using 67.08% CPU
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.014 seconds
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -36052.229
+Optimal log-likelihood: -36052.174
+Proportion of invariable sites: 0.030
+Gamma shape alpha: 1.734
+Parameters optimization took 1 rounds (0.092 sec)
+Time for fast ML tree search: 1.960 seconds
+
+NOTE: ModelFinder requires 79 MB RAM!
+ModelFinder will test up to 1232 protein models (sample size: 437 epsilon: 0.100) ...
+Akaike Information Criterion:           LG+F+I+R6
+Corrected Akaike Information Criterion: Q.INSECT+I+R5
+Bayesian Information Criterion:         Q.INSECT+I+R5
+Best-fit model: Q.INSECT+I+R5 chosen according to BIC
+
+All model information printed to results/tubulin_tree/tubulins.model.gz
+CPU time for ModelFinder: 813.813 seconds (0h:13m:33s)
+Wall-clock time for ModelFinder: 164.417 seconds (0h:2m:44s)
+Generating 1000 samples for ultrafast bootstrap (seed: 93550)...
+
+NOTE: 40 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -35923.223
+2. Current log-likelihood: -35900.958
+3. Current log-likelihood: -35900.156
+4. Current log-likelihood: -35899.895
+5. Current log-likelihood: -35899.765
+Optimal log-likelihood: -35899.697
+Proportion of invariable sites: 0.031
+Site proportion and rates:  (0.098,0.156) (0.250,0.443) (0.381,0.890) (0.216,1.664) (0.023,7.516)
+Parameters optimization took 5 rounds (0.980 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.155453 secs using 1128% CPU
+Computing ML distances took 0.155659 sec (of wall-clock time) 1.753780 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.00030303 secs using 201% CPU
+Constructing RapidNJ tree: done in 0.01755 secs using 57% CPU
+Computing RapidNJ tree took 0.017885 sec (of wall-clock time) 0.010634 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -36020.208
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 0.981 second
+Computing log-likelihood of 98 initial trees ... 7.663 seconds
+Current best score: -35899.697
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -35886.247
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 2: -35860.118
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 3: -35859.779
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 4: -35858.238
+Iteration 10 / LogL: -35858.248 / Time: 0h:3m:9s
+Iteration 20 / LogL: -35874.451 / Time: 0h:3m:24s
+Finish initializing candidate tree set (19)
+Current best tree score: -35858.238 / CPU time: 38.661
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 26: -35854.432
+Iteration 30 / LogL: -35925.340 / Time: 0h:3m:47s (0h:3m:28s left)
+Iteration 40 / LogL: -35857.058 / Time: 0h:4m:10s (0h:3m:10s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 42: -35852.954
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 43: -35850.387
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 49: -35850.209
+Iteration 50 / LogL: -35851.046 / Time: 0h:4m:32s (0h:3m:38s left)
+Log-likelihood cutoff on original alignment: -35905.597
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 60: -35848.376
+Iteration 60 / LogL: -35848.376 / Time: 0h:4m:56s (0h:3m:43s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 68: -35847.779
+Iteration 70 / LogL: -35858.191 / Time: 0h:5m:18s (0h:3m:39s left)
+Iteration 80 / LogL: -35848.692 / Time: 0h:5m:40s (0h:3m:15s left)
+Iteration 90 / LogL: -35847.923 / Time: 0h:6m:2s (0h:2m:53s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 99: -35846.765
+Iteration 100 / LogL: -35853.833 / Time: 0h:6m:25s (0h:3m:41s left)
+Log-likelihood cutoff on original alignment: -35905.210
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.991
+Iteration 110 / LogL: -35848.550 / Time: 0h:6m:46s (0h:3m:20s left)
+Iteration 120 / LogL: -35850.010 / Time: 0h:7m:10s (0h:2m:58s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 121: -35846.733
+Iteration 130 / LogL: -35847.941 / Time: 0h:7m:31s (0h:3m:22s left)
+Iteration 140 / LogL: -35849.538 / Time: 0h:7m:54s (0h:3m:0s left)
+Iteration 150 / LogL: -35855.714 / Time: 0h:8m:15s (0h:2m:37s left)
+Log-likelihood cutoff on original alignment: -35905.210
+Iteration 160 / LogL: -35846.836 / Time: 0h:8m:38s (0h:2m:15s left)
+Iteration 170 / LogL: -35848.381 / Time: 0h:9m:1s (0h:1m:53s left)
+Estimate model parameters (epsilon = 0.100)
+UPDATE BEST LOG-LIKELIHOOD: -35846.679
+Iteration 180 / LogL: -36017.126 / Time: 0h:9m:24s (0h:1m:31s left)
+Iteration 190 / LogL: -35849.954 / Time: 0h:9m:50s (0h:1m:9s left)
+Iteration 200 / LogL: -35853.687 / Time: 0h:10m:13s (0h:0m:47s left)
+Log-likelihood cutoff on original alignment: -35905.210
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.995
+Iteration 210 / LogL: -35857.398 / Time: 0h:10m:38s (0h:3m:24s left)
+Iteration 220 / LogL: -35854.391 / Time: 0h:11m:0s (0h:3m:1s left)
+TREE SEARCH COMPLETED AFTER 222 ITERATIONS / Time: 0h:11m:5s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -35846.679
+Optimal log-likelihood: -35846.678
+Proportion of invariable sites: 0.031
+Site proportion and rates:  (0.103,0.158) (0.267,0.459) (0.372,0.920) (0.206,1.712) (0.022,7.649)
+Parameters optimization took 1 rounds (0.097 sec)
+BEST SCORE FOUND : -35846.678
+
+Testing tree branches by SH-like aLRT with 1000 replicates...
+0.445 sec.
+Creating bootstrap support values...
+Split supports printed to NEXUS file results/tubulin_tree/tubulins.splits.nex
+Total tree length: 36.937
+
+Total number of iterations: 222
+CPU time used for tree search: 725.374 sec (0h:12m:5s)
+Wall-clock time used for tree search: 499.069 sec (0h:8m:19s)
+Total CPU time used: 1547.686 sec (0h:25m:47s)
+Total wall-clock time used: 665.765 sec (0h:11m:5s)
+
+Computing bootstrap consensus tree...
+Reading input file results/tubulin_tree/tubulins.splits.nex...
+112 taxa and 565 splits.
+Consensus tree written to results/tubulin_tree/tubulins.contree
+Reading input trees file results/tubulin_tree/tubulins.contree
+Log-likelihood of consensus tree: -35847.906
+
+Analysis results written to: 
+  IQ-TREE report:                results/tubulin_tree/tubulins.iqtree
+  Maximum-likelihood tree:       results/tubulin_tree/tubulins.treefile
+  Likelihood distances:          results/tubulin_tree/tubulins.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          results/tubulin_tree/tubulins.splits.nex
+  Consensus tree:                results/tubulin_tree/tubulins.contree
+  Screen log file:               results/tubulin_tree/tubulins.log
+
+Date and Time: Wed Oct 21 09:43:18 2026

@@ -46,3 +46,4 @@ data/proteomes/Mery.faa	zenodo:12913342/AugustusAnnotation.tar.gz!run_augustus/M
 data/proteomes/Odio_KUM.faa	zenodo:12913342/AugustusAnnotation.tar.gz!run_augustus/KUM-M3-7f.sm.OKI-CDS/FASTA/KUM-M3-7f.prot.longest.fa	c8f8aaac3a07ac612d757aa8efcf8f02da801beec3c09d416f30fcedce3b87f2	8305507	2026-10-20	
 data/proteomes/Oalb.faa	zenodo:12913342/AugustusAnnotation.tar.gz!run_augustus/Oalb_SCLG01.1.sm.abi.cionamodel/O_alb.prot.longest.fa	f52d2a669a8d4901f673a706c5cac49aefac91465bd57e3eaec1eeaab194771b	7523591	2026-10-20	
 data/proteomes/Odio_OSA.faa	zenodo:12913342/AugustusAnnotation.tar.gz!run_augustus/OSKA2016v1.9.sm/FASTA/OSKA2016v1.9.prot.longest.fa	9387ec5f18a0de16e199d30856a12e2a71f3176956f59ea70d2c697b7673071e	7490040	2026-10-20	
+data/genes/extra_refs/Xla_zeta.faa	https://rest.uniprot.org/uniprotkb/Q8AVA7.fasta	6ec83e8927e56949564ed7dc8e47f101ce187911d0de8e07dd1b77f3f001dfe3	522	2026-10-21	Xenopus laevis tubz1.L (zeta-tubulin) reference for the tubulin tree

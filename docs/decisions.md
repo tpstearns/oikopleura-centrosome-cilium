@@ -2,6 +2,8 @@
 
 Newest first. One line per decision with the reason; longer rationale in the relevant doc.
 
+- 2026-10-21 — Tubulin tree (`scripts/tubulin_tree.py`, rule `tubulin_tree`): Od δ and ε fall inside the δ (97.5/99) and ε (100/100) reference clades; the ζ clade (99/100, 17 sequences including ζ from amphioxus ×2, Clavelina, Ciona ×2, Phallusia, Botryllus, Styela clava, Thalia democratica) contains no Oikopleura sequence. ζ-tubulin is therefore lost on the Oikopleura branch and retained across the other tunicates sampled; δ and ε are retained. Still E4-pending (genome absence workflow). Reference set = seed files + X. laevis tubz1.L (Q8AVA7, recorded in the manifest) + δ/ε/ζ-owned proteins of eight panel proteomes; queries = all Okinawa and OdB3 tubulin-family proteins (E ≤ 1e-30).
+
 - 2026-10-20 — Checkpoint 1 (Od lineages + C. robusta, proteome level) recorded in `results/checkpoint_1_summary.md`. Open decisions for TS: (1) score vertebrate paralog pairs as groups (23 collisions detected automatically; `group` column proposed for `config/gene_modules.tsv`); (2) admit E ≤ 1e-10 / ≥10% profile coverage as E2; (3) add a best-human-hit column to the RBH stage and use it in tiers; (4) decoy paralogs in the gene list. No absence has been called; CCDC78 and ζ-tubulin are the first candidates for the full absence workflow.
 - 2026-10-20 — TP73: the vertebrate-seeded profile finds nothing in Od, but Pfam PF00870 finds one divergent p53-family protein per Od proteome (E ≈ 1e-5). Family-level Pfam/structure evidence must be consulted before any E4 on genes whose profiles are vertebrate-biased; this is the case for every gene whose seed set is Mmus/Xtro/Drer only (`results/profiles_summary.tsv`, n_species ≤ 3 with no invertebrate seed).
 
